@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caio Carrara Log, Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.">
+
+
+        <title>Regras de negócio usando Domain Driven Design // Caio Carrara Log // Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./theme/css/pure.css">
+    <link rel="stylesheet" href="./theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="./author/caio-carrara.html" title="See posts by Caio Carrara">
+                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/f6d5a605df582ab9ea419ebef9f400b7">
+                </a>
+                <h2 class="article-info">Caio Carrara</h2>
+                <small class="about-author">Trabalhando principalmente com Python, Java, HTML, CSS e Javascript. Hora ou outra me arrisco no empreendedorismo. Quando não estou programando ou estudando estou treinando, andando de bicicleta, jogando meu 3DS ou assistindo um filme.</small>
+                <h5>Published</h5>
+                <p>Sun 02 February 2014</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Regras de negócio usando Domain Driven Design</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="./tag/arquitetura.html">arquitetura</a>
+                                <a class="post-category" href="./tag/desenvolvimento.html">desenvolvimento</a>
+                                <a class="post-category" href="./tag/java.html">java</a>
+                        </p>
+                </header>
+            </section>
+            <p>Aos que ainda não conhecem o conceito de <a href="http://en.wikipedia.org/wiki/Domain-driven_design" title="Domain Driven Design Wikipedia">Domain Driven Design
+(DDD)</a>,
+sugiro que busquem conhecer o quanto antes (pode começar pela indicação
+de livro no final do post). O objetivo desse post não é explicar o DDD
+(talvez em um próximo post), mas sim tentar ajudar a desmistificar uma
+dúvida que pode ser recorrente dos que começam a desenvolver software
+orientado ao domínio.</p>
+<p>A base do DDD diz que o desenvolvimento de uma solução de software deve
+ser feito respeitando-se algumas camadas para a organização da solução:</p>
+<ul>
+<li><strong><!--more-->Camada de Apresentação:</strong> é a famosa "interface com o
+    usuário". Essa camada é a responsável por apresentear as informações
+    ao usuário e interpretar os comandos do mesmo;</li>
+<li><strong>Camada de Aplicação:</strong> essa deve ser uma fina camada que coordena
+    as atividades da aplição. Aqui não deve haver lógica de negócio
+    envolvida.</li>
+<li><strong>Camada de Domínio:</strong> essa é a camada que possui as informações do
+    domínio e deve ser considerada o "coração" da solução.</li>
+<li><strong>Camada de Infraestrutura:</strong> essa camada deve atuar como uma camada
+    de suporte para as demais. Uma provedora da interligação entre as
+    camadas, implementar a persistência dos objetos do negócio e conter
+    as bilbiotecas de suporte.</li>
+</ul>
+<p>Dentro da Camada de Domínio, onde realmente o DDD se foca, há ainda mais
+alguns conceitos envolvidos:</p>
+<ul>
+<li><strong>Entity:</strong> objetos com uma identidade única;</li>
+<li><strong>Value Objects:</strong> objetos geralmente imutáveis, sem identidade,
+    onde o que interessa é o seu valor. Geralmente objetos com valores
+    iguais são considerados iguais;</li>
+<li><strong>Aggregate:</strong> coleções de objetos agrupados por uma entidade
+    centralizadora;</li>
+<li><strong>Service:</strong> quando alguma operação não se enquadra em nenhuma
+    entidades surgem os serviços;</li>
+<li><strong>Repository:</strong> abstração do grupo de todos os objetos do domínio de
+    deterimnado tipo. Através do <em>Repository</em> é possível realizar
+    operações no grupo de objetos: adicionar, remover, etc.</li>
+<li><strong>Factory:</strong> padrão para se delegar a criação de objetos de domínio.</li>
+</ul>
+<p>Essa foi uma apresentação simplista e rápida dos principais conceitos
+envolvidos. Agora, quando alguns desenvolvedores se deparam com todo
+esse novo universo de organização pode se perguntar onde, de fato,
+implementar suas lógicas de negócio. Lembrando que lógica do negócio é
+diferente da implementação do fluxo da aplicação (tarefas ou interação
+com outros sistemas, por exemplo).</p>
+<p>Se considerar somente os padrões da camada de domínio pode-se muito
+facilmente concluir que a implementação de um software segundo esses
+padrões acarretará o <em>anti-pattern</em> Modelo de Domínio Anêmico. Nesse
+<em>anti-pattern</em> as entidades possuem somente estados (atributos) e nenhum
+comportamento (métodos). Nas palavras do <a href="http://martinfowler.com/" title="Martin Fowler site">Martin
+Fowler</a> <a href="http://martinfowler.com/bliki/AnemicDomainModel.html" title="Anemic Domain Model by Martin Fowler"><em>bags of getters
+and
+setters</em></a>.
+Nesse modelo as entidades não possuem quaisquer lógicas de negócio,
+essas ficam abrigadas em classes estritamente de serviços, onde a sua
+responsabilidade é fornecer as lógicas de negócio.</p>
+<p>Dentre outros problemas, melhor apresentados no <a href="http://martinfowler.com/bliki/AnemicDomainModel.html" title="Anemic Domain Model by Martin Fowler">artigo do
+Fowler</a>,
+com o Modelo de Domínio Anêmico corre-se um risco eminete de se perder
+os princípios da orientação a objetos e tornar as classes de serviços
+meras aberrações procedurais. Infortunadamente os problemas práticos
+dessa abordagem só são percebidos no decorrer da manutenção do software.</p>
+<p>Assim sendo, de maneira alguma o DDD prevê o Modelo Anêmico, muito pelo
+contrário, com o DDD as Entities não são restritas a estados. Da mesma
+forma que um bom design de projeto orientado a objetos, um projeto DDD
+deve detectar as entidades do domínio <strong>e os comportamentos das
+entidades de domínio.</strong> Se uma entidade possui seus atributos e
+comportamentos bem definidos, não há porquê separá-los na implementação,
+de forma que uma entidade no DDD pode (e deve) possuir, além de seus
+atributos, seus comportamentos com as regras de negócios envolvidas.</p>
+<p>Porém não deve-se com isso fazer com que a implementação do domínio
+distorça o domínio real. Ao se analisar os problemas a serem resolvidos
+pela implementação e tentar definir os objetos do modelo, muito
+facilmente haverão alguns aspectos e comportamentos que não serão
+facilmente associados a nenhum objeto do modelo. Para as ações "orfãs"
+de objetos do modelo é que existem os <strong>Services</strong>. Um exemplo básico é
+a operação de transferência de dinheiro de uma conta para outra. A ação
+(método) de transferência pertence à conta de origem ou à conta de
+destino? Aparentemente não faz sentido em nenhuma das duas, não é?</p>
+<p>Quando esse tipo de comportamento é detectado na análise da solução, a
+melhor prática é implementá-lo como um serviço. A principal
+resposabilidade de um Serviço é fornecer funcionalidades, que não são de
+responsabilidade direta de qualquer objeto do modelo, para os próprios
+objetos do modelo. Vale atentar ao fato de que, classes de serviço, como
+quaisquer outras da solução, <strong>devem</strong> seguir obrigatoriamente, os
+princípios da orientação a objetos.</p>
+<p>Respondendo a pergunta do título do post: se a regra de negócio for
+explicitamente parte de um comportamento de uma entidade do modelo,
+então a regra deve ser implementada no comportamento da entidade. Agora,
+se a regra de negócio não pertence claramente a qualquer objeto do
+modelo, então deve-se estudar e analisar muito bem a criação de um
+Serviço que ofereça determinada funcionalidade que implemente a devida
+regra de negócio.</p>
+<p>Links úteis:</p>
+<ul>
+<li>Quer saber mais de DDD? <a href="http://www.infoq.com/minibooks/domain-driven-design-quickly" title="Domain Driven Design Quickly">Domain Driven Design
+    Quickly</a>
+    por Abel Avram &amp; Floyd Marinescu.</li>
+<li>Quer saber mais sobre Arquitetura de software: <a href="http://www.arquiteturajava.com.br/" title="Introdução à Arquitetura e Design de Software">Introdução à
+    Arquitetura e Design de
+    Software</a>,
+    Paulo Siveira, Guilherme Silveira, et al.</li>
+</ul>
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = "caiocarrara"; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div><footer class="footer">
+    <p>&copy; Caio Carrara Log &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-28003582-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+    </script>
+</body>
+</html>

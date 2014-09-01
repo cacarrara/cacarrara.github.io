@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caio Carrara Log, Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.">
+
+
+        <title>[Dica] Instalando PostgreSQL no Fedora 19 // Caio Carrara Log // Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./theme/css/pure.css">
+    <link rel="stylesheet" href="./theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="./author/caio-carrara.html" title="See posts by Caio Carrara">
+                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/f6d5a605df582ab9ea419ebef9f400b7">
+                </a>
+                <h2 class="article-info">Caio Carrara</h2>
+                <small class="about-author">Trabalhando principalmente com Python, Java, HTML, CSS e Javascript. Hora ou outra me arrisco no empreendedorismo. Quando não estou programando ou estudando estou treinando, andando de bicicleta, jogando meu 3DS ou assistindo um filme.</small>
+                <h5>Published</h5>
+                <p>Wed 02 April 2014</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>[Dica] Instalando PostgreSQL no Fedora 19</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="./tag/desenvolvimento.html">desenvolvimento</a>
+                                <a class="post-category" href="./tag/fedora.html">fedora</a>
+                                <a class="post-category" href="./tag/linux.html">linux</a>
+                                <a class="post-category" href="./tag/postgresql.html">postgresql</a>
+                        </p>
+                </header>
+            </section>
+            <p>Fala ai galera! Beleza?</p>
+<p>Hoje trago uma dica rápida e que não é bem muita novidade, mas é sempre
+últil ter um guia rápido assim quando queremos fazer uma nova
+instalação. Aqui irei considerar a minha distribuição Linux favorita, o
+Fedora, mas pode ajudar para as demais distros também.</p>
+<p>Primeiro, baixe e instale os pacotes do PostgreSQL (lembrando que o
+símbolo # indica prompt com nível root):</p>
+<div class="highlight"><pre><span class="c"># yum install postgresql postgresql-server</span>
+</pre></div>
+
+
+<p>Terminando a instalação, vamos iniciar o banco de dados, habilitar e
+iniciar o serviço do PostgreSQL:</p>
+<div class="highlight"><pre><span class="c"># postgresql-setup initdb  </span>
+<span class="c"># systemctl enable postgresql.service  </span>
+<span class="c"># systemctl start postgresql.service</span>
+</pre></div>
+
+
+<p>Agora vamos acessar o prompt com o usuário <em>postgres </em>para podermos
+cadastrar uma senha para esse usuário na base:</p>
+<div class="highlight"><pre><span class="c"># su postgres</span>
+</pre></div>
+
+
+<p>Vamos agora iniciar o prompt do PostgreSQL e cadastrar uma senha para a
+ROLE <em>postgres</em> e sair:</p>
+<div class="highlight"><pre><span class="nv">$ </span>pgsql  
+<span class="nv">$ </span>postgres: ALTER ROLE postgres WITH ENCRYPTED PASSWORD <span class="s1">&#39;suasenha&#39;</span>;  
+<span class="nv">$ </span>postgres: <span class="se">\\</span>q  
+<span class="nv">$ </span><span class="nb">exit</span>
+</pre></div>
+
+
+<p>Assim voltamos para o prompt root, vamos mudar o método de autenticação
+do banco para utilizarmos md5. Basta editar o arquivo
+<em><code>/var/lib/pgsql/data/pg_hba.conf</code></em> e mudar as configurações
+<em>peer </em>e <em>ident</em> para <em>md5</em> conforme o exemplo abaixo:</p>
+<div class="highlight"><pre><span class="c"># TYPE DATABASE USER ADDRESS METHOD</span>
+<span class="c"># &quot;local&quot; is for Unix domain socket connections only local all all md5  </span>
+<span class="c"># IPv4 local connections:  </span>
+    host all all 127.0.0.1/32 md5  
+<span class="c"># IPv6 local connections:  </span>
+    host all all ::1/128 md5
+</pre></div>
+
+
+<p>Salve o arquivo e reinicie o serviço do PostgreSQL:</p>
+<div class="highlight"><pre><span class="c"># systemctl restart postgresql.service</span>
+</pre></div>
+
+
+<p>É possível testar a nova configuração tentando acessar o console do
+PostgreSQL com o usuário postgres:</p>
+<div class="highlight"><pre><span class="c"># pgsql -U postgres -W</span>
+</pre></div>
+
+
+<p>Vai ser solicitada a senha. Informando-a, caso consiga acesso ao prompt,
+a configuração está completa.</p>
+<p>É isso ai, abraço e até a próxima!</p>
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = "caiocarrara"; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div><footer class="footer">
+    <p>&copy; Caio Carrara Log &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-28003582-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+    </script>
+</body>
+</html>
