@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*.pid
 
 # C extensions
 *.so
@@ -21,6 +22,10 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+
+# Pelican output
+output/
+cache/
 
 # Installer logs
 pip-log.txt
