@@ -5,56 +5,56 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://caiocarrara.com.br/index.html</loc>
-<lastmod>2014-09-02T00:42:25-00:00</lastmod>
+<lastmod>2014-09-02T00:45:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://caiocarrara.com.br/archives.html</loc>
-<lastmod>2014-09-02T00:42:25-00:00</lastmod>
+<lastmod>2014-09-02T00:45:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://caiocarrara.com.br/tags.html</loc>
-<lastmod>2014-09-02T00:42:25-00:00</lastmod>
+<lastmod>2014-09-02T00:45:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://caiocarrara.com.br/categories.html</loc>
-<lastmod>2014-09-02T00:42:25-00:00</lastmod>
+<lastmod>2014-09-02T00:45:09-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://caiocarrara.com.br/contato.html</loc>
-<lastmod>2014-09-02T00:42:25-00:00</lastmod>
+<lastmod>2014-09-02T00:45:09-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
 </url>
 
 <url>
 <loc>http://caiocarrara.com.br/sobre.html</loc>
-<lastmod>2014-09-02T00:42:25-00:00</lastmod>
+<lastmod>2014-09-02T00:45:09-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
 </url>
 
 <url>
-<loc>http://caiocarrara.com.br/meu-primeiro-hackathon.html</loc>
-<lastmod>2014-08-24T15:43:00-00:00</lastmod>
+<loc>http://caiocarrara.com.br/migrando-do-wordpress-para-o-pelican.html</loc>
+<lastmod>2014-09-02T00:45:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>http://caiocarrara.com.br/migrando-do-wordpress-para-o-pelican.html</loc>
-<lastmod>2014-08-02T00:45:00-00:00</lastmod>
+<loc>http://caiocarrara.com.br/meu-primeiro-hackathon.html</loc>
+<lastmod>2014-08-24T15:43:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
@@ -138,7 +138,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://caiocarrara.com.br/category/python.html</loc>
-<lastmod>2014-08-02T00:45:00:%s</lastmod>
+<lastmod>2014-09-02T00:45:00:%s</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -152,7 +152,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://caiocarrara.com.br/tag/pelican.html</loc>
-<lastmod>2014-08-02T00:45:00:%s</lastmod>
+<lastmod>2014-09-02T00:45:00:%s</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -180,7 +180,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://caiocarrara.com.br/tag/python.html</loc>
-<lastmod>2014-08-24T15:43:00:%s</lastmod>
+<lastmod>2014-09-02T00:45:00:%s</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -243,7 +243,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://caiocarrara.com.br/author/caio-carrara.html</loc>
-<lastmod>2014-08-24T15:43:00:%s</lastmod>
+<lastmod>2014-09-02T00:45:00:%s</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

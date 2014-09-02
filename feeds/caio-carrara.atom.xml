@@ -1,5 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Caio Carrara Log</title><link href="http://caiocarrara.com.br/" rel="alternate"></link><link href="http://caiocarrara.com.br/feeds/caio-carrara.atom.xml" rel="self"></link><id>http://caiocarrara.com.br/</id><updated>2014-08-24T15:43:00-03:00</updated><entry><title>Meu primeiro Hackathon</title><link href="http://caiocarrara.com.br/meu-primeiro-hackathon.html" rel="alternate"></link><updated>2014-08-24T15:43:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:caiocarrara.com.br,2014-08-24:meu-primeiro-hackathon.html</id><summary type="html">&lt;p&gt;Ontem ocorreu o primeiro &lt;a href="http://dev.transparencia.org.br/api-portal/hackathon" title="Hackathon transparência Brasil"&gt;Hackathon Transparência
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Caio Carrara Log</title><link href="http://caiocarrara.com.br/" rel="alternate"></link><link href="http://caiocarrara.com.br/feeds/caio-carrara.atom.xml" rel="self"></link><id>http://caiocarrara.com.br/</id><updated>2014-09-02T00:45:00-03:00</updated><entry><title>Migrando do Wordpress para o Pelican</title><link href="http://caiocarrara.com.br/migrando-do-wordpress-para-o-pelican.html" rel="alternate"></link><updated>2014-09-02T00:45:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:caiocarrara.com.br,2014-09-02:migrando-do-wordpress-para-o-pelican.html</id><summary type="html">&lt;p&gt;Hoje pela manhã eu terminei a migração desse meu blog do &lt;a href="http://wordpress.org"&gt;Wordpress&lt;/a&gt; para o &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;. Eu utilizava o antigo 
+sistema gerenciador de conteúdo há algum tempo, desde quando comecei as atividades aqui no &lt;em&gt;caiocarrara.com.br&lt;/em&gt;. 
+Na ocasião era a única ferramenta que conhecia e eu achava fácil para instalar e customizar, portanto foi a 
+escolha mais óbvia para mim. De lá para cá, ainda que a utilização não tenha sido intensa, e talvez justamente por isso, 
+o Wordpress estava suprindo minhas necessidades. Nos últimos dias comecei acessá-lo regularmente para rascunhar alguns 
+artigos e juntamente com a utilização mais recorrente eu comecei a desgostar da ferramenta.  &lt;/p&gt;
+&lt;p&gt;Assim como é muito mais rápido e convidativo abrir um editor de textos como o &lt;a href="http://sublimetext.com"&gt;Sublime&lt;/a&gt; do que uma IDE como o &lt;a href="http://eclipse.org"&gt;Eclipse&lt;/a&gt; para 
+programar, ou mesmo o console interativo do &lt;a href="http://python.org"&gt;Python&lt;/a&gt; para uma validação de código rápida, acho muito mais convidativo abrir um editor
+de textos simples de minha preferência para rascunhar e escrever um artigo do que ter que sofrer as "intempéries" da Internet 
+brasileira para abrir uma página de autenticação, se autenticar, clicar para escrever um post, esperar todo aquele editor 
+de textos com recursos que raramente utilizo carregar para só então colocar um pedaço de ideia "no papel". Muitas vezes um 
+texto é construído com a união de pequenas ideias que vão aparecendo. Repetir esse ciclo todo e juntar todas as ideias 
+estava ficando lento. Naturalmente passei a anotar minhas ideias em arquivos de texto simples e o Pelican então caiu como 
+uma luva!&lt;/p&gt;
+&lt;h3&gt;Pelican&lt;/h3&gt;
+&lt;p&gt;Basicamente o Pelican é um gerador de páginas HTML estáticas. Ele faz seu trabalho a partir de arquivos de textos com 
+marcações especiais, como o &lt;a href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt; ou o &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; (minha preferência). Eu poderia me aprofundar nessa parte, 
+mas o &lt;a href="http://twitter.com/Arthur_4lves"&gt;Arthur Alves&lt;/a&gt; já fez um belo trabalho lá no PythonClub explicando bem o Pelican no seu artigo &lt;a href="http://pythonclub.com.br/criando-sites-estaticos-com-pelican.html"&gt;Criando sites estáticos 
+com Pelican Framework&lt;/a&gt;. Se alguém quiser saber mais os fundamentos do Pelican, esse artigo será ótimo!&lt;/p&gt;
+&lt;h3&gt;Migrando Wordpress para o Pelican&lt;/h3&gt;
+&lt;p&gt;Depois de brincar um pouco com o Pelican e me sentir um pouco mais familiarizado com o gerador e seus comandos resolvi 
+colocar a mão na massa e partir para a migração. A seguir vou colocar uma receitinha de como fazer isso, os passos são os 
+que lembro de ter feito.  &lt;/p&gt;
+&lt;p&gt;O Pelican já possui uma ferramenta que faz todo o trabalho pesado de importação pra gente, chama-se &lt;code&gt;pelican-import&lt;/code&gt;. Esse 
+recurso atua sobre o xml de exportação gerado em seu site Wordpress. Para gerar esse arquivo acesse o painel de administração 
+do seu Wordpress, no meu lateral esquerdo acesse &lt;code&gt;Tools &amp;gt; Export&lt;/code&gt;. No meu caso eu selecionei para exportar &lt;code&gt;All Content&lt;/code&gt; e 
+cliquei para fazer o download.  &lt;/p&gt;
+&lt;p&gt;Tendo o arquivo xml gerado, vamos certificar de ter instalado as dependências para se importar o conteúdo do XML. O Pelican 
+utiliza os pacotes &lt;em&gt;BeautifulSoup4&lt;/em&gt; e &lt;em&gt;lxml&lt;/em&gt;. A instalação é feita como com qualquer outro pacote:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install BeautifulSoup4 lxml
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Estando com as dependências em ordem, já podemos rodar o &lt;code&gt;pelican-import&lt;/code&gt;. Esse utilitário é capaz de importar um site 
+de diversas fontes para o formato esperado pelo Pelican. Como estamos focando no Wordpress, o comando é o seguinte:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-import --wpfile -m -o content/ /path/to/export.xml
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;No comando acima, além da chamada do utilitário de importação foram passados alguns parâmetros:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--wpfile&lt;/code&gt;: indica que a importação deverá utilizar um arquivo XML de exportação do Wordpress;  &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-m&lt;/code&gt;: indica que o arquivo de saída deverá estar no formado Markdown. O padrão é rst;  &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-o content/&lt;/code&gt;: indica o diretório nos quais os arquivos Mardown gerados deverão ser escritos;  &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/path/to/export.xml&lt;/code&gt;: o arquivo exportado do Wordpress.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para testar a importação, basta executar o Pelican para gerar os arquivos html estáticos e rodar o servidor HTTP 
+de desenvolvimento:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican content
+&lt;span class="nv"&gt;$ &lt;/span&gt;./development_server.sh start
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Acesse &lt;code&gt;localhost:8000&lt;/code&gt; para ver como ficou.  &lt;/p&gt;
+&lt;p&gt;No geral e para os tipos de posts e páginas que eu tinha no meu Wordpress essa sequência simples foi praticamente o 
+suficiente. Adicionalmente eu precisei editar alguns links que ficaram quebrados e fazer algumas melhorias 
+nos &lt;em&gt;metadata&lt;/em&gt; dos arquivos do Pelican.  &lt;/p&gt;
+&lt;h3&gt;Deploy no Github Pages&lt;/h3&gt;
+&lt;p&gt;Antes eu usava uma hospedagem particular para rodar o Wordpress, mas agora com as páginas estáticas eu não tenho mais 
+a necessidade de ter o &lt;a href="http://php.net"&gt;PHP&lt;/a&gt; e &lt;a href="http://mysql.com"&gt;MySql&lt;/a&gt;, basta um servidor &lt;a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"&gt;HTTP&lt;/a&gt; bem simples. Resolvi simplificar ainda mais e  delegar isso 
+para o serviço provido pelo próprio &lt;a href="http://github.com"&gt;Github&lt;/a&gt;, o &lt;a href="http://pages.github.com"&gt;Github Pages&lt;/a&gt;. Essa foi a escolha mais imediata pois já  estou utilizando 
+o Github para versionar os meus artigos.  &lt;/p&gt;
+&lt;p&gt;Todo usuário do Github já possui previamente uma conta no serviço &lt;a href="http://pages.github.com"&gt;Pages&lt;/a&gt;, basta criar um repositório cujo nome seja 
+&lt;code&gt;[username].github.io&lt;/code&gt;. No meu caso o repositório ficou com o nome &lt;code&gt;cacarrara.github.io&lt;/code&gt;. Os arquivos que estiverem 
+no branch &lt;code&gt;master&lt;/code&gt; desse repositório são utilizados pelo Pages para exibir as páginas do site na url com o mesmo 
+nome do repositório criado.  &lt;/p&gt;
+&lt;p&gt;Seguindo a mesma ideia do pessoal do &lt;a href="http://pythonclub.com.br"&gt;PythonClub&lt;/a&gt;, eu criei um branch chamado &lt;code&gt;pelican&lt;/code&gt; para os arquivos do 
+Pelican e os &lt;em&gt;Markdown&lt;/em&gt; originais das minhas publicações e o branch &lt;code&gt;master&lt;/code&gt; abriga somente as páginas html geradas. Para 
+ajudar um pouco nesse processo de subir para o Github os arquivos a cada geração, eu utilizo um utilitário chamado 
+&lt;code&gt;ghp-import&lt;/code&gt;. Para instalá-lo utilize o &lt;em&gt;pip&lt;/em&gt; também:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install ghp-import
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Após a geração do Pelican, basta executar:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ghp-import output
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;output&lt;/code&gt;: indica o diretório onde estão os arquivos gerados pelo Pelican  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;O comando &lt;code&gt;ghp-import&lt;/code&gt; atualiza o branch local de nome &lt;code&gt;gh-pages&lt;/code&gt; com o conteúdo do diretório &lt;code&gt;output&lt;/code&gt;. Depois disso, basta fazer 
+o &lt;code&gt;push&lt;/code&gt; do branch &lt;code&gt;gh-pages&lt;/code&gt; para o branch &lt;code&gt;master&lt;/code&gt; do reposiório remoto:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git push origin gh-pages:master
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;E pronto! Pode ser que a sincronia do Github Pages demore um pouquinho para de fato publicar a primeira versão da sua página, 
+mas se tudo deu certo logo estará no ar!&lt;/p&gt;
+&lt;p&gt;Além disso também atualizei meu DNS para utilizar o domínio caiocarrara.com.br no Github Pages, caso essa também seja a 
+vontade de quem lê esse artigo, recomendo a própria documentação do Github para isso: &lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages"&gt;Github Pages - Custom URLs&lt;/a&gt;. Qualquer 
+dúvida deixa nos comentários que posso ajudar!  &lt;/p&gt;
+&lt;p&gt;Bom, é isso. Até a próxima! &lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category></entry><entry><title>Meu primeiro Hackathon</title><link href="http://caiocarrara.com.br/meu-primeiro-hackathon.html" rel="alternate"></link><updated>2014-08-24T15:43:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:caiocarrara.com.br,2014-08-24:meu-primeiro-hackathon.html</id><summary type="html">&lt;p&gt;Ontem ocorreu o primeiro &lt;a href="http://dev.transparencia.org.br/api-portal/hackathon" title="Hackathon transparência Brasil"&gt;Hackathon Transparência
 Brasil&lt;/a&gt;.
 O evento foi realizado pela &lt;a href="http://transparencia.org.br/" title="Transparência Brasil"&gt;ONG Transparência
 Brasil&lt;/a&gt; (TBrasil)
@@ -109,100 +202,7 @@ formato de código é inadmissível! Python e a comunidade envolvida
 possibilitam que essa dificuldade seja muito menor.&lt;/p&gt;
 &lt;p&gt;Obrigado TBrasil, Sensedia, Google Brasil e em especial Rafael Nunes,
 Julia e Taiolor!&lt;/p&gt;
-&lt;p&gt;Nos vemos no próximo Hackathon!&lt;/p&gt;</summary><category term="appengine"></category><category term="hackathon"></category><category term="python"></category></entry><entry><title>Migrando do Wordpress para o Pelican</title><link href="http://caiocarrara.com.br/migrando-do-wordpress-para-o-pelican.html" rel="alternate"></link><updated>2014-08-02T00:45:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:caiocarrara.com.br,2014-08-02:migrando-do-wordpress-para-o-pelican.html</id><summary type="html">&lt;p&gt;Hoje pela manhã eu terminei a migração desse meu blog do &lt;a href="http://wordpress.org"&gt;Wordpress&lt;/a&gt; para o &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;. Eu utilizava o antigo 
-sistema gerenciador de conteúdo há algum tempo, desde quando comecei as atividades aqui no &lt;em&gt;caiocarrara.com.br&lt;/em&gt;. 
-Na ocasião era a única ferramenta que conhecia e eu achava fácil para instalar e customizar, portanto foi a 
-escolha mais óbvia para mim. De lá para cá, ainda que a utilização não tenha sido intensa, e talvez justamente por isso, 
-o Wordpress estava suprindo minhas necessidades. Nos últimos dias comecei acessá-lo regularmente para rascunhar alguns 
-artigos e juntamente com a utilização mais recorrente eu comecei a desgostar da ferramenta.  &lt;/p&gt;
-&lt;p&gt;Assim como é muito mais rápido e convidativo abrir um editor de textos como o &lt;a href="http://sublimetext.com"&gt;Sublime&lt;/a&gt; do que uma IDE como o &lt;a href="http://eclipse.org"&gt;Eclipse&lt;/a&gt; para 
-programar, ou mesmo o console interativo do &lt;a href="http://python.org"&gt;Python&lt;/a&gt; para uma validação de código rápida, acho muito mais convidativo abrir um editor
-de textos simples de minha preferência para rascunhar e escrever um artigo do que ter que sofrer as "intempéries" da Internet 
-brasileira para abrir uma página de autenticação, se autenticar, clicar para escrever um post, esperar todo aquele editor 
-de textos com recursos que raramente utilizo carregar para só então colocar um pedaço de ideia "no papel". Muitas vezes um 
-texto é construído com a união de pequenas ideias que vão aparecendo. Repetir esse ciclo todo e juntar todas as ideias 
-estava ficando lento. Naturalmente passei a anotar minhas ideias em arquivos de texto simples e o Pelican então caiu como 
-uma luva!&lt;/p&gt;
-&lt;h3&gt;Pelican&lt;/h3&gt;
-&lt;p&gt;Basicamente o Pelican é um gerador de páginas HTML estáticas. Ele faz seu trabalho a partir de arquivos de textos com 
-marcações especiais, como o &lt;a href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt; ou o &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; (minha preferência). Eu poderia me aprofundar nessa parte, 
-mas o &lt;a href="http://twitter.com/Arthur_4lves"&gt;Arthur Alves&lt;/a&gt; já fez um belo trabalho lá no PythonClub explicando bem o Pelican no seu artigo &lt;a href="http://pythonclub.com.br/criando-sites-estaticos-com-pelican.html"&gt;Criando sites estáticos 
-com Pelican Framework&lt;/a&gt;. Se alguém quiser saber mais os fundamentos do Pelican, esse artigo será ótimo!&lt;/p&gt;
-&lt;h3&gt;Migrando Wordpress para o Pelican&lt;/h3&gt;
-&lt;p&gt;Depois de brincar um pouco com o Pelican e me sentir um pouco mais familiarizado com o gerador e seus comandos resolvi 
-colocar a mão na massa e partir para a migração. A seguir vou colocar uma receitinha de como fazer isso, os passos são os 
-que lembro de ter feito.  &lt;/p&gt;
-&lt;p&gt;O Pelican já possui uma ferramenta que faz todo o trabalho pesado de importação pra gente, chama-se &lt;code&gt;pelican-import&lt;/code&gt;. Esse 
-recurso atua sobre o xml de exportação gerado em seu site Wordpress. Para gerar esse arquivo acesse o painel de administração 
-do seu Wordpress, no meu lateral esquerdo acesse &lt;code&gt;Tools &amp;gt; Export&lt;/code&gt;. No meu caso eu selecionei para exportar &lt;code&gt;All Content&lt;/code&gt; e 
-cliquei para fazer o download.  &lt;/p&gt;
-&lt;p&gt;Tendo o arquivo xml gerado, vamos certificar de ter instalado as dependências para se importar o conteúdo do XML. O Pelican 
-utiliza os pacotes &lt;em&gt;BeautifulSoup4&lt;/em&gt; e &lt;em&gt;lxml&lt;/em&gt;. A instalação é feita como com qualquer outro pacote:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install BeautifulSoup4 lxml
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Estando com as dependências em ordem, já podemos rodar o &lt;code&gt;pelican-import&lt;/code&gt;. Esse utilitário é capaz de importar um site 
-de diversas fontes para o formato esperado pelo Pelican. Como estamos focando no Wordpress, o comando é o seguinte:  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican-import --wpfile -m -o content/ /path/to/export.xml
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;No comando acima, além da chamada do utilitário de importação foram passados alguns parâmetros:  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;--wpfile&lt;/code&gt;: indica que a importação deverá utilizar um arquivo XML de exportação do Wordpress;  &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-m&lt;/code&gt;: indica que o arquivo de saída deverá estar no formado Markdown. O padrão é rst;  &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-o content/&lt;/code&gt;: indica o diretório nos quais os arquivos Mardown gerados deverão ser escritos;  &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/path/to/export.xml&lt;/code&gt;: o arquivo exportado do Wordpress.  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Para testar a importação, basta executar o Pelican para gerar os arquivos html estáticos e rodar o servidor HTTP 
-de desenvolvimento:  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pelican content
-&lt;span class="nv"&gt;$ &lt;/span&gt;./development_server.sh start
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Acesse &lt;code&gt;localhost:8000&lt;/code&gt; para ver como ficou.  &lt;/p&gt;
-&lt;p&gt;No geral e para os tipos de posts e páginas que eu tinha no meu Wordpress essa sequência simples foi praticamente o 
-suficiente. Adicionalmente eu precisei editar alguns links que ficaram quebrados e fazer algumas melhorias 
-nos &lt;em&gt;metadata&lt;/em&gt; dos arquivos do Pelican.  &lt;/p&gt;
-&lt;h3&gt;Deploy no Github Pages&lt;/h3&gt;
-&lt;p&gt;Antes eu usava uma hospedagem particular para rodar o Wordpress, mas agora com as páginas estáticas eu não tenho mais 
-a necessidade de ter o &lt;a href="http://php.net"&gt;PHP&lt;/a&gt; e &lt;a href="http://mysql.com"&gt;MySql&lt;/a&gt;, basta um servidor &lt;a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"&gt;HTTP&lt;/a&gt; bem simples. Resolvi simplificar ainda mais e  delegar isso 
-para o serviço provido pelo próprio &lt;a href="http://github.com"&gt;Github&lt;/a&gt;, o &lt;a href="http://pages.github.com"&gt;Github Pages&lt;/a&gt;. Essa foi a escolha mais imediata pois já  estou utilizando 
-o Github para versionar os meus artigos.  &lt;/p&gt;
-&lt;p&gt;Todo usuário do Github já possui previamente uma conta no serviço &lt;a href="http://pages.github.com"&gt;Pages&lt;/a&gt;, basta criar um repositório cujo nome seja 
-&lt;code&gt;[username].github.io&lt;/code&gt;. No meu caso o repositório ficou com o nome &lt;code&gt;cacarrara.github.io&lt;/code&gt;. Os arquivos que estiverem 
-no branch &lt;code&gt;master&lt;/code&gt; desse repositório são utilizados pelo Pages para exibir as páginas do site na url com o mesmo 
-nome do repositório criado.  &lt;/p&gt;
-&lt;p&gt;Seguindo a mesma ideia do pessoal do &lt;a href="http://pythonclub.com.br"&gt;PythonClub&lt;/a&gt;, eu criei um branch chamado &lt;code&gt;pelican&lt;/code&gt; para os arquivos do 
-Pelican e os &lt;em&gt;Markdown&lt;/em&gt; originais das minhas publicações e o branch &lt;code&gt;master&lt;/code&gt; abriga somente as páginas html geradas. Para 
-ajudar um pouco nesse processo de subir para o Github os arquivos a cada geração, eu utilizo um utilitário chamado 
-&lt;code&gt;ghp-import&lt;/code&gt;. Para instalá-lo utilize o &lt;em&gt;pip&lt;/em&gt; também:  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install ghp-import
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Após a geração do Pelican, basta executar:  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ghp-import output
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;output&lt;/code&gt;: indica o diretório onde estão os arquivos gerados pelo Pelican  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;O comando &lt;code&gt;ghp-import&lt;/code&gt; atualiza o branch local de nome &lt;code&gt;gh-pages&lt;/code&gt; com o conteúdo do diretório &lt;code&gt;output&lt;/code&gt;. Depois disso, basta fazer 
-o &lt;code&gt;push&lt;/code&gt; do branch &lt;code&gt;gh-pages&lt;/code&gt; para o branch &lt;code&gt;master&lt;/code&gt; do reposiório remoto:  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git push origin gh-pages:master
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;E pronto! Pode ser que a sincronia do Github Pages demore um pouquinho para de fato publicar a primeira versão da sua página, 
-mas se tudo deu certo logo estará no ar!&lt;/p&gt;
-&lt;p&gt;Além disso também atualizei meu DNS para utilizar o domínio caiocarrara.com.br no Github Pages, caso essa também seja a 
-vontade de quem lê esse artigo, recomendo a própria documentação do Github para isso: &lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages"&gt;Github Pages - Custom URLs&lt;/a&gt;. Qualquer 
-dúvida deixa nos comentários que posso ajudar!  &lt;/p&gt;
-&lt;p&gt;Bom, é isso. Até a próxima! &lt;/p&gt;</summary><category term="python"></category><category term="pelican"></category></entry><entry><title>[Dica] Instalando PostgreSQL no Fedora 19</title><link href="http://caiocarrara.com.br/instalando-postgresql-no-fedora-19.html" rel="alternate"></link><updated>2014-04-02T22:00:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:caiocarrara.com.br,2014-04-02:instalando-postgresql-no-fedora-19.html</id><summary type="html">&lt;p&gt;Fala ai galera! Beleza?&lt;/p&gt;
+&lt;p&gt;Nos vemos no próximo Hackathon!&lt;/p&gt;</summary><category term="appengine"></category><category term="hackathon"></category><category term="python"></category></entry><entry><title>[Dica] Instalando PostgreSQL no Fedora 19</title><link href="http://caiocarrara.com.br/instalando-postgresql-no-fedora-19.html" rel="alternate"></link><updated>2014-04-02T22:00:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:caiocarrara.com.br,2014-04-02:instalando-postgresql-no-fedora-19.html</id><summary type="html">&lt;p&gt;Fala ai galera! Beleza?&lt;/p&gt;
 &lt;p&gt;Hoje trago uma dica rápida e que não é bem muita novidade, mas é sempre
 últil ter um guia rápido assim quando queremos fazer uma nova
 instalação. Aqui irei considerar a minha distribuição Linux favorita, o
