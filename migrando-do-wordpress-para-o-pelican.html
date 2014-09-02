@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caio Carrara Log, Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.">
+
+
+        <title>Migrando do Wordpress para o Pelican // Caio Carrara Log // Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./theme/css/pure.css">
+    <link rel="stylesheet" href="./theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="./author/caio-carrara.html" title="See posts by Caio Carrara">
+                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/f6d5a605df582ab9ea419ebef9f400b7">
+                </a>
+                <h2 class="article-info">Caio Carrara</h2>
+                <small class="about-author">Trabalhando principalmente com Python, Java, HTML, CSS e Javascript. Hora ou outra me arrisco no empreendedorismo. Quando não estou programando ou estudando estou treinando, andando de bicicleta, jogando meu 3DS ou assistindo um filme.</small>
+                <h5>Published</h5>
+                <p>Sat 02 August 2014</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Migrando do Wordpress para o Pelican</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="./tag/python.html">python</a>
+                                <a class="post-category" href="./tag/pelican.html">pelican</a>
+                        </p>
+                </header>
+            </section>
+            <p>Hoje pela manhã eu terminei a migração desse meu blog do <a href="http://wordpress.org">Wordpress</a> para o <a href="http://getpelican.com">Pelican</a>. Eu utilizava o antigo 
+sistema gerenciador de conteúdo há algum tempo, desde quando comecei as atividades aqui no <em>caiocarrara.com.br</em>. 
+Na ocasião era a única ferramenta que conhecia e eu achava fácil para instalar e customizar, portanto foi a 
+escolha mais óbvia para mim. De lá para cá, ainda que a utilização não tenha sido intensa, e talvez justamente por isso, 
+o Wordpress estava suprindo minhas necessidades. Nos últimos dias comecei acessá-lo regularmente para rascunhar alguns 
+artigos e juntamente com a utilização mais recorrente eu comecei a desgostar da ferramenta.  </p>
+<p>Assim como é muito mais rápido e convidativo abrir um editor de textos como o <a href="http://sublimetext.com">Sublime</a> do que uma IDE como o <a href="http://eclipse.org">Eclipse</a> para 
+programar, ou mesmo o console interativo do <a href="http://python.org">Python</a> para uma validação de código rápida, acho muito mais convidativo abrir um editor
+de textos simples de minha preferência para rascunhar e escrever um artigo do que ter que sofrer as "intempéries" da Internet 
+brasileira para abrir uma página de autenticação, se autenticar, clicar para escrever um post, esperar todo aquele editor 
+de textos com recursos que raramente utilizo carregar para só então colocar um pedaço de ideia "no papel". Muitas vezes um 
+texto é construído com a união de pequenas ideias que vão aparecendo. Repetir esse ciclo todo e juntar todas as ideias 
+estava ficando lento. Naturalmente passei a anotar minhas ideias em arquivos de texto simples e o Pelican então caiu como 
+uma luva!</p>
+<h3>Pelican</h3>
+<p>Basicamente o Pelican é um gerador de páginas HTML estáticas. Ele faz seu trabalho a partir de arquivos de textos com 
+marcações especiais, como o <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> ou o <a href="http://daringfireball.net/projects/markdown/">Markdown</a> (minha preferência). Eu poderia me aprofundar nessa parte, 
+mas o <a href="http://twitter.com/Arthur_4lves">Arthur Alves</a> já fez um belo trabalho lá no PythonClub explicando bem o Pelican no seu artigo <a href="http://pythonclub.com.br/criando-sites-estaticos-com-pelican.html">Criando sites estáticos 
+com Pelican Framework</a>. Se alguém quiser saber mais os fundamentos do Pelican, esse artigo será ótimo!</p>
+<h3>Migrando Wordpress para o Pelican</h3>
+<p>Depois de brincar um pouco com o Pelican e me sentir um pouco mais familiarizado com o gerador e seus comandos resolvi 
+colocar a mão na massa e partir para a migração. A seguir vou colocar uma receitinha de como fazer isso, os passos são os 
+que lembro de ter feito.  </p>
+<p>O Pelican já possui uma ferramenta que faz todo o trabalho pesado de importação pra gente, chama-se <code>pelican-import</code>. Esse 
+recurso atua sobre o xml de exportação gerado em seu site Wordpress. Para gerar esse arquivo acesse o painel de administração 
+do seu Wordpress, no meu lateral esquerdo acesse <code>Tools &gt; Export</code>. No meu caso eu selecionei para exportar <code>All Content</code> e 
+cliquei para fazer o download.  </p>
+<p>Tendo o arquivo xml gerado, vamos certificar de ter instalado as dependências para se importar o conteúdo do XML. O Pelican 
+utiliza os pacotes <em>BeautifulSoup4</em> e <em>lxml</em>. A instalação é feita como com qualquer outro pacote:</p>
+<div class="highlight"><pre><span class="nv">$ </span>pip install BeautifulSoup4 lxml
+</pre></div>
+
+
+<p>Estando com as dependências em ordem, já podemos rodar o <code>pelican-import</code>. Esse utilitário é capaz de importar um site 
+de diversas fontes para o formato esperado pelo Pelican. Como estamos focando no Wordpress, o comando é o seguinte:  </p>
+<div class="highlight"><pre><span class="nv">$ </span>pelican-import --wpfile -m -o content/ /path/to/export.xml
+</pre></div>
+
+
+<p>No comando acima, além da chamada do utilitário de importação foram passados alguns parâmetros:  </p>
+<ul>
+<li><code>--wpfile</code>: indica que a importação deverá utilizar um arquivo XML de exportação do Wordpress;  </li>
+<li><code>-m</code>: indica que o arquivo de saída deverá estar no formado Markdown. O padrão é rst;  </li>
+<li><code>-o content/</code>: indica o diretório nos quais os arquivos Mardown gerados deverão ser escritos;  </li>
+<li><code>/path/to/export.xml</code>: o arquivo exportado do Wordpress.  </li>
+</ul>
+<p>Para testar a importação, basta executar o Pelican para gerar os arquivos html estáticos e rodar o servidor HTTP 
+de desenvolvimento:  </p>
+<div class="highlight"><pre><span class="nv">$ </span>pelican content
+<span class="nv">$ </span>./development_server.sh start
+</pre></div>
+
+
+<p>Acesse <code>localhost:8000</code> para ver como ficou.  </p>
+<p>No geral e para os tipos de posts e páginas que eu tinha no meu Wordpress essa sequência simples foi praticamente o 
+suficiente. Adicionalmente eu precisei editar alguns links que ficaram quebrados e fazer algumas melhorias 
+nos <em>metadata</em> dos arquivos do Pelican.  </p>
+<h3>Deploy no Github Pages</h3>
+<p>Antes eu usava uma hospedagem particular para rodar o Wordpress, mas agora com as páginas estáticas eu não tenho mais 
+a necessidade de ter o <a href="http://php.net">PHP</a> e <a href="http://mysql.com">MySql</a>, basta um servidor <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> bem simples. Resolvi simplificar ainda mais e  delegar isso 
+para o serviço provido pelo próprio <a href="http://github.com">Github</a>, o <a href="http://pages.github.com">Github Pages</a>. Essa foi a escolha mais imediata pois já  estou utilizando 
+o Github para versionar os meus artigos.  </p>
+<p>Todo usuário do Github já possui previamente uma conta no serviço <a href="http://pages.github.com">Pages</a>, basta criar um repositório cujo nome seja 
+<code>[username].github.io</code>. No meu caso o repositório ficou com o nome <code>cacarrara.github.io</code>. Os arquivos que estiverem 
+no branch <code>master</code> desse repositório são utilizados pelo Pages para exibir as páginas do site na url com o mesmo 
+nome do repositório criado.  </p>
+<p>Seguindo a mesma ideia do pessoal do <a href="http://pythonclub.com.br">PythonClub</a>, eu criei um branch chamado <code>pelican</code> para os arquivos do 
+Pelican e os <em>Markdown</em> originais das minhas publicações e o branch <code>master</code> abriga somente as páginas html geradas. Para 
+ajudar um pouco nesse processo de subir para o Github os arquivos a cada geração, eu utilizo um utilitário chamado 
+<code>ghp-import</code>. Para instalá-lo utilize o <em>pip</em> também:  </p>
+<div class="highlight"><pre><span class="nv">$ </span>pip install ghp-import
+</pre></div>
+
+
+<p>Após a geração do Pelican, basta executar:  </p>
+<div class="highlight"><pre><span class="nv">$ </span>ghp-import output
+</pre></div>
+
+
+<ul>
+<li><code>output</code>: indica o diretório onde estão os arquivos gerados pelo Pelican  </li>
+</ul>
+<p>O comando <code>ghp-import</code> atualiza o branch local de nome <code>gh-pages</code> com o conteúdo do diretório <code>output</code>. Depois disso, basta fazer 
+o <code>push</code> do branch <code>gh-pages</code> para o branch <code>master</code> do reposiório remoto:  </p>
+<div class="highlight"><pre><span class="nv">$ </span>git push origin gh-pages:master
+</pre></div>
+
+
+<p>E pronto! Pode ser que a sincronia do Github Pages demore um pouquinho para de fato publicar a primeira versão da sua página, 
+mas se tudo deu certo logo estará no ar!</p>
+<p>Além disso também atualizei meu DNS para utilizar o domínio caiocarrara.com.br no Github Pages, caso essa também seja a 
+vontade de quem lê esse artigo, recomendo a própria documentação do Github para isso: <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages">Github Pages - Custom URLs</a>. Qualquer 
+dúvida deixa nos comentários que posso ajudar!  </p>
+<p>Bom, é isso. Até a próxima! </p>
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = "caiocarrara"; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div><footer class="footer">
+    <p>&copy; Caio Carrara Log &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-28003582-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+    </script>
+</body>
+</html>
