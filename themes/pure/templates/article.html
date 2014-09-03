@@ -1,6 +1,23 @@
 {% extends 'base.html' %}
 {% block title %}{{ article.title|striptags }} // {{ super() }}{% endblock title %}
 
+{% block meta_description %}{{ article.summary|striptags|trim() }}{% endblock %}
+
+{% block seo %}
+    {% if article.author_g_plus_id %}
+        <link rel="author" href="https://plus.google.com/{{ article.author_g_plus_id }}" />
+    {% endif %}
+        <meta property="og:title" content="{{ article.title|striptags }}" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+        <meta property="og:description" content="{{ article.summary|striptags }}" />
+        <meta name="twitter:url" content="{{ SITEURL }}/{{ article.url }}">
+        <meta name="twitter:title" content="{{ article.title }}">
+        <meta name="twitter:description" content="{{ article.summary|striptags }}">
+
+    {{ super() }}
+{% endblock %}
+
 {% block head_css %}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css">
 {% endblock %}
@@ -23,8 +40,8 @@
                     {% if article.author_gravatar %}
                         <img class="avatar" alt="{{ article.author }}" src="{{ article.author_gravatar }}">
                     {% endif %}
+                    <h2 class="article-info">{{ article.author }}</h2>
                 </a>
-                <h2 class="article-info">{{ article.author }}</h2>
                 <small class="about-author">{{ article.about_author }}</small>
                 <h5>Published</h5>
                 <p>{{ article.locale_date }}</p>
