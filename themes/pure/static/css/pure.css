@@ -292,6 +292,19 @@ pre {
     padding-left: 25%; /* "left col (nav + list)" width */
     position: relative;
 }
+
+.share-links {
+    text-align: right;
+}
+
+.share-links a {
+    margin-left: 10px;
+}
+
+.fa-twitter { color: #55acee; }
+.fa-facebook {color: #3B5998; }
+.fa-google-plus { color: #DD4B39; }
+
 @media (max-width: 767px) {
     .sidebar {
         width: 100%;

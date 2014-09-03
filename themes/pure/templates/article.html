@@ -64,6 +64,9 @@
             {{ article.content }}
             <div class="hr"></div>
             <a href="#" class="go-top">Go Top</a>
+            {% if article.share_post and article.status != 'draft' %}
+                {% include 'share_post.html' %}
+            {% endif %}
             {% if DISQUS_SITENAME %}
                 {% include 'disqus.html' %}
             {% endif %}
