@@ -42,6 +42,7 @@ PLUGIN_PATHS = ['pelican-plugins',]
 PLUGINS = [
     'sitemap',
     'gravatar',
+    'share_post',
     'gzip_cache', #keep this as last plugin
 ]
 
