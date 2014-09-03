@@ -2,20 +2,16 @@
     <div class="cover-img" style="background-image: url('{{ COVER_IMG_URL }}')">
         <div class="cover-body">
             <header class="header">
-                <hgroup>
-                    <h1 class="brand-main"><a href="/">{{ SITENAME }}</a></h1>
-                    <h2 class="tagline">{{ TAGLINE }}</h2>
+                <h1 class="brand-main"><a href="/">{{ SITENAME }}</a></h1>
+                <h2 class="tagline">{{ TAGLINE }}</h2>
                 {% for title, link in MENUITEMS %}
                     <p class="links"><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></p>
                 {% endfor %}
-                    <p class="social">
+                <p class="social">
                 {% for title, link in SOCIAL %}
-                        <a href="{{ link }}">
-                            <i class="fa fa-{{ title }} fa-3x"></i>
-                        </a>
+                    <a href="{{ link }}"><i class="fa fa-{{ title }} fa-3x"></i></a>
                 {% endfor %}
-                    <p>
-                </hgroup>
+                <p>
             </header>
         </div>
     </div>
