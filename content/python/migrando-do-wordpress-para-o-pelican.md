@@ -111,6 +111,8 @@ Além disso também atualizei meu DNS para utilizar o domínio caiocarrara.com.b
 vontade de quem lê esse artigo, recomendo a própria documentação do Github para isso: [Github Pages - Custom URLs]. Qualquer 
 dúvida deixa nos comentários que posso ajudar!  
 
+Para quem quiser dar uma olhada, o repositório desse site está no meu Github: [cacarrara.github.io].
+
 Bom, é isso. Até a próxima! 
 
 
@@ -131,3 +133,4 @@ Bom, é isso. Até a próxima!
 [Github Pages]:http://pages.github.com
 [Pages]:http://pages.github.com  
 [Github Pages - Custom URLs]:https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages
+[cacarrara.github.io]:https://github.com/cacarrara/cacarrara.github.io/
