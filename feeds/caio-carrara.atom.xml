@@ -409,7 +409,7 @@ orientado ao domínio.&lt;/p&gt;
 &lt;p&gt;A base do DDD diz que o desenvolvimento de uma solução de software deve
 ser feito respeitando-se algumas camadas para a organização da solução:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;!--more--&gt;Camada de Apresentação:&lt;/strong&gt; é a famosa "interface com o
+&lt;li&gt;&lt;strong&gt;Camada de Apresentação:&lt;/strong&gt; é a famosa "interface com o
     usuário". Essa camada é a responsável por apresentear as informações
     ao usuário e interpretar os comandos do mesmo;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Camada de Aplicação:&lt;/strong&gt; essa deve ser uma fina camada que coordena
@@ -506,9 +506,7 @@ merece, é o code style dos projetos em que trabalhamos. Seja qual for a
 linguagem, escrevemos comportamentos para a máquina, mas quem mantém,
 altera e melhora esses comportamentos em formato de código são humanos.
 Assim sendo, nada mais importante do que pensar nisso quando estamos
-escrevendo código.&lt;/p&gt;
-&lt;!--more--&gt;
-
+escrevendo código.  &lt;/p&gt;
 &lt;p&gt;Graças as maravilhas do mundo moderno, os principais ambientes de
 desenvolvimento para a plataforma Java já podem formatar e limpar o
 código pra gente. No
@@ -569,14 +567,12 @@ Python em um seminário de tecnologia promovido pela faculdade Pitágoras
 de Votorantim/SP. O público era de estudantes de cursos de computação.
 Infelizmente eu não tive o prazer de conhecer Python durante minha
 graduação, portanto quando surgiu a oportunidade de mostrar algo
-diferente aos estudantes não pensei duas vezes.&lt;/p&gt;
-&lt;!--more--&gt;
-
+diferente aos estudantes não pensei duas vezes.  &lt;/p&gt;
 &lt;p&gt;Agora estou compartilhando com vocês os slides da apresentação. Estão
 bem descritivos, para quem desejar um conhecimento rápido, pode ser bem
 útil:&lt;/p&gt;
-&lt;p&gt;Link: &lt;a href="https://speakerdeck.com/cacarrara/python-breve-introducao"&gt;https://speakerdeck.com/cacarrara/python-breve-introducao&lt;/a&gt;&lt;br /&gt;
-Aquele abraço!&lt;/p&gt;</summary><category term="desenvolvimento"></category><category term="python"></category></entry><entry><title>Virtualenv: Instalação e utilização</title><link href="http://caiocarrara.com.br/virtualenv-instalacao-e-utilizacao.html" rel="alternate"></link><updated>2013-11-24T18:08:00-02:00</updated><author><name>Caio Carrara</name></author><id>tag:caiocarrara.com.br,2013-11-24:virtualenv-instalacao-e-utilizacao.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;O que é virtualenv:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Link: &lt;a href="https://speakerdeck.com/cacarrara/python-breve-introducao"&gt;https://speakerdeck.com/cacarrara/python-breve-introducao&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;Aquele abraço!&lt;/p&gt;</summary><category term="desenvolvimento"></category><category term="python"></category></entry><entry><title>Virtualenv: Instalação e utilização</title><link href="http://caiocarrara.com.br/virtualenv-instalacao-e-utilizacao.html" rel="alternate"></link><updated>2013-11-24T18:08:00-02:00</updated><author><name>Caio Carrara</name></author><id>tag:caiocarrara.com.br,2013-11-24:virtualenv-instalacao-e-utilizacao.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;O que é virtualenv:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;De acordo com o próprio site do virtualenv, trata-se de uma ferramenta
 para a criação de ambientes Python isolados (ambientes virtuais, virtual
 environments, virtualenv). Essa própria descrição é bastante

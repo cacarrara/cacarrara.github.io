@@ -3,7 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Caio Carrara Log, Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.">
+    <meta name="description" content="O objetivo desse post não é explicar o Domain Driven Design, mas sim tentar ajudar a desmistificar uma dúvida que pode ser recorrente dos que começam a desenvolver software orientado ao domínio: como organizar a lógica de negócio evitando o modelo anêmico.">
+
+        <link rel="author" href="https://plus.google.com/108931761041773828029" />
+        <meta property="og:title" content="Regras de negócio usando Domain Driven Design" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="./regras-de-negocio-usando-domain-driven-design.html" />
+        <meta property="og:description" content="O objetivo desse post não é explicar o Domain Driven Design, mas sim tentar ajudar a desmistificar uma dúvida que pode ser recorrente dos que começam a desenvolver software orientado ao domínio: como organizar a lógica de negócio evitando o modelo anêmico." />
+        <meta name="twitter:url" content="./regras-de-negocio-usando-domain-driven-design.html">
+        <meta name="twitter:title" content="Regras de negócio usando Domain Driven Design">
+        <meta name="twitter:description" content="O objetivo desse post não é explicar o Domain Driven Design, mas sim tentar ajudar a desmistificar uma dúvida que pode ser recorrente dos que começam a desenvolver software orientado ao domínio: como organizar a lógica de negócio evitando o modelo anêmico.">
+
+    
 
 
         <title>Regras de negócio usando Domain Driven Design // Caio Carrara Log // Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.</title>
@@ -30,8 +41,8 @@
             <hgroup>
                 <a href="./author/caio-carrara.html" title="See posts by Caio Carrara">
                         <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/f6d5a605df582ab9ea419ebef9f400b7">
+                    <h2 class="article-info">Caio Carrara</h2>
                 </a>
-                <h2 class="article-info">Caio Carrara</h2>
                 <small class="about-author">Trabalhando principalmente com Python, Java, HTML, CSS e Javascript. Hora ou outra me arrisco no empreendedorismo. Quando não estou programando ou estudando estou treinando, andando de bicicleta, jogando meu 3DS ou assistindo um filme.</small>
                 <h5>Published</h5>
                 <p>Sun 02 February 2014</p>
@@ -61,7 +72,7 @@ orientado ao domínio.</p>
 <p>A base do DDD diz que o desenvolvimento de uma solução de software deve
 ser feito respeitando-se algumas camadas para a organização da solução:</p>
 <ul>
-<li><strong><!--more-->Camada de Apresentação:</strong> é a famosa "interface com o
+<li><strong>Camada de Apresentação:</strong> é a famosa "interface com o
     usuário". Essa camada é a responsável por apresentear as informações
     ao usuário e interpretar os comandos do mesmo;</li>
 <li><strong>Camada de Aplicação:</strong> essa deve ser uma fina camada que coordena
