@@ -16,7 +16,8 @@ DEFAULT_LANG = u'pt'
 USE_FOLDER_AS_CATEGORY = True
 
 DEFAULT_METADATA = (
-    ('About_author', 'Trabalhando principalmente com Python, Java, HTML, CSS e Javascript. Hora ou outra me arrisco no empreendedorismo. Quando não estou programando ou estudando estou treinando, andando de bicicleta, jogando meu 3DS ou assistindo um filme.'),
+    ('about_author', 'Trabalhando principalmente com Python, Java, HTML, CSS e Javascript. Hora ou outra me arrisco no empreendedorismo. Quando não estou programando ou estudando estou treinando, andando de bicicleta, jogando meu 3DS ou assistindo um filme.'),
+    ('author_g_plus_id', '108931761041773828029'),
 )
 
 # Feed generation is usually not desired when developing
