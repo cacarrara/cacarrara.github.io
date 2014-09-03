@@ -1,7 +1,8 @@
 Title: Virtualenv: Instalação e utilização
 Date: 2013-11-24 18:08
 Tags: desenvolvimento, django, python, virtualenv
-Slug: virtualenv-instalacao-e-utilizacao
+Slug: virtualenv-instalacao-e-utilizacao  
+Summary: Virtualenv é uma ferramenta indispensável para quem desenvolve software utilizando Python. Nesse artigo mostro os motivos pelos quais você deveria utilizar e como fazer a instalação e configuração inicial.
 
 **O que é virtualenv:**
 

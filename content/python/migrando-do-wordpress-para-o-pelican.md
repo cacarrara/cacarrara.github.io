@@ -2,6 +2,7 @@ Title: Migrando do Wordpress para o Pelican
 Date: 2014-09-02 00:45  
 Tags: python, pelican  
 Slug: migrando-do-wordpress-para-o-pelican  
+Summary: Aqui eu explico quais os motivos me levaram a migrar meu antigo blog Wordpress para Pelican + Github Pages. Além disso explico passo a passo como fazer essa migração.
 
 
 Hoje pela manhã eu terminei a migração desse meu blog do [Wordpress] para o [Pelican]. Eu utilizava o antigo 

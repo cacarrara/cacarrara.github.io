@@ -2,6 +2,7 @@ Title: Crie as suas oportunidades para aprender
 Date: 2014-02-09 17:34
 Tags: carreira, python
 Slug: crie-as-suas-oportunidades-para-aprender
+Summary: Não espere que surja um tempo livre na sua rotina para aprender algo novo. Vivemos várias oportunidades no dia-a-dia que poderão ser ótimas chances de conhecer algo novo, basta sermos mais sensíveis a esses momentos e criarmos nossas oportunidades para aprender.
 
 Nós somos muito acostumados a tentar separar um tempo para fazer um
 curso, assistir uma palestra ou aprender uma nova linguagem de

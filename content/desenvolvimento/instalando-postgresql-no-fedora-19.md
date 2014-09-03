@@ -1,7 +1,8 @@
 Title: [Dica] Instalando PostgreSQL no Fedora 19
 Date: 2014-04-02 22:00
 Tags: desenvolvimento, fedora, linux, postgresql
-Slug: instalando-postgresql-no-fedora-19
+Slug: instalando-postgresql-no-fedora-19  
+Summary: Esse post tem como objetivo ficar de nota para posterior registro de como instalar o PostgreSQL no Fedora 19.
 
 Fala ai galera! Beleza?
 

@@ -1,7 +1,8 @@
 Title: Meu primeiro Hackathon
 Date: 2014-08-24 15:43
 Slug: meu-primeiro-hackathon
-Tags: appengine, hackathon, python
+Tags: appengine, hackathon, python  
+Summary: Eu participei do meu primeiro Hackathon da Transparência Brasil. Foi uma experiência incrível e resolvi contar um pouco o que a ONG Transparência Brasil e a Sensedia fizeram lá na sede do Google Brasil.
 
 Ontem ocorreu o primeiro [Hackathon Transparência
 Brasil](http://dev.transparencia.org.br/api-portal/hackathon "Hackathon transparência Brasil").

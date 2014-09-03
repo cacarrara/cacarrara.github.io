@@ -1,7 +1,8 @@
 Title: Regras de negócio usando Domain Driven Design
 Date: 2014-02-02 12:59
 Tags: arquitetura, desenvolvimento, java
-Slug: regras-de-negocio-usando-domain-driven-design
+Slug: regras-de-negocio-usando-domain-driven-design  
+Summary: O objetivo desse post não é explicar o Domain Driven Design, mas sim tentar ajudar a desmistificar uma dúvida que pode ser recorrente dos que começam a desenvolver software orientado ao domínio: como organizar a lógica de negócio evitando o modelo anêmico.
 
 Aos que ainda não conhecem o conceito de [Domain Driven Design
 (DDD)](http://en.wikipedia.org/wiki/Domain-driven_design "Domain Driven Design Wikipedia"),
@@ -14,7 +15,7 @@ orientado ao domínio.
 A base do DDD diz que o desenvolvimento de uma solução de software deve
 ser feito respeitando-se algumas camadas para a organização da solução:
 
--   **<!--more-->Camada de Apresentação:** é a famosa "interface com o
+-   **Camada de Apresentação:** é a famosa "interface com o
     usuário". Essa camada é a responsável por apresentear as informações
     ao usuário e interpretar os comandos do mesmo;
 -   **Camada de Aplicação:** essa deve ser uma fina camada que coordena

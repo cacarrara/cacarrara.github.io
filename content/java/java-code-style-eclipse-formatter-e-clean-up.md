@@ -1,16 +1,15 @@
 Title: Java Code Style (eclipse formatter e clean up)
 Date: 2013-12-21 10:41
 Tags: desenvolvimento, java
-Slug: java-code-style-eclipse-formatter-e-clean-up
+Slug: java-code-style-eclipse-formatter-e-clean-up  
+Summary: Além de pensarmos na qualidade do código que estamos entregando para a máquina compilar, interpretar e executar, também precisamos nos importar com a qualidade do código fonte que continuará existindo para manutenções futuras. Apresento nesse artigo uma proposta de estilo de código fonte Java e como o Eclipse pode ajudar nisso.
 
 Um ponto importante, mas que nem sempre é tratado com a seriedade que
 merece, é o code style dos projetos em que trabalhamos. Seja qual for a
 linguagem, escrevemos comportamentos para a máquina, mas quem mantém,
 altera e melhora esses comportamentos em formato de código são humanos.
 Assim sendo, nada mais importante do que pensar nisso quando estamos
-escrevendo código.
-
-<!--more-->
+escrevendo código.  
 
 Graças as maravilhas do mundo moderno, os principais ambientes de
 desenvolvimento para a plataforma Java já podem formatar e limpar o

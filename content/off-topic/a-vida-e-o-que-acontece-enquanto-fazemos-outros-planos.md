@@ -1,7 +1,8 @@
 Title: [Off-Topic] A vida é o que acontece enquanto fazemos outros planos
 Date: 2013-11-24 17:47
 Tags: carreira, off-topic
-Slug: a-vida-e-o-que-acontece-enquanto-fazemos-outros-planos
+Slug: a-vida-e-o-que-acontece-enquanto-fazemos-outros-planos  
+Summary: A partir da apresentação do Henrique Bastos na Python Brasil [9] eu faço uma reflexão sobre carreira e mercado para desenvolvedores de software, mas também serve para profissionais de outras áreas.
 
 > Life is what happens when we are making other plans.
 

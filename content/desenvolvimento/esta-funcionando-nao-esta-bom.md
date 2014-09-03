@@ -1,7 +1,8 @@
 Title: Está funcionando? Não está bom!
 Date: 2014-02-19 23:15
 Tags: arquitetura, carreira, desenvolvimento
-Slug: esta-funcionando-nao-esta-bom
+Slug: esta-funcionando-nao-esta-bom  
+Summary: Desenvolver software profissionalmente, entre outras coisas, é entregar satisfação ao usuário e atender necessidades de clientes. O trabalho visto dessa forma pode ser exercido de duas maneiras: proativa ou reativa. Nesse artigo eu falo um pouco sobre as duas maneiras.
 
 Eu ainda não posso dizer que sou um profissional tão experiente, afinal
 estou há pouco mais de 3 anos atuando profissionalmente com
