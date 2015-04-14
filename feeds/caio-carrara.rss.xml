@@ -1,5 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Caio Carrara Log</title><link>http://caiocarrara.com.br/</link><description></description><atom:link href="http://caiocarrara.com.br/feeds/caio-carrara.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 09 Oct 2014 10:00:00 -0300</lastBuildDate><item><title>Palestra Software Crafsmanship na FATEC Sorocaba</title><link>http://caiocarrara.com.br/palestra-software-craftsmanship-na-fatec-sorocaba.html</link><description>&lt;p&gt;O &lt;a href="http://manifesto.softwarecraftsmanship.org/"&gt;Manifesto for Software Craftsmanship&lt;/a&gt; não é tão popular hoje em dia quanto o &lt;a href="http://agilemanifesto.org/"&gt;Agile Manifesto&lt;/a&gt;. Entretanto, acredito que os princípios defendidos pelo Craftsmanship são tão importantes quanto os do Agile. Visando apresentar o &lt;em&gt;Artesanato de Software&lt;/em&gt;, bem como alguns outros princípios para os graduandos em &lt;a href="http://fatecsorocaba.edu.br/topo/cursos/ads.asp"&gt;Análise e Desenvolvimento de Sistemas da FATEC De Sorocaba&lt;/a&gt;, no dia 08/10/2014 apresentei a palestra &lt;strong&gt;Artesanato de Software&lt;/strong&gt; que compartilho aqui agora:  &lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Caio Carrara Log</title><link>http://caiocarrara.com.br/</link><description></description><atom:link href="http://caiocarrara.com.br/feeds/caio-carrara.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 15 Apr 2015 01:30:00 -0300</lastBuildDate><item><title>Django - atribuindo classes CSS e atributos HTML a Form Fields</title><link>http://caiocarrara.com.br/django-atribuindo-classes-css-e-atributos-html-a-form-fields.html</link><description>&lt;h2&gt;Django Fields e Widgets&lt;/h2&gt;
+&lt;p&gt;Tentando simplificar as diversas complexidades que existem na criação e manipulação de formulários em uma aplicação web, o framework &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt; abstrai o componente de formulário em um conjunto de classes &lt;a href="http://python.org"&gt;Python&lt;/a&gt;. Trabalhando dessa forma o desenvolvedor tem a possibilidade de definir diversos aspectos de um formulário simplesmente através de programação com &lt;a href="http://python.org"&gt;Python&lt;/a&gt;. Entre esses aspectos estão tanto os que atingem a camada de apresentação (HTML) quanto a camada de processamento no servidor.&lt;/p&gt;
+&lt;p&gt;Nessa abordagem da abstração de formulários do &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt; existem, entre outros, dois componentes importantes: os &lt;a href="http://docs.djangoproject.com/en/1.8/ref/forms/fields/"&gt;Form Fields&lt;/a&gt; e os &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/"&gt;Widgets&lt;/a&gt;. Enquanto a responsabilidade dos Fields é a de gerenciar os dados e validá-los em uma submissão ao servidor, os &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/"&gt;Widgets&lt;/a&gt; são responsáveis por definir como esses campos serão apresentados no navegador para o usuário final.&lt;/p&gt;
+&lt;p&gt;Uma vez que são os &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/"&gt;Widgets&lt;/a&gt; que definem como um campo de um formulário irá se apresentar na página HTML, nada mais coerente do que o próprio Widget suportar a atribuição das classes CSS desse campo. Assim sendo, de acordo com a própria &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#styling-widget-instances"&gt;documentação oficial&lt;/a&gt; do &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt;, a forma de se estilizar os campos no HTML é informando atributos adicionais ao Widget no momento de sua instanciação e atribuição ao respectivo Field. Vamos aos exemplos.&lt;/p&gt;
+&lt;h3&gt;Estilizando Widgets&lt;/h3&gt;
+&lt;p&gt;De acordo com a documentação oficial uma das maneiras de se atribuir classes CSS a um widget é a seguinte:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CommentForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Form&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TextInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;special&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}))&lt;/span&gt;
+    &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;URLField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;comment&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TextInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;size&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;40&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Outra maneira de fazer essa atribuição é através do atributo widget da classe Meta. Em um &lt;a href="https://docs.djangoproject.com/en/1.8/topics/forms/modelforms/"&gt;ModelForm&lt;/a&gt;, por exemplo, a atribuição ficaria assim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MeuModelForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ModelForm&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Meta&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MeuModel&lt;/span&gt;
+        &lt;span class="n"&gt;fields&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;__all__&amp;#39;&lt;/span&gt;
+        &lt;span class="n"&gt;widgets&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="s"&gt;&amp;#39;field_one&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;TextInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;special&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}),&lt;/span&gt;
+            &lt;span class="s"&gt;&amp;#39;field_two&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Textarea&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;special&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Entretanto, sabemos muito bem que em aplicações reais não somente o atributo class precisamos atribuir aos fields. Assim sendo o exemplo anterior pode facilmente evoluir para o seguinte exemplo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MeuModelForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ModelForm&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Meta&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MeuModel&lt;/span&gt;
+        &lt;span class="n"&gt;fields&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;__all__&amp;#39;&lt;/span&gt;
+        &lt;span class="n"&gt;widgets&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="s"&gt;&amp;#39;field_one&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;TextInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;special&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                          &lt;span class="s"&gt;&amp;#39;id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;field_one&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                          &lt;span class="s"&gt;&amp;#39;placeholder&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Field One&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                          &lt;span class="s"&gt;&amp;#39;required&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}),&lt;/span&gt;
+            &lt;span class="s"&gt;&amp;#39;field_two&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Textarea&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;special&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                         &lt;span class="s"&gt;&amp;#39;data-rules&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;required&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                         &lt;span class="s"&gt;&amp;#39;id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;field_two&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                         &lt;span class="s"&gt;&amp;#39;placeholder&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Field Two&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                         &lt;span class="s"&gt;&amp;#39;rows&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A tendência é que esse trecho do código aumente consideravelmente para formulários um pouco mais complexos, seja na quantidade de campos ou na forma com que os mesmos serão apresentados, precisando assim de classes CSS ou outros atributos HTML. Ainda assim, mesmo com mais código sendo produzido nesse ponto, não podemos negar que há certa organização.&lt;/p&gt;
+&lt;h3&gt;Um problema ao se definir classes CSS nos atributos da classe Widget&lt;/h3&gt;
+&lt;p&gt;Um problema que enfrentei recentemente relacionado à esse tema foi o de precisar voltar ao módulo de Forms (forms.py) somente para alterar o estilo de alguns formulários. Nessa oportunidade específica a pessoa que estava fazendo a manutenção nos templates ainda não tinha muito conhecimento de &lt;a href="http://python.org"&gt;Python&lt;/a&gt; e muito pouca familiaridade com a estrutura de um projeto &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt;. Ela sabia muito bem de front-end e sabia se econtrar no diretório dos templates da aplicação apenas.&lt;/p&gt;
+&lt;p&gt;Independente da experiência do desenvolvedor que estiver fazendo a manutenção dos formulários, se pensarmos um pouco, quando estamos alterando a apresentação de um form é muito mais comum nos encontrarmos manipulando arquivos de template, CSS e javascript do que o módulo &lt;a href="http://python.org"&gt;Python&lt;/a&gt; de formulários. Dessa forma, pelo menos na minha visão, seria preferível, na maior parte dos casos, definir as classes CSS no próprio arquivo de template do &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt;, bem como os demais atributos HTML dos campos de um formulário.&lt;/p&gt;
+&lt;h3&gt;Utilizando django-widget-tweaks&lt;/h3&gt;
+&lt;p&gt;A &lt;a href="https://github.com/kmike/django-widget-tweaks"&gt;django-widget-tweaks&lt;/a&gt; é uma biblioteca simples, direta e bem feita, que permite que possamos ajustar classes CSS e atributos HTML dos &lt;a href="http://docs.djangoproject.com/en/1.8/ref/forms/fields/"&gt;Form Fields&lt;/a&gt; do &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt; nos próprios arquivos de template. Ela possibilita que desenvolvedores possam atualizar arquivos de template sem precisar se envolver diretamente com códigos &lt;a href="http://python.org"&gt;Python&lt;/a&gt;. Essa é uma grande vantagem quando se tem equipes com conhecimentos distintos ou mesmo quando se precisa pragmaticamente separar as definições de apresentação das instruções de código &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para utilizar a lib basta instalá-la através do &lt;a href="http://caiocarrara.com.br/virtualenv-instalacao-e-utilizacao.html"&gt;pip&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install django-widget-tweaks
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Adicioná-la às INSTALED_APPS no settings:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;INSTALED_APPS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;#39;widget_tweaks&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Uma das formas de utilizá-la nos arquivos de template é através de &lt;a href="https://docs.djangoproject.com/en/1.8/howto/custom-template-tags/#writing-custom-template-filters"&gt;filtros&lt;/a&gt; como o a seguinte:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;{% load widget_tweaks %}
+
+&lt;span class="c"&gt;&amp;lt;!-- adiciona 2 novas classes ao campo --&amp;gt;&lt;/span&gt;
+{{ form.title|add_class:&amp;quot;css_class_1 css_class_2&amp;quot; }}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Outros atributos HTML também podem ser atribuídos de maneira semelhante com filtros:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;{% load widget_tweaks %}
+
+&lt;span class="c"&gt;&amp;lt;!-- muda o tipo do campo, por exemplo para conformidade com HTML5 --&amp;gt;&lt;/span&gt;
+{{ form.search_query|attr:&amp;quot;type:search&amp;quot; }}
+
+&lt;span class="c"&gt;&amp;lt;!-- adiciona/modifica alguns atributos --&amp;gt;&lt;/span&gt;
+{{ form.text|attr:&amp;quot;rows:20&amp;quot;|attr:&amp;quot;cols:20&amp;quot;|attr:&amp;quot;title:Hello, world!&amp;quot; }}
+
+&lt;span class="c"&gt;&amp;lt;!-- adiciona atributos sem parâmetros --&amp;gt;&lt;/span&gt;
+{{ form.search_query|attr:&amp;quot;autofocus&amp;quot; }}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Mais detalhes e informações sobre a django-widget-tweaks podem ser encontrados no completo &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#styling-widget-instances"&gt;README&lt;/a&gt; do projeto no github. Não deixe de conferir se quiser usar.&lt;/p&gt;
+&lt;p&gt;Até a próxima!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Caio Carrara</dc:creator><pubDate>Wed, 15 Apr 2015 01:30:00 -0300</pubDate><guid>tag:caiocarrara.com.br,2015-04-15:django-atribuindo-classes-css-e-atributos-html-a-form-fields.html</guid><category>python</category><category>django</category></item><item><title>Palestra Software Crafsmanship na FATEC Sorocaba</title><link>http://caiocarrara.com.br/palestra-software-craftsmanship-na-fatec-sorocaba.html</link><description>&lt;p&gt;O &lt;a href="http://manifesto.softwarecraftsmanship.org/"&gt;Manifesto for Software Craftsmanship&lt;/a&gt; não é tão popular hoje em dia quanto o &lt;a href="http://agilemanifesto.org/"&gt;Agile Manifesto&lt;/a&gt;. Entretanto, acredito que os princípios defendidos pelo Craftsmanship são tão importantes quanto os do Agile. Visando apresentar o &lt;em&gt;Artesanato de Software&lt;/em&gt;, bem como alguns outros princípios para os graduandos em &lt;a href="http://fatecsorocaba.edu.br/topo/cursos/ads.asp"&gt;Análise e Desenvolvimento de Sistemas da FATEC De Sorocaba&lt;/a&gt;, no dia 08/10/2014 apresentei a palestra &lt;strong&gt;Artesanato de Software&lt;/strong&gt; que compartilho aqui agora:  &lt;/p&gt;
 &lt;script async class="speakerdeck-embed" data-id="9e019c8031df01327f262efaeef44115" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"&gt;&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Caio Carrara</dc:creator><pubDate>Thu, 09 Oct 2014 10:00:00 -0300</pubDate><guid>tag:caiocarrara.com.br,2014-10-09:palestra-software-craftsmanship-na-fatec-sorocaba.html</guid><category>desenvolvimento</category><category>craftsmanship</category></item><item><title>Migrando do Wordpress para o Pelican</title><link>http://caiocarrara.com.br/migrando-do-wordpress-para-o-pelican.html</link><description>&lt;p&gt;Hoje pela manhã eu terminei a migração desse meu blog do &lt;a href="http://wordpress.org"&gt;Wordpress&lt;/a&gt; para o &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;. Eu utilizava o antigo 
 sistema gerenciador de conteúdo há algum tempo, desde quando comecei as atividades aqui no &lt;em&gt;caiocarrara.com.br&lt;/em&gt;. 
 Na ocasião era a única ferramenta que conhecia e eu achava fácil para instalar e customizar, portanto foi a 
@@ -232,7 +318,7 @@ cadastrar uma senha para esse usuário na base:&lt;/p&gt;
 &lt;p&gt;Vamos agora iniciar o prompt do PostgreSQL e cadastrar uma senha para a
 ROLE &lt;em&gt;postgres&lt;/em&gt; e sair:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pgsql  
-&lt;span class="nv"&gt;$ &lt;/span&gt;postgres: ALTER ROLE postgres WITH ENCRYPTED PASSWORD &lt;span class="s1"&gt;&amp;#39;suasenha&amp;#39;&lt;/span&gt;;  
+&lt;span class="nv"&gt;$ &lt;/span&gt;postgres: ALTER ROLE postgres WITH ENCRYPTED PASSWORD &lt;span class="s1"&gt;&amp;#39;suasenha&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  
 &lt;span class="nv"&gt;$ &lt;/span&gt;postgres: &lt;span class="se"&gt;\\&lt;/span&gt;q  
 &lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
