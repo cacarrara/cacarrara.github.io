@@ -8,22 +8,23 @@
         <link rel="author" href="https://plus.google.com/108931761041773828029" />
         <meta property="og:title" content="Django - atribuindo classes CSS e atributos HTML a Form Fields" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="./django-atribuindo-classes-css-e-atributos-html-a-form-fields.html" />
+        <meta property="og:url" content="/django-atribuindo-classes-css-e-atributos-html-a-form-fields.html" />
         <meta property="og:description" content="Nesse post eu falo sobre a distinção de responsabilidades entre Fields e Widgets no sistema de formulários do Django e um potencial problema nessa maneira de abstrair o Form quanto à sua apresentação. Assim sendo eu proponho uma maneira de se trabalhar utilizando a lib django-widget-twaks para solucionar o problema apresentado, reforçando a separação de responsabilidade entre a camada de apresentação e a de lógica de negócios." />
-        <meta name="twitter:url" content="./django-atribuindo-classes-css-e-atributos-html-a-form-fields.html">
+        <meta name="twitter:url" content="/django-atribuindo-classes-css-e-atributos-html-a-form-fields.html">
         <meta name="twitter:title" content="Django - atribuindo classes CSS e atributos HTML a Form Fields">
         <meta name="twitter:description" content="Nesse post eu falo sobre a distinção de responsabilidades entre Fields e Widgets no sistema de formulários do Django e um potencial problema nessa maneira de abstrair o Form quanto à sua apresentação. Assim sendo eu proponho uma maneira de se trabalhar utilizando a lib django-widget-twaks para solucionar o problema apresentado, reforçando a separação de responsabilidade entre a camada de apresentação e a de lógica de negócios.">
 
     
 
+        <link rel="alternate"  href="/feeds/all.atom.xml" type="application/atom+xml" title="Caio Carrara Full Atom Feed"/>
 
-        <title>Django - atribuindo classes CSS e atributos HTML a Form Fields // Caio Carrara Log // Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.</title>
+        <title>Django - atribuindo classes CSS e atributos HTML a Form Fields // Caio Carrara // Desenvolvimento de software, Python, Internet Livre, negócios e ideias aleatórias. Não necessariamente nessa ordem</title>
 
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./theme/css/pure.css">
-    <link rel="stylesheet" href="./theme/css/pygments.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
@@ -39,13 +40,13 @@
     <div class="sidebar sidebar-article pure-u">
         <header class="header-article">
             <hgroup>
-                <a href="./author/caio-carrara.html" title="See posts by Caio Carrara">
-                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/f6d5a605df582ab9ea419ebef9f400b7">
+                <a href="/author/caio-carrara.html" title="See posts by Caio Carrara">
+                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/eb1221b884c4b4e3016d34705530c8d1">
                     <h2 class="article-info">Caio Carrara</h2>
                 </a>
-                <small class="about-author">Trabalhando principalmente com Python, Java, HTML, CSS e Javascript. Hora ou outra me arrisco no empreendedorismo. Quando não estou programando ou estudando estou treinando, andando de bicicleta, jogando meu 3DS ou assistindo um filme.</small>
+                <small class="about-author">Programador para o resto da vida. Falando sobre software e a vida.</small>
                 <h5>Published</h5>
-                <p>Wed 15 April 2015</p>
+                <p>qua 15 abril 2015</p>
                 <a href="/">&larr;Home</a>
             </hgroup>
         </header>
@@ -56,8 +57,8 @@
                 <header class="post-header">
                     <h1>Django - atribuindo classes CSS e atributos HTML a Form Fields</h1>
                         <p class="post-meta">
-                            // under                                 <a class="post-category" href="./tag/python.html">python</a>
-                                <a class="post-category" href="./tag/django.html">django</a>
+                            // under                                 <a class="post-category" href="/tag/python.html">python</a>
+                                <a class="post-category" href="/tag/django.html">django</a>
                         </p>
                 </header>
             </section>
@@ -67,40 +68,40 @@
 <p>Uma vez que são os <a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/">Widgets</a> que definem como um campo de um formulário irá se apresentar na página HTML, nada mais coerente do que o próprio Widget suportar a atribuição das classes CSS desse campo. Assim sendo, de acordo com a própria <a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#styling-widget-instances">documentação oficial</a> do <a href="http://djangoproject.com">Django</a>, a forma de se estilizar os campos no HTML é informando atributos adicionais ao Widget no momento de sua instanciação e atribuição ao respectivo Field. Vamos aos exemplos.</p>
 <h3>Estilizando Widgets</h3>
 <p>De acordo com a documentação oficial uma das maneiras de se atribuir classes CSS a um widget é a seguinte:</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">CommentForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;special&#39;</span><span class="p">}))</span>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CommentForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;special&#39;</span><span class="p">}))</span>
     <span class="n">url</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">URLField</span><span class="p">()</span>
-    <span class="n">comment</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;size&#39;</span><span class="p">:</span> <span class="s">&#39;40&#39;</span><span class="p">}))</span>
+    <span class="n">comment</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="s1">&#39;40&#39;</span><span class="p">}))</span>
 </pre></div>
 
 
 <p>Outra maneira de fazer essa atribuição é através do atributo widget da classe Meta. Em um <a href="https://docs.djangoproject.com/en/1.8/topics/forms/modelforms/">ModelForm</a>, por exemplo, a atribuição ficaria assim:</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">MeuModelForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MeuModelForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">MeuModel</span>
-        <span class="n">fields</span> <span class="o">=</span> <span class="s">&#39;__all__&#39;</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span>
         <span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s">&#39;field_one&#39;</span><span class="p">:</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;special&#39;</span><span class="p">}),</span>
-            <span class="s">&#39;field_two&#39;</span><span class="p">:</span> <span class="n">Textarea</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;special&#39;</span><span class="p">})</span>
+            <span class="s1">&#39;field_one&#39;</span><span class="p">:</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;special&#39;</span><span class="p">}),</span>
+            <span class="s1">&#39;field_two&#39;</span><span class="p">:</span> <span class="n">Textarea</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;special&#39;</span><span class="p">})</span>
         <span class="p">}</span>
 </pre></div>
 
 
 <p>Entretanto, sabemos muito bem que em aplicações reais não somente o atributo class precisamos atribuir aos fields. Assim sendo o exemplo anterior pode facilmente evoluir para o seguinte exemplo:</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">MeuModelForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MeuModelForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">MeuModel</span>
-        <span class="n">fields</span> <span class="o">=</span> <span class="s">&#39;__all__&#39;</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span>
         <span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s">&#39;field_one&#39;</span><span class="p">:</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;special&#39;</span><span class="p">,</span>
-                                          <span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="s">&#39;field_one&#39;</span><span class="p">,</span>
-                                          <span class="s">&#39;placeholder&#39;</span><span class="p">:</span> <span class="s">&#39;Field One&#39;</span><span class="p">,</span>
-                                          <span class="s">&#39;required&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">}),</span>
-            <span class="s">&#39;field_two&#39;</span><span class="p">:</span> <span class="n">Textarea</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;special&#39;</span><span class="p">,</span>
-                                         <span class="s">&#39;data-rules&#39;</span><span class="p">:</span> <span class="s">&#39;required&#39;</span><span class="p">,</span>
-                                         <span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="s">&#39;field_two&#39;</span><span class="p">,</span>
-                                         <span class="s">&#39;placeholder&#39;</span><span class="p">:</span> <span class="s">&#39;Field Two&#39;</span><span class="p">,</span>
-                                         <span class="s">&#39;rows&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">})</span>
+            <span class="s1">&#39;field_one&#39;</span><span class="p">:</span> <span class="n">TextInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;special&#39;</span><span class="p">,</span>
+                                          <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;field_one&#39;</span><span class="p">,</span>
+                                          <span class="s1">&#39;placeholder&#39;</span><span class="p">:</span> <span class="s1">&#39;Field One&#39;</span><span class="p">,</span>
+                                          <span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}),</span>
+            <span class="s1">&#39;field_two&#39;</span><span class="p">:</span> <span class="n">Textarea</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;special&#39;</span><span class="p">,</span>
+                                         <span class="s1">&#39;data-rules&#39;</span><span class="p">:</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+                                         <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;field_two&#39;</span><span class="p">,</span>
+                                         <span class="s1">&#39;placeholder&#39;</span><span class="p">:</span> <span class="s1">&#39;Field Two&#39;</span><span class="p">,</span>
+                                         <span class="s1">&#39;rows&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">})</span>
         <span class="p">}</span>
 </pre></div>
 
@@ -112,20 +113,20 @@
 <h3>Utilizando django-widget-tweaks</h3>
 <p>A <a href="https://github.com/kmike/django-widget-tweaks">django-widget-tweaks</a> é uma biblioteca simples, direta e bem feita, que permite que possamos ajustar classes CSS e atributos HTML dos <a href="http://docs.djangoproject.com/en/1.8/ref/forms/fields/">Form Fields</a> do <a href="http://djangoproject.com">Django</a> nos próprios arquivos de template. Ela possibilita que desenvolvedores possam atualizar arquivos de template sem precisar se envolver diretamente com códigos <a href="http://python.org">Python</a>. Essa é uma grande vantagem quando se tem equipes com conhecimentos distintos ou mesmo quando se precisa pragmaticamente separar as definições de apresentação das instruções de código <a href="http://python.org">Python</a>.</p>
 <p>Para utilizar a lib basta instalá-la através do <a href="http://caiocarrara.com.br/virtualenv-instalacao-e-utilizacao.html">pip</a>:</p>
-<div class="highlight"><pre><span class="nv">$ </span>pip install django-widget-tweaks
+<div class="highlight"><pre><span></span>$ pip install django-widget-tweaks
 </pre></div>
 
 
 <p>Adicioná-la às INSTALED_APPS no settings:</p>
-<div class="highlight"><pre><span class="n">INSTALED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight"><pre><span></span><span class="n">INSTALED_APPS</span> <span class="o">=</span> <span class="p">(</span>
     <span class="o">...</span><span class="p">,</span>
-    <span class="s">&#39;widget_tweaks&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;widget_tweaks&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 
 
 <p>Uma das formas de utilizá-la nos arquivos de template é através de <a href="https://docs.djangoproject.com/en/1.8/howto/custom-template-tags/#writing-custom-template-filters">filtros</a> como o a seguinte:</p>
-<div class="highlight"><pre>{% load widget_tweaks %}
+<div class="highlight"><pre><span></span>{% load widget_tweaks %}
 
 <span class="c">&lt;!-- adiciona 2 novas classes ao campo --&gt;</span>
 {{ form.title|add_class:&quot;css_class_1 css_class_2&quot; }}
@@ -133,7 +134,7 @@
 
 
 <p>Outros atributos HTML também podem ser atribuídos de maneira semelhante com filtros:</p>
-<div class="highlight"><pre>{% load widget_tweaks %}
+<div class="highlight"><pre><span></span>{% load widget_tweaks %}
 
 <span class="c">&lt;!-- muda o tipo do campo, por exemplo para conformidade com HTML5 --&gt;</span>
 {{ form.search_query|attr:&quot;type:search&quot; }}
@@ -151,9 +152,9 @@
             <div class="hr"></div>
             <a href="#" class="go-top">Go Top</a>
 <p class="share-links">
-    <a href="http://twitter.com/home?status=Django%20-%20atribuindo%20classes%20CSS%20e%20atributos%20HTML%20a%20Form%20Fields%20 http%3A//caiocarrara.com.br/django-atribuindo-classes-css-e-atributos-html-a-form-fields.html" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-2x"></i></a>
-    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http%3A//caiocarrara.com.br/django-atribuindo-classes-css-e-atributos-html-a-form-fields.html&p[images][0]=&p[title]=Django%20-%20atribuindo%20classes%20CSS%20e%20atributos%20HTML%20a%20Form%20Fields%20&p[summary]=%3Cp%3ENesse%20post%20eu%20falo%20sobre%20a%20distin%C3%A7%C3%A3o%20de%20responsabilidades%20entre%20Fields%20e%20Widgets%20no%20sistema%20de%20formul%C3%A1rios%20do%20Django%20e%20um%20potencial%20problema%20nessa%20maneira%20de%20abstrair%20o%20Form%20quanto%20%C3%A0%20sua%20apresenta%C3%A7%C3%A3o.%20Assim%20sendo%20eu%20proponho%20uma%20maneira%20de%20se%20trabalhar%20utilizando%20a%20lib%20django-widget-twaks%20para%20solucionar%20o%20problema%20apresentado%2C%20refor%C3%A7ando%20a%20separa%C3%A7%C3%A3o%20de%20responsabilidade%20entre%20a%20camada%20de%20apresenta%C3%A7%C3%A3o%20e%20a%20de%20l%C3%B3gica%20de%20neg%C3%B3cios.%3C/p%3E" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-2x"></i></a>
-    <a href="https://plus.google.com/share?url=http%3A//caiocarrara.com.br/django-atribuindo-classes-css-e-atributos-html-a-form-fields.html" target="_blank" title="Share on Google Plus"><i class="fa fa-google-plus fa-2x"></i></a>
+    <a href="http://twitter.com/home?status=Django%20-%20atribuindo%20classes%20CSS%20e%20atributos%20HTML%20a%20Form%20Fields%20 /django-atribuindo-classes-css-e-atributos-html-a-form-fields.html" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-2x"></i></a>
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=/django-atribuindo-classes-css-e-atributos-html-a-form-fields.html&p[images][0]=&p[title]=Django%20-%20atribuindo%20classes%20CSS%20e%20atributos%20HTML%20a%20Form%20Fields%20&p[summary]=%3Cp%3ENesse%20post%20eu%20falo%20sobre%20a%20distin%C3%A7%C3%A3o%20de%20responsabilidades%20entre%20Fields%20e%20Widgets%20no%20sistema%20de%20formul%C3%A1rios%20do%20Django%20e%20um%20potencial%20problema%20nessa%20maneira%20de%20abstrair%20o%20Form%20quanto%20%C3%A0%20sua%20apresenta%C3%A7%C3%A3o.%20Assim%20sendo%20eu%20proponho%20uma%20maneira%20de%20se%20trabalhar%20utilizando%20a%20lib%20django-widget-twaks%20para%20solucionar%20o%20problema%20apresentado%2C%20refor%C3%A7ando%20a%20separa%C3%A7%C3%A3o%20de%20responsabilidade%20entre%20a%20camada%20de%20apresenta%C3%A7%C3%A3o%20e%20a%20de%20l%C3%B3gica%20de%20neg%C3%B3cios.%3C/p%3E" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-2x"></i></a>
+    <a href="https://plus.google.com/share?url=/django-atribuindo-classes-css-e-atributos-html-a-form-fields.html" target="_blank" title="Share on Google Plus"><i class="fa fa-google-plus fa-2x"></i></a>
 </p><div class="comments">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -170,7 +171,7 @@
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div><footer class="footer">
-    <p>&copy; Caio Carrara Log &ndash;
+    <p>&copy; Caio Carrara &ndash;
         Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
         for <a href="http://blog.getpelican.com/">Pelican</a>
     </p>

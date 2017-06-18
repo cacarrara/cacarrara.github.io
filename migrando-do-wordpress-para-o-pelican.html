@@ -8,22 +8,23 @@
         <link rel="author" href="https://plus.google.com/108931761041773828029" />
         <meta property="og:title" content="Migrando do Wordpress para o Pelican" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="./migrando-do-wordpress-para-o-pelican.html" />
+        <meta property="og:url" content="/migrando-do-wordpress-para-o-pelican.html" />
         <meta property="og:description" content="Aqui eu explico quais os motivos me levaram a migrar meu antigo blog Wordpress para Pelican + Github Pages. Além disso explico passo a passo como fazer essa migração." />
-        <meta name="twitter:url" content="./migrando-do-wordpress-para-o-pelican.html">
+        <meta name="twitter:url" content="/migrando-do-wordpress-para-o-pelican.html">
         <meta name="twitter:title" content="Migrando do Wordpress para o Pelican">
         <meta name="twitter:description" content="Aqui eu explico quais os motivos me levaram a migrar meu antigo blog Wordpress para Pelican + Github Pages. Além disso explico passo a passo como fazer essa migração.">
 
     
 
+        <link rel="alternate"  href="/feeds/all.atom.xml" type="application/atom+xml" title="Caio Carrara Full Atom Feed"/>
 
-        <title>Migrando do Wordpress para o Pelican // Caio Carrara Log // Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.</title>
+        <title>Migrando do Wordpress para o Pelican // Caio Carrara // Desenvolvimento de software, Python, Internet Livre, negócios e ideias aleatórias. Não necessariamente nessa ordem</title>
 
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./theme/css/pure.css">
-    <link rel="stylesheet" href="./theme/css/pygments.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
@@ -39,13 +40,13 @@
     <div class="sidebar sidebar-article pure-u">
         <header class="header-article">
             <hgroup>
-                <a href="./author/caio-carrara.html" title="See posts by Caio Carrara">
-                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/f6d5a605df582ab9ea419ebef9f400b7">
+                <a href="/author/caio-carrara.html" title="See posts by Caio Carrara">
+                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/eb1221b884c4b4e3016d34705530c8d1">
                     <h2 class="article-info">Caio Carrara</h2>
                 </a>
-                <small class="about-author">Trabalhando principalmente com Python, Java, HTML, CSS e Javascript. Hora ou outra me arrisco no empreendedorismo. Quando não estou programando ou estudando estou treinando, andando de bicicleta, jogando meu 3DS ou assistindo um filme.</small>
+                <small class="about-author">Programador para o resto da vida. Falando sobre software e a vida.</small>
                 <h5>Published</h5>
-                <p>Tue 02 September 2014</p>
+                <p>ter 02 setembro 2014</p>
                 <a href="/">&larr;Home</a>
             </hgroup>
         </header>
@@ -56,8 +57,8 @@
                 <header class="post-header">
                     <h1>Migrando do Wordpress para o Pelican</h1>
                         <p class="post-meta">
-                            // under                                 <a class="post-category" href="./tag/python.html">python</a>
-                                <a class="post-category" href="./tag/pelican.html">pelican</a>
+                            // under                                 <a class="post-category" href="/tag/python.html">python</a>
+                                <a class="post-category" href="/tag/pelican.html">pelican</a>
                         </p>
                 </header>
             </section>
@@ -90,13 +91,13 @@ do seu Wordpress, no meu lateral esquerdo acesse <code>Tools &gt; Export</code>.
 cliquei para fazer o download.  </p>
 <p>Tendo o arquivo xml gerado, vamos certificar de ter instalado as dependências para se importar o conteúdo do XML. O Pelican 
 utiliza os pacotes <em>BeautifulSoup4</em> e <em>lxml</em>. A instalação é feita como com qualquer outro pacote:</p>
-<div class="highlight"><pre><span class="nv">$ </span>pip install BeautifulSoup4 lxml
+<div class="highlight"><pre><span></span>$ pip install BeautifulSoup4 lxml
 </pre></div>
 
 
 <p>Estando com as dependências em ordem, já podemos rodar o <code>pelican-import</code>. Esse utilitário é capaz de importar um site 
 de diversas fontes para o formato esperado pelo Pelican. Como estamos focando no Wordpress, o comando é o seguinte:  </p>
-<div class="highlight"><pre><span class="nv">$ </span>pelican-import --wpfile -m -o content/ /path/to/export.xml
+<div class="highlight"><pre><span></span>$ pelican-import --wpfile -m -o content/ /path/to/export.xml
 </pre></div>
 
 
@@ -109,8 +110,8 @@ de diversas fontes para o formato esperado pelo Pelican. Como estamos focando no
 </ul>
 <p>Para testar a importação, basta executar o Pelican para gerar os arquivos html estáticos e rodar o servidor HTTP 
 de desenvolvimento:  </p>
-<div class="highlight"><pre><span class="nv">$ </span>pelican content
-<span class="nv">$ </span>./development_server.sh start
+<div class="highlight"><pre><span></span>$ pelican content
+$ ./development_server.sh start
 </pre></div>
 
 
@@ -131,12 +132,12 @@ nome do repositório criado.  </p>
 Pelican e os <em>Markdown</em> originais das minhas publicações e o branch <code>master</code> abriga somente as páginas html geradas. Para 
 ajudar um pouco nesse processo de subir para o Github os arquivos a cada geração, eu utilizo um utilitário chamado 
 <code>ghp-import</code>. Para instalá-lo utilize o <em>pip</em> também:  </p>
-<div class="highlight"><pre><span class="nv">$ </span>pip install ghp-import
+<div class="highlight"><pre><span></span>$ pip install ghp-import
 </pre></div>
 
 
 <p>Após a geração do Pelican, basta executar:  </p>
-<div class="highlight"><pre><span class="nv">$ </span>ghp-import output
+<div class="highlight"><pre><span></span>$ ghp-import output
 </pre></div>
 
 
@@ -145,7 +146,7 @@ ajudar um pouco nesse processo de subir para o Github os arquivos a cada geraç�
 </ul>
 <p>O comando <code>ghp-import</code> atualiza o branch local de nome <code>gh-pages</code> com o conteúdo do diretório <code>output</code>. Depois disso, basta fazer 
 o <code>push</code> do branch <code>gh-pages</code> para o branch <code>master</code> do reposiório remoto:  </p>
-<div class="highlight"><pre><span class="nv">$ </span>git push origin gh-pages:master
+<div class="highlight"><pre><span></span>$ git push origin gh-pages:master
 </pre></div>
 
 
@@ -159,9 +160,9 @@ dúvida deixa nos comentários que posso ajudar!  </p>
             <div class="hr"></div>
             <a href="#" class="go-top">Go Top</a>
 <p class="share-links">
-    <a href="http://twitter.com/home?status=Migrando%20do%20Wordpress%20para%20o%20Pelican%20 http%3A//caiocarrara.com.br/migrando-do-wordpress-para-o-pelican.html" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-2x"></i></a>
-    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http%3A//caiocarrara.com.br/migrando-do-wordpress-para-o-pelican.html&p[images][0]=&p[title]=Migrando%20do%20Wordpress%20para%20o%20Pelican%20&p[summary]=%3Cp%3EAqui%20eu%20explico%20quais%20os%20motivos%20me%20levaram%20a%20migrar%20meu%20antigo%20blog%20Wordpress%20para%20Pelican%20%2B%20Github%20Pages.%20Al%C3%A9m%20disso%20explico%20passo%20a%20passo%20como%20fazer%20essa%20migra%C3%A7%C3%A3o.%3C/p%3E" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-2x"></i></a>
-    <a href="https://plus.google.com/share?url=http%3A//caiocarrara.com.br/migrando-do-wordpress-para-o-pelican.html" target="_blank" title="Share on Google Plus"><i class="fa fa-google-plus fa-2x"></i></a>
+    <a href="http://twitter.com/home?status=Migrando%20do%20Wordpress%20para%20o%20Pelican%20 /migrando-do-wordpress-para-o-pelican.html" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-2x"></i></a>
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=/migrando-do-wordpress-para-o-pelican.html&p[images][0]=&p[title]=Migrando%20do%20Wordpress%20para%20o%20Pelican%20&p[summary]=%3Cp%3EAqui%20eu%20explico%20quais%20os%20motivos%20me%20levaram%20a%20migrar%20meu%20antigo%20blog%20Wordpress%20para%20Pelican%20%2B%20Github%20Pages.%20Al%C3%A9m%20disso%20explico%20passo%20a%20passo%20como%20fazer%20essa%20migra%C3%A7%C3%A3o.%3C/p%3E" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-2x"></i></a>
+    <a href="https://plus.google.com/share?url=/migrando-do-wordpress-para-o-pelican.html" target="_blank" title="Share on Google Plus"><i class="fa fa-google-plus fa-2x"></i></a>
 </p><div class="comments">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -178,7 +179,7 @@ dúvida deixa nos comentários que posso ajudar!  </p>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div><footer class="footer">
-    <p>&copy; Caio Carrara Log &ndash;
+    <p>&copy; Caio Carrara &ndash;
         Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
         for <a href="http://blog.getpelican.com/">Pelican</a>
     </p>

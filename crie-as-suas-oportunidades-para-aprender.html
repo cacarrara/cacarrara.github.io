@@ -8,22 +8,23 @@
         <link rel="author" href="https://plus.google.com/108931761041773828029" />
         <meta property="og:title" content="Crie as suas oportunidades para aprender" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="./crie-as-suas-oportunidades-para-aprender.html" />
+        <meta property="og:url" content="/crie-as-suas-oportunidades-para-aprender.html" />
         <meta property="og:description" content="Não espere que surja um tempo livre na sua rotina para aprender algo novo. Vivemos várias oportunidades no dia-a-dia que poderão ser ótimas chances de conhecer algo novo, basta sermos mais sensíveis a esses momentos e criarmos nossas oportunidades para aprender." />
-        <meta name="twitter:url" content="./crie-as-suas-oportunidades-para-aprender.html">
+        <meta name="twitter:url" content="/crie-as-suas-oportunidades-para-aprender.html">
         <meta name="twitter:title" content="Crie as suas oportunidades para aprender">
         <meta name="twitter:description" content="Não espere que surja um tempo livre na sua rotina para aprender algo novo. Vivemos várias oportunidades no dia-a-dia que poderão ser ótimas chances de conhecer algo novo, basta sermos mais sensíveis a esses momentos e criarmos nossas oportunidades para aprender.">
 
     
 
+        <link rel="alternate"  href="/feeds/all.atom.xml" type="application/atom+xml" title="Caio Carrara Full Atom Feed"/>
 
-        <title>Crie as suas oportunidades para aprender // Caio Carrara Log // Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.</title>
+        <title>Crie as suas oportunidades para aprender // Caio Carrara // Desenvolvimento de software, Python, Internet Livre, negócios e ideias aleatórias. Não necessariamente nessa ordem</title>
 
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./theme/css/pure.css">
-    <link rel="stylesheet" href="./theme/css/pygments.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
@@ -39,13 +40,13 @@
     <div class="sidebar sidebar-article pure-u">
         <header class="header-article">
             <hgroup>
-                <a href="./author/caio-carrara.html" title="See posts by Caio Carrara">
-                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/f6d5a605df582ab9ea419ebef9f400b7">
+                <a href="/author/caio-carrara.html" title="See posts by Caio Carrara">
+                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/eb1221b884c4b4e3016d34705530c8d1">
                     <h2 class="article-info">Caio Carrara</h2>
                 </a>
-                <small class="about-author">Trabalhando principalmente com Python, Java, HTML, CSS e Javascript. Hora ou outra me arrisco no empreendedorismo. Quando não estou programando ou estudando estou treinando, andando de bicicleta, jogando meu 3DS ou assistindo um filme.</small>
+                <small class="about-author">Programador para o resto da vida. Falando sobre software e a vida.</small>
                 <h5>Published</h5>
-                <p>Sun 09 February 2014</p>
+                <p>dom 09 fevereiro 2014</p>
                 <a href="/">&larr;Home</a>
             </hgroup>
         </header>
@@ -56,8 +57,8 @@
                 <header class="post-header">
                     <h1>Crie as suas oportunidades para aprender</h1>
                         <p class="post-meta">
-                            // under                                 <a class="post-category" href="./tag/carreira.html">carreira</a>
-                                <a class="post-category" href="./tag/python.html">python</a>
+                            // under                                 <a class="post-category" href="/tag/carreira.html">carreira</a>
+                                <a class="post-category" href="/tag/python.html">python</a>
                         </p>
                 </header>
             </section>
@@ -101,7 +102,7 @@ deveria ser removido e o caracter que seria inserido. O help estava
 versionado então eu rodei o script de primeira, sem medo, para ver o que
 dava e não é que funcionou?! O script em questão segue abaixo e também
 pode ser acessado no <a href="https://github.com/cacarrara/py_scripts/blob/master/replace_in_all_files.py" title="Github do Caio Carrara python scripts">meu Github</a>:</p>
-<div class="highlight"><pre><span class="c"># coding: utf-8  </span>
+<div class="highlight"><pre><span></span><span class="c1"># coding: utf-8  </span>
 <span class="kn">import</span> <span class="nn">os</span>  
 <span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
 
@@ -118,21 +119,21 @@ pode ser acessado no <a href="https://github.com/cacarrara/py_scripts/blob/maste
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>  
             <span class="n">replace_in_all_files</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">oldChar</span><span class="p">,</span> <span class="n">newChar</span><span class="p">)</span>  
         <span class="k">else</span><span class="p">:</span>  
-            <span class="n">arq</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parent_folder_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>  
+            <span class="n">arq</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parent_folder_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>  
             <span class="n">oldContent</span> <span class="o">=</span> <span class="n">arq</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>  
             <span class="n">arq</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-            <span class="n">arq</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parent_folder_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>  
-            <span class="n">newContent</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>  
+            <span class="n">arq</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parent_folder_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>  
+            <span class="n">newContent</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>  
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">oldContent</span><span class="p">:</span>  
             <span class="n">newContent</span> <span class="o">+=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">oldChar</span><span class="p">,</span> <span class="n">newChar</span><span class="p">)</span>  
             <span class="n">arq</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">newContent</span><span class="p">)</span>  
             <span class="n">arq</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  
-            <span class="k">print</span> <span class="s">&quot;OK: &quot;</span> <span class="o">+</span> <span class="n">filename</span>
+            <span class="k">print</span> <span class="s2">&quot;OK: &quot;</span> <span class="o">+</span> <span class="n">filename</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>  
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>  
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span> \<span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>  
-    <span class="k">print</span> <span class="s">&quot;You need to inform all params: rootPath, oldChar, newChar&quot;</span>  
+    <span class="k">print</span> <span class="s2">&quot;You need to inform all params: rootPath, oldChar, newChar&quot;</span>  
 <span class="k">else</span><span class="p">:</span>  
     <span class="n">rootPath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  
     <span class="n">oldChar</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  
@@ -150,9 +151,9 @@ você.</p>
             <div class="hr"></div>
             <a href="#" class="go-top">Go Top</a>
 <p class="share-links">
-    <a href="http://twitter.com/home?status=Crie%20as%20suas%20oportunidades%20para%20aprender%20 http%3A//caiocarrara.com.br/crie-as-suas-oportunidades-para-aprender.html" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-2x"></i></a>
-    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http%3A//caiocarrara.com.br/crie-as-suas-oportunidades-para-aprender.html&p[images][0]=&p[title]=Crie%20as%20suas%20oportunidades%20para%20aprender%20&p[summary]=%3Cp%3EN%C3%A3o%20espere%20que%20surja%20um%20tempo%20livre%20na%20sua%20rotina%20para%20aprender%20algo%20novo.%20Vivemos%20v%C3%A1rias%20oportunidades%20no%20dia-a-dia%20que%20poder%C3%A3o%20ser%20%C3%B3timas%20chances%20de%20conhecer%20algo%20novo%2C%20basta%20sermos%20mais%20sens%C3%ADveis%20a%20esses%20momentos%20e%20criarmos%20nossas%20oportunidades%20para%20aprender.%3C/p%3E" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-2x"></i></a>
-    <a href="https://plus.google.com/share?url=http%3A//caiocarrara.com.br/crie-as-suas-oportunidades-para-aprender.html" target="_blank" title="Share on Google Plus"><i class="fa fa-google-plus fa-2x"></i></a>
+    <a href="http://twitter.com/home?status=Crie%20as%20suas%20oportunidades%20para%20aprender%20 /crie-as-suas-oportunidades-para-aprender.html" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-2x"></i></a>
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=/crie-as-suas-oportunidades-para-aprender.html&p[images][0]=&p[title]=Crie%20as%20suas%20oportunidades%20para%20aprender%20&p[summary]=%3Cp%3EN%C3%A3o%20espere%20que%20surja%20um%20tempo%20livre%20na%20sua%20rotina%20para%20aprender%20algo%20novo.%20Vivemos%20v%C3%A1rias%20oportunidades%20no%20dia-a-dia%20que%20poder%C3%A3o%20ser%20%C3%B3timas%20chances%20de%20conhecer%20algo%20novo%2C%20basta%20sermos%20mais%20sens%C3%ADveis%20a%20esses%20momentos%20e%20criarmos%20nossas%20oportunidades%20para%20aprender.%3C/p%3E" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-2x"></i></a>
+    <a href="https://plus.google.com/share?url=/crie-as-suas-oportunidades-para-aprender.html" target="_blank" title="Share on Google Plus"><i class="fa fa-google-plus fa-2x"></i></a>
 </p><div class="comments">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -169,7 +170,7 @@ você.</p>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div><footer class="footer">
-    <p>&copy; Caio Carrara Log &ndash;
+    <p>&copy; Caio Carrara &ndash;
         Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
         for <a href="http://blog.getpelican.com/">Pelican</a>
     </p>

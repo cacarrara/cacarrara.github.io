@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Caio Carrara - java</title><link href="/" rel="alternate"></link><link href="/feeds/java.atom.xml" rel="self"></link><id>/</id><updated>2013-12-21T10:41:00-02:00</updated><entry><title>Java Code Style (eclipse formatter e clean up)</title><link href="/java-code-style-eclipse-formatter-e-clean-up.html" rel="alternate"></link><published>2013-12-21T10:41:00-02:00</published><updated>2013-12-21T10:41:00-02:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2013-12-21:/java-code-style-eclipse-formatter-e-clean-up.html</id><summary type="html">&lt;p&gt;Além de pensarmos na qualidade do código que estamos entregando para a máquina compilar, interpretar e executar, também precisamos nos importar com a qualidade do código fonte que continuará existindo para manutenções futuras. Apresento nesse artigo uma proposta de estilo de código fonte Java e como o Eclipse pode ajudar nisso.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Um ponto importante, mas que nem sempre é tratado com a seriedade que
+merece, é o code style dos projetos em que trabalhamos. Seja qual for a
+linguagem, escrevemos comportamentos para a máquina, mas quem mantém,
+altera e melhora esses comportamentos em formato de código são humanos.
+Assim sendo, nada mais importante do que pensar nisso quando estamos
+escrevendo código.  &lt;/p&gt;
+&lt;p&gt;Graças as maravilhas do mundo moderno, os principais ambientes de
+desenvolvimento para a plataforma Java já podem formatar e limpar o
+código pra gente. No
+&lt;a href="http://www.eclipse.org/" title="Eclipse Website"&gt;Eclipse&lt;/a&gt;, foco desse post,
+há duas funções básicas para isso: &lt;a href="http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Fjava%2Fcodestyle%2Fref-preferences-formatter.htm" title="Help Eclipse Preferences Code Formatter"&gt;Code
+Formatter&lt;/a&gt;
+e &lt;a href="http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Fjava%2Fcodestyle%2Fref-preferences-cleanup.htm" title="Help Eclipse Preferences Clean Up"&gt;Code Clean
+Up&lt;/a&gt;.
+O Clean Up além da formatação,  faz mais algumas coisas no código,
+exemplo: declara variável como &lt;em&gt;final&lt;/em&gt; quando possível, adiciona o
+&lt;em&gt;this&lt;/em&gt; quando necessário, organiza &lt;em&gt;imports&lt;/em&gt;, etc. Ambos são bastante
+configuráveis.&lt;/p&gt;
+&lt;p&gt;Eu fiz um clean up meu, com base no que acho necessário. Eu sugeriria
+altamente a todos que trabalham com Java também usassem essa função.
+Podem configurar um Clean Up com as preferências pertinentes ao projeto
+que estão trabalhando, ou que a equipe de desenvolvedores ache melhor.
+Se desejarem, um ponto de partida pode ser o
+&lt;a href="https://dl.dropboxusercontent.com/u/23404136/caio-eclipse-cleanup.xml" title="Arquivo Caio Eclipse Clean Up xml"&gt;caio-eclipse-cleanup.xml&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Também fiz um formatter. O que fiz é praticamente igual ao &lt;a href="http://google-styleguide.googlecode.com/svn/trunk/javaguide.html" title="Code Style do Google para Java"&gt;Code Style
+do Google para
+Java&lt;/a&gt;.
+O que fiz foi alterar o espaço das tabulações de 2 para 4 e a versão
+target do Java de 1.5 para 1.7. Todo o formatador é configurável, mas o
+arquivo que estou usando também pode ser utilizado como ponto de
+partida:
+&lt;a href="https://dl.dropboxusercontent.com/u/23404136/eclipse-java-google-style.xml" title="Eclipse Java Formatter by Google edited by Caio"&gt;eclipse-java-google-style.xml&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Para usar os arquivos que disponibilizei é simples, após o download os
+mesmos precisam ser importados para os workspaces onde serão
+utilizados:&lt;br&gt;
+&lt;strong&gt;Code Formatter:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style="letter-spacing: 0.05em;"&gt;Eclipse &gt; Window &gt;
+    Preferences &gt; Java &gt; Code Style &gt; Formatter &gt; Import...&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Code Cleanup:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style="letter-spacing: 0.05em;"&gt;Eclipse &gt; Window &gt;
+    Preferences &gt; Java &gt; Code Style &gt; Clean Up &gt; Import...&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;No dia a dia eu uso muito os atalhos:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style="letter-spacing: 0.05em;"&gt;&lt;strong&gt;Ctrl + Shift + F:&lt;/strong&gt; aplica a
+    formatação definida no Formatter&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style="letter-spacing: 0.05em;"&gt;&lt;strong&gt;Ctrl + Shift + O:&lt;/strong&gt; organiza
+    os imports&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Com esses atalhos, aquele código escrito rapidamente para um teste,
+protótipo ou mesmo exercício da faculdade, não tem mais desculpas para
+não ficar formatado corretamente. Afinal, é muito rápido e fácil
+utilizá-los.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Para passar o Clean Up:&lt;/strong&gt;&lt;br&gt;
+Selecione um projeto, um pacote, um arquivo .java ou mesmo ctrl + a no
+arquivo fonte, clique com o botão direito: Source &gt; Clean Up.&lt;/p&gt;
+&lt;p&gt;É isso. Espero que o código, além de performático e muito bom para as
+máquinas, também fique ótimo para ser lido pelos programadores!&lt;/p&gt;
+&lt;p&gt;Abraço!&lt;/p&gt;</content><category term="desenvolvimento"></category><category term="java"></category></entry></feed>

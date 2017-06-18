@@ -8,22 +8,23 @@
         <link rel="author" href="https://plus.google.com/108931761041773828029" />
         <meta property="og:title" content="[Dica] Instalando PostgreSQL no Fedora 19" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="./instalando-postgresql-no-fedora-19.html" />
+        <meta property="og:url" content="/instalando-postgresql-no-fedora-19.html" />
         <meta property="og:description" content="Esse post tem como objetivo ficar de nota para posterior registro de como instalar o PostgreSQL no Fedora 19." />
-        <meta name="twitter:url" content="./instalando-postgresql-no-fedora-19.html">
+        <meta name="twitter:url" content="/instalando-postgresql-no-fedora-19.html">
         <meta name="twitter:title" content="[Dica] Instalando PostgreSQL no Fedora 19">
         <meta name="twitter:description" content="Esse post tem como objetivo ficar de nota para posterior registro de como instalar o PostgreSQL no Fedora 19.">
 
     
 
+        <link rel="alternate"  href="/feeds/all.atom.xml" type="application/atom+xml" title="Caio Carrara Full Atom Feed"/>
 
-        <title>[Dica] Instalando PostgreSQL no Fedora 19 // Caio Carrara Log // Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.</title>
+        <title>[Dica] Instalando PostgreSQL no Fedora 19 // Caio Carrara // Desenvolvimento de software, Python, Internet Livre, negócios e ideias aleatórias. Não necessariamente nessa ordem</title>
 
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./theme/css/pure.css">
-    <link rel="stylesheet" href="./theme/css/pygments.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="/theme/css/pygments.css">
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
@@ -39,13 +40,13 @@
     <div class="sidebar sidebar-article pure-u">
         <header class="header-article">
             <hgroup>
-                <a href="./author/caio-carrara.html" title="See posts by Caio Carrara">
-                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/f6d5a605df582ab9ea419ebef9f400b7">
+                <a href="/author/caio-carrara.html" title="See posts by Caio Carrara">
+                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/eb1221b884c4b4e3016d34705530c8d1">
                     <h2 class="article-info">Caio Carrara</h2>
                 </a>
-                <small class="about-author">Trabalhando principalmente com Python, Java, HTML, CSS e Javascript. Hora ou outra me arrisco no empreendedorismo. Quando não estou programando ou estudando estou treinando, andando de bicicleta, jogando meu 3DS ou assistindo um filme.</small>
+                <small class="about-author">Programador para o resto da vida. Falando sobre software e a vida.</small>
                 <h5>Published</h5>
-                <p>Wed 02 April 2014</p>
+                <p>qua 02 abril 2014</p>
                 <a href="/">&larr;Home</a>
             </hgroup>
         </header>
@@ -56,10 +57,10 @@
                 <header class="post-header">
                     <h1>[Dica] Instalando PostgreSQL no Fedora 19</h1>
                         <p class="post-meta">
-                            // under                                 <a class="post-category" href="./tag/desenvolvimento.html">desenvolvimento</a>
-                                <a class="post-category" href="./tag/fedora.html">fedora</a>
-                                <a class="post-category" href="./tag/linux.html">linux</a>
-                                <a class="post-category" href="./tag/postgresql.html">postgresql</a>
+                            // under                                 <a class="post-category" href="/tag/desenvolvimento.html">desenvolvimento</a>
+                                <a class="post-category" href="/tag/fedora.html">fedora</a>
+                                <a class="post-category" href="/tag/linux.html">linux</a>
+                                <a class="post-category" href="/tag/postgresql.html">postgresql</a>
                         </p>
                 </header>
             </section>
@@ -70,30 +71,30 @@ instalação. Aqui irei considerar a minha distribuição Linux favorita, o
 Fedora, mas pode ajudar para as demais distros também.</p>
 <p>Primeiro, baixe e instale os pacotes do PostgreSQL (lembrando que o
 símbolo # indica prompt com nível root):</p>
-<div class="highlight"><pre><span class="c"># yum install postgresql postgresql-server</span>
+<div class="highlight"><pre><span></span><span class="c1"># yum install postgresql postgresql-server</span>
 </pre></div>
 
 
 <p>Terminando a instalação, vamos iniciar o banco de dados, habilitar e
 iniciar o serviço do PostgreSQL:</p>
-<div class="highlight"><pre><span class="c"># postgresql-setup initdb  </span>
-<span class="c"># systemctl enable postgresql.service  </span>
-<span class="c"># systemctl start postgresql.service</span>
+<div class="highlight"><pre><span></span><span class="c1"># postgresql-setup initdb  </span>
+<span class="c1"># systemctl enable postgresql.service  </span>
+<span class="c1"># systemctl start postgresql.service</span>
 </pre></div>
 
 
 <p>Agora vamos acessar o prompt com o usuário <em>postgres </em>para podermos
 cadastrar uma senha para esse usuário na base:</p>
-<div class="highlight"><pre><span class="c"># su postgres</span>
+<div class="highlight"><pre><span></span><span class="c1"># su postgres</span>
 </pre></div>
 
 
 <p>Vamos agora iniciar o prompt do PostgreSQL e cadastrar uma senha para a
 ROLE <em>postgres</em> e sair:</p>
-<div class="highlight"><pre><span class="nv">$ </span>pgsql  
-<span class="nv">$ </span>postgres: ALTER ROLE postgres WITH ENCRYPTED PASSWORD <span class="s1">&#39;suasenha&#39;</span><span class="p">;</span>  
-<span class="nv">$ </span>postgres: <span class="se">\\</span>q  
-<span class="nv">$ </span><span class="nb">exit</span>
+<div class="highlight"><pre><span></span>$ pgsql  
+$ postgres: ALTER ROLE postgres WITH ENCRYPTED PASSWORD <span class="s1">&#39;suasenha&#39;</span><span class="p">;</span>  
+$ postgres: <span class="se">\\</span>q  
+$ <span class="nb">exit</span>
 </pre></div>
 
 
@@ -101,23 +102,23 @@ ROLE <em>postgres</em> e sair:</p>
 do banco para utilizarmos md5. Basta editar o arquivo
 <em><code>/var/lib/pgsql/data/pg_hba.conf</code></em> e mudar as configurações
 <em>peer </em>e <em>ident</em> para <em>md5</em> conforme o exemplo abaixo:</p>
-<div class="highlight"><pre><span class="c"># TYPE DATABASE USER ADDRESS METHOD</span>
-<span class="c"># &quot;local&quot; is for Unix domain socket connections only local all all md5  </span>
-<span class="c"># IPv4 local connections:  </span>
-    host all all 127.0.0.1/32 md5  
-<span class="c"># IPv6 local connections:  </span>
+<div class="highlight"><pre><span></span><span class="c1"># TYPE DATABASE USER ADDRESS METHOD</span>
+<span class="c1"># &quot;local&quot; is for Unix domain socket connections only local all all md5  </span>
+<span class="c1"># IPv4 local connections:  </span>
+    host all all <span class="m">127</span>.0.0.1/32 md5  
+<span class="c1"># IPv6 local connections:  </span>
     host all all ::1/128 md5
 </pre></div>
 
 
 <p>Salve o arquivo e reinicie o serviço do PostgreSQL:</p>
-<div class="highlight"><pre><span class="c"># systemctl restart postgresql.service</span>
+<div class="highlight"><pre><span></span><span class="c1"># systemctl restart postgresql.service</span>
 </pre></div>
 
 
 <p>É possível testar a nova configuração tentando acessar o console do
 PostgreSQL com o usuário postgres:</p>
-<div class="highlight"><pre><span class="c"># pgsql -U postgres -W</span>
+<div class="highlight"><pre><span></span><span class="c1"># pgsql -U postgres -W</span>
 </pre></div>
 
 
@@ -127,9 +128,9 @@ a configuração está completa.</p>
             <div class="hr"></div>
             <a href="#" class="go-top">Go Top</a>
 <p class="share-links">
-    <a href="http://twitter.com/home?status=%5BDica%5D%20Instalando%20PostgreSQL%20no%20Fedora%2019%20 http%3A//caiocarrara.com.br/instalando-postgresql-no-fedora-19.html" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-2x"></i></a>
-    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http%3A//caiocarrara.com.br/instalando-postgresql-no-fedora-19.html&p[images][0]=&p[title]=%5BDica%5D%20Instalando%20PostgreSQL%20no%20Fedora%2019%20&p[summary]=%3Cp%3EEsse%20post%20tem%20como%20objetivo%20ficar%20de%20nota%20para%20posterior%20registro%20de%20como%20instalar%20o%20PostgreSQL%20no%20Fedora%2019.%3C/p%3E" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-2x"></i></a>
-    <a href="https://plus.google.com/share?url=http%3A//caiocarrara.com.br/instalando-postgresql-no-fedora-19.html" target="_blank" title="Share on Google Plus"><i class="fa fa-google-plus fa-2x"></i></a>
+    <a href="http://twitter.com/home?status=%5BDica%5D%20Instalando%20PostgreSQL%20no%20Fedora%2019%20 /instalando-postgresql-no-fedora-19.html" target="_blank" title="Share on Twitter"><i class="fa fa-twitter fa-2x"></i></a>
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=/instalando-postgresql-no-fedora-19.html&p[images][0]=&p[title]=%5BDica%5D%20Instalando%20PostgreSQL%20no%20Fedora%2019%20&p[summary]=%3Cp%3EEsse%20post%20tem%20como%20objetivo%20ficar%20de%20nota%20para%20posterior%20registro%20de%20como%20instalar%20o%20PostgreSQL%20no%20Fedora%2019.%3C/p%3E" target="_blank" title="Share on Facebook"><i class="fa fa-facebook fa-2x"></i></a>
+    <a href="https://plus.google.com/share?url=/instalando-postgresql-no-fedora-19.html" target="_blank" title="Share on Google Plus"><i class="fa fa-google-plus fa-2x"></i></a>
 </p><div class="comments">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -146,7 +147,7 @@ a configuração está completa.</p>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div><footer class="footer">
-    <p>&copy; Caio Carrara Log &ndash;
+    <p>&copy; Caio Carrara &ndash;
         Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
         for <a href="http://blog.getpelican.com/">Pelican</a>
     </p>
