@@ -3,8 +3,8 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Caio Carrara'
-AUTHOR_EMAIL = u'caiocarrara@gmail.com'
-SITENAME = u'Caio Carrara Log'
+AUTHOR_EMAIL = u'eu@caiocarrara.com.br'
+SITENAME = u'Caio Carrara'
 SITEURL = 'http://caiocarrara.com.br'
 
 PATH = 'content'
@@ -16,7 +16,7 @@ DEFAULT_LANG = u'pt'
 USE_FOLDER_AS_CATEGORY = True
 
 DEFAULT_METADATA = (
-    ('about_author', 'Trabalhando principalmente com Python, Java, HTML, CSS e Javascript. Hora ou outra me arrisco no empreendedorismo. Quando não estou programando ou estudando estou treinando, andando de bicicleta, jogando meu 3DS ou assistindo um filme.'),
+    ('about_author', 'Programador para o resto da vida. Falando sobre software e a vida.'),
     ('author_g_plus_id', '108931761041773828029'),
 )
 
@@ -26,7 +26,7 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 MENUITEMS = [
-    ('Arquivo', 'archives.html'), 
+    ('Arquivo', 'archives.html'),
     ('Sobre', 'sobre.html'),
     ('Contato', 'contato.html'),
 ]
@@ -37,16 +37,16 @@ SOCIAL = (
     ('rss', 'http://caiocarrara.com.br/feeds/caio-carrara.atom.xml'),
 )
 
-PLUGIN_PATHS = ['pelican-plugins',]
+PLUGIN_PATHS = ['pelican-plugins', ]
 
 PLUGINS = [
     'sitemap',
     'gravatar',
     'share_post',
-    'gzip_cache', #keep this as last plugin
+    'gzip_cache',  # keep this as last plugin
 ]
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 7
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
@@ -55,7 +55,9 @@ PAGE_URL = PAGE_SAVE_AS = '{slug}.html'
 
 THEME = 'themes/pure'
 COVER_IMG_URL = 'http://i.imgur.com/uZIQDHD.jpg'
-TAGLINE = 'Falando sobre desenvolvimento de software com destaque para Python, Django, Java, VRaptor, web e Agile.'
+TAGLINE = (
+    'Desenvolvimento de software, Python, Internet Livre, negócios e ideias aleatórias. Não necessariamente nessa ordem'
+)
 GITHUB_URL = 'https://github.com/cacarrara/cacarrara.github.io'
 DISQUS_SITENAME = 'caiocarrara'
 GOOGLE_ANALYTICS = 'UA-28003582-1'
@@ -74,5 +76,5 @@ SITEMAP = {
     }
 }
 
-STATIC_PATHS = ['images', 'extra/CNAME',]
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+STATIC_PATHS = ['images', 'extra/CNAME', ]
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}, }
