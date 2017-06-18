@@ -3,11 +3,10 @@ Slug: contato
 
 Formas de se contatar comigo:
 
+-   E-mail: eu [at] caiocarrara.com.br
 -   Twitter:
-    [@CaioWCC](https://twitter.com/CaioWCC "Twitter do Caio Carrara")
+    [@CaioWCC](https://twitter.com/CaioWCC)
 -   Github:
-    [github.com/cacarrara](https://github.com/cacarrara "Github do Caio Carrara")
+    [github.com/cacarrara](https://github.com/cacarrara)
 -   LinkedIn:
-    [linkedin.com/in/caiocarrara](https://www.linkedin.com/in/caiocarrara "Linkedin do Caio Carrara")
--   E-mail: [meu\_nome] + [meu\_sobrenome] [at] [gmail] [dot] [com]
-
+    [linkedin.com/in/caiocarrara](https://www.linkedin.com/in/caiocarrara)
