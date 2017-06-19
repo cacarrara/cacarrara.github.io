@@ -42,6 +42,11 @@
               <h2 class="article-info">{{ article.author }}</h2>
           </a>
           <small class="about-author">{{ article.about_author }}</small>
+          <p class="social" >
+            {% for title, link in SOCIAL %}
+                <a href="{{ link }}" style="color: #888;"><i class="fa fa-{{ title }} fa-3x"></i></a>
+            {% endfor %}
+          </p>
           <h5>Published</h5>
           <p>{{ article.locale_date }}</p>
           <a href="/">&larr;Home</a>
@@ -53,7 +58,7 @@
                 <header class="post-header">
                     <h1>{{ article.title }}</h1>
                         <p class="post-meta">
-                            // under {% for tag in article.tags %}
+                            // tags {% for tag in article.tags %}
                                 <a class="post-category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
                             {% endfor %}
                         </p>
