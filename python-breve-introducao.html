@@ -21,37 +21,28 @@
         <title>Python: breve introdução // Caio Carrara // Desenvolvimento de software, Python, Internet Livre, negócios e ideias aleatórias. Não necessariamente nessa ordem</title>
 
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/theme/css/pure.css">
-    <link rel="stylesheet" href="/theme/css/pygments.css">
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".content").fitVids();
-        });
-    </script>
+    <link rel="stylesheet" href="/theme/css/pygments.css">
 </head>
 
 <body>
-<div class="pure-g-r" id="layout">
-    <div class="sidebar sidebar-article pure-u">
+<div class="pure-g" id="layout">
+    <div class="sidebar sidebar-article pure-u-1">
         <header class="header-article">
-            <hgroup>
-                <a href="/author/caio-carrara.html" title="See posts by Caio Carrara">
-                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/eb1221b884c4b4e3016d34705530c8d1">
-                    <h2 class="article-info">Caio Carrara</h2>
-                </a>
-                <small class="about-author">Programador para o resto da vida. Falando sobre software e a vida.</small>
-                <h5>Published</h5>
-                <p>qui 28 novembro 2013</p>
-                <a href="/">&larr;Home</a>
-            </hgroup>
+          <a href="/author/caio-carrara.html" title="See posts by Caio Carrara">
+                  <img alt="Caio Carrara" src="http://www.gravatar.com/avatar/eb1221b884c4b4e3016d34705530c8d1">
+              <h2 class="article-info">Caio Carrara</h2>
+          </a>
+          <small class="about-author">Programador para o resto da vida. Falando sobre software e a vida.</small>
+          <h5>Published</h5>
+          <p>qui 28 novembro 2013</p>
+          <a href="/">&larr;Home</a>
         </header>
     </div>
-    <div class="pure-u">
+    <div class="pure-u-1">
         <div class="content">
             <section class="post">
                 <header class="post-header">
@@ -62,15 +53,13 @@
                         </p>
                 </header>
             </section>
-            <p>No começo do ano de 2013 tive a oportunidade de apresentar a linguagem
-Python em um seminário de tecnologia promovido pela faculdade Pitágoras
-de Votorantim/SP. O público era de estudantes de cursos de computação.
-Infelizmente eu não tive o prazer de conhecer Python durante minha
-graduação, portanto quando surgiu a oportunidade de mostrar algo
-diferente aos estudantes não pensei duas vezes.  </p>
-<p>Agora estou compartilhando com vocês os slides da apresentação. Estão
-bem descritivos, para quem desejar um conhecimento rápido, pode ser bem
-útil:</p>
+            <p>No começo do ano de 2013 tive a oportunidade de apresentar a linguagem Python em
+um seminário de tecnologia promovido pela faculdade Pitágoras de Votorantim/SP.
+O público era de estudantes de cursos de computação.  Infelizmente eu não tive o
+prazer de conhecer Python durante minha graduação, portanto quando surgiu a
+oportunidade de mostrar algo diferente aos estudantes não pensei duas vezes.  </p>
+<p>Agora estou compartilhando com vocês os slides da apresentação. Estão bem
+descritivos, para quem desejar um conhecimento rápido, pode ser bem útil:</p>
 <p>Link: <a href="https://speakerdeck.com/cacarrara/python-breve-introducao">https://speakerdeck.com/cacarrara/python-breve-introducao</a>  </p>
 <p>Aquele abraço!</p>
             <div class="hr"></div>
@@ -102,6 +91,10 @@ bem descritivos, para quem desejar um conhecimento rápido, pode ser bem
 </footer>        </div>
     </div>
 </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
     <script>
         var $top = $('.go-top');
 
@@ -124,6 +117,12 @@ bem descritivos, para quem desejar um conhecimento rápido, pode ser bem
         // don't scroll you back up the page.
         $('body').on('click', 'a[href="#"]', function(event) {
             event.preventDefault();
+        });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
         });
     </script>
     <script type="text/javascript">

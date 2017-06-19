@@ -21,37 +21,28 @@
         <title>Java Code Style (eclipse formatter e clean up) // Caio Carrara // Desenvolvimento de software, Python, Internet Livre, negócios e ideias aleatórias. Não necessariamente nessa ordem</title>
 
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/theme/css/pure.css">
-    <link rel="stylesheet" href="/theme/css/pygments.css">
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".content").fitVids();
-        });
-    </script>
+    <link rel="stylesheet" href="/theme/css/pygments.css">
 </head>
 
 <body>
-<div class="pure-g-r" id="layout">
-    <div class="sidebar sidebar-article pure-u">
+<div class="pure-g" id="layout">
+    <div class="sidebar sidebar-article pure-u-1">
         <header class="header-article">
-            <hgroup>
-                <a href="/author/caio-carrara.html" title="See posts by Caio Carrara">
-                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/eb1221b884c4b4e3016d34705530c8d1">
-                    <h2 class="article-info">Caio Carrara</h2>
-                </a>
-                <small class="about-author">Programador para o resto da vida. Falando sobre software e a vida.</small>
-                <h5>Published</h5>
-                <p>sáb 21 dezembro 2013</p>
-                <a href="/">&larr;Home</a>
-            </hgroup>
+          <a href="/author/caio-carrara.html" title="See posts by Caio Carrara">
+                  <img alt="Caio Carrara" src="http://www.gravatar.com/avatar/eb1221b884c4b4e3016d34705530c8d1">
+              <h2 class="article-info">Caio Carrara</h2>
+          </a>
+          <small class="about-author">Programador para o resto da vida. Falando sobre software e a vida.</small>
+          <h5>Published</h5>
+          <p>sáb 21 dezembro 2013</p>
+          <a href="/">&larr;Home</a>
         </header>
     </div>
-    <div class="pure-u">
+    <div class="pure-u-1">
         <div class="content">
             <section class="post">
                 <header class="post-header">
@@ -62,41 +53,34 @@
                         </p>
                 </header>
             </section>
-            <p>Um ponto importante, mas que nem sempre é tratado com a seriedade que
-merece, é o code style dos projetos em que trabalhamos. Seja qual for a
-linguagem, escrevemos comportamentos para a máquina, mas quem mantém,
-altera e melhora esses comportamentos em formato de código são humanos.
-Assim sendo, nada mais importante do que pensar nisso quando estamos
-escrevendo código.  </p>
+            <p>Um ponto importante, mas que nem sempre é tratado com a seriedade que merece, é
+o code style dos projetos em que trabalhamos. Seja qual for a linguagem,
+escrevemos comportamentos para a máquina, mas quem mantém, altera e melhora
+esses comportamentos em formato de código são humanos.  Assim sendo, nada mais
+importante do que pensar nisso quando estamos escrevendo código.  </p>
 <p>Graças as maravilhas do mundo moderno, os principais ambientes de
-desenvolvimento para a plataforma Java já podem formatar e limpar o
-código pra gente. No
-<a href="http://www.eclipse.org/" title="Eclipse Website">Eclipse</a>, foco desse post,
+desenvolvimento para a plataforma Java já podem formatar e limpar o código pra
+gente. No <a href="http://www.eclipse.org/" title="Eclipse Website">Eclipse</a>, foco desse post,
 há duas funções básicas para isso: <a href="http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Fjava%2Fcodestyle%2Fref-preferences-formatter.htm" title="Help Eclipse Preferences Code Formatter">Code
-Formatter</a>
-e <a href="http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Fjava%2Fcodestyle%2Fref-preferences-cleanup.htm" title="Help Eclipse Preferences Clean Up">Code Clean
-Up</a>.
-O Clean Up além da formatação,  faz mais algumas coisas no código,
-exemplo: declara variável como <em>final</em> quando possível, adiciona o
-<em>this</em> quando necessário, organiza <em>imports</em>, etc. Ambos são bastante
-configuráveis.</p>
-<p>Eu fiz um clean up meu, com base no que acho necessário. Eu sugeriria
-altamente a todos que trabalham com Java também usassem essa função.
-Podem configurar um Clean Up com as preferências pertinentes ao projeto
-que estão trabalhando, ou que a equipe de desenvolvedores ache melhor.
-Se desejarem, um ponto de partida pode ser o
+Formatter</a> e <a href="http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Fjava%2Fcodestyle%2Fref-preferences-cleanup.htm" title="Help Eclipse Preferences Clean Up">Code Clean
+Up</a>.  O Clean Up além da formatação,  faz mais
+algumas coisas no código, exemplo: declara variável como <em>final</em> quando
+possível, adiciona o <em>this</em> quando necessário, organiza <em>imports</em>, etc. Ambos
+são bastante configuráveis.</p>
+<p>Eu fiz um clean up meu, com base no que acho necessário. Eu sugeriria altamente
+a todos que trabalham com Java também usassem essa função.  Podem configurar um
+Clean Up com as preferências pertinentes ao projeto que estão trabalhando, ou
+que a equipe de desenvolvedores ache melhor.  Se desejarem, um ponto de partida
+pode ser o
 <a href="https://dl.dropboxusercontent.com/u/23404136/caio-eclipse-cleanup.xml" title="Arquivo Caio Eclipse Clean Up xml">caio-eclipse-cleanup.xml</a></p>
-<p>Também fiz um formatter. O que fiz é praticamente igual ao <a href="http://google-styleguide.googlecode.com/svn/trunk/javaguide.html" title="Code Style do Google para Java">Code Style
-do Google para
-Java</a>.
-O que fiz foi alterar o espaço das tabulações de 2 para 4 e a versão
-target do Java de 1.5 para 1.7. Todo o formatador é configurável, mas o
-arquivo que estou usando também pode ser utilizado como ponto de
-partida:
+<p>Também fiz um formatter. O que fiz é praticamente igual ao <a href="http://google-styleguide.googlecode.com/svn/trunk/javaguide.html" title="Code Style do Google para Java">Code Style do Google
+para Java</a>.  O que fiz foi alterar o espaço das
+tabulações de 2 para 4 e a versão target do Java de 1.5 para 1.7. Todo o
+formatador é configurável, mas o arquivo que estou usando também pode ser
+utilizado como ponto de partida:
 <a href="https://dl.dropboxusercontent.com/u/23404136/eclipse-java-google-style.xml" title="Eclipse Java Formatter by Google edited by Caio">eclipse-java-google-style.xml</a></p>
-<p>Para usar os arquivos que disponibilizei é simples, após o download os
-mesmos precisam ser importados para os workspaces onde serão
-utilizados:<br>
+<p>Para usar os arquivos que disponibilizei é simples, após o download os mesmos
+precisam ser importados para os workspaces onde serão utilizados:<br>
 <strong>Code Formatter:</strong></p>
 <ul>
 <li><span style="letter-spacing: 0.05em;">Eclipse > Window >
@@ -114,15 +98,14 @@ utilizados:<br>
 <li><span style="letter-spacing: 0.05em;"><strong>Ctrl + Shift + O:</strong> organiza
     os imports</span></li>
 </ul>
-<p>Com esses atalhos, aquele código escrito rapidamente para um teste,
-protótipo ou mesmo exercício da faculdade, não tem mais desculpas para
-não ficar formatado corretamente. Afinal, é muito rápido e fácil
-utilizá-los.</p>
-<p><strong>Para passar o Clean Up:</strong><br>
-Selecione um projeto, um pacote, um arquivo .java ou mesmo ctrl + a no
-arquivo fonte, clique com o botão direito: Source > Clean Up.</p>
-<p>É isso. Espero que o código, além de performático e muito bom para as
-máquinas, também fique ótimo para ser lido pelos programadores!</p>
+<p>Com esses atalhos, aquele código escrito rapidamente para um teste, protótipo ou
+mesmo exercício da faculdade, não tem mais desculpas para não ficar formatado
+corretamente. Afinal, é muito rápido e fácil utilizá-los.</p>
+<p><strong>Para passar o Clean Up:</strong>  </p>
+<p>Selecione um projeto, um pacote, um arquivo .java ou mesmo ctrl + a no arquivo
+fonte, clique com o botão direito: Source > Clean Up.</p>
+<p>É isso. Espero que o código, além de performático e muito bom para as máquinas,
+também fique ótimo para ser lido pelos programadores!</p>
 <p>Abraço!</p>
             <div class="hr"></div>
             <a href="#" class="go-top">Go Top</a>
@@ -153,6 +136,10 @@ máquinas, também fique ótimo para ser lido pelos programadores!</p>
 </footer>        </div>
     </div>
 </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
     <script>
         var $top = $('.go-top');
 
@@ -175,6 +162,12 @@ máquinas, também fique ótimo para ser lido pelos programadores!</p>
         // don't scroll you back up the page.
         $('body').on('click', 'a[href="#"]', function(event) {
             event.preventDefault();
+        });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
         });
     </script>
     <script type="text/javascript">

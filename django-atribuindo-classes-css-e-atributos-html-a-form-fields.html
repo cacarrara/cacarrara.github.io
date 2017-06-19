@@ -21,37 +21,28 @@
         <title>Django - atribuindo classes CSS e atributos HTML a Form Fields // Caio Carrara // Desenvolvimento de software, Python, Internet Livre, negócios e ideias aleatórias. Não necessariamente nessa ordem</title>
 
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/theme/css/pure.css">
-    <link rel="stylesheet" href="/theme/css/pygments.css">
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".content").fitVids();
-        });
-    </script>
+    <link rel="stylesheet" href="/theme/css/pygments.css">
 </head>
 
 <body>
-<div class="pure-g-r" id="layout">
-    <div class="sidebar sidebar-article pure-u">
+<div class="pure-g" id="layout">
+    <div class="sidebar sidebar-article pure-u-1">
         <header class="header-article">
-            <hgroup>
-                <a href="/author/caio-carrara.html" title="See posts by Caio Carrara">
-                        <img class="avatar" alt="Caio Carrara" src="http://www.gravatar.com/avatar/eb1221b884c4b4e3016d34705530c8d1">
-                    <h2 class="article-info">Caio Carrara</h2>
-                </a>
-                <small class="about-author">Programador para o resto da vida. Falando sobre software e a vida.</small>
-                <h5>Published</h5>
-                <p>qua 15 abril 2015</p>
-                <a href="/">&larr;Home</a>
-            </hgroup>
+          <a href="/author/caio-carrara.html" title="See posts by Caio Carrara">
+                  <img alt="Caio Carrara" src="http://www.gravatar.com/avatar/eb1221b884c4b4e3016d34705530c8d1">
+              <h2 class="article-info">Caio Carrara</h2>
+          </a>
+          <small class="about-author">Programador para o resto da vida. Falando sobre software e a vida.</small>
+          <h5>Published</h5>
+          <p>qua 15 abril 2015</p>
+          <a href="/">&larr;Home</a>
         </header>
     </div>
-    <div class="pure-u">
+    <div class="pure-u-1">
         <div class="content">
             <section class="post">
                 <header class="post-header">
@@ -63,11 +54,27 @@
                 </header>
             </section>
             <h2>Django Fields e Widgets</h2>
-<p>Tentando simplificar as diversas complexidades que existem na criação e manipulação de formulários em uma aplicação web, o framework <a href="http://djangoproject.com">Django</a> abstrai o componente de formulário em um conjunto de classes <a href="http://python.org">Python</a>. Trabalhando dessa forma o desenvolvedor tem a possibilidade de definir diversos aspectos de um formulário simplesmente através de programação com <a href="http://python.org">Python</a>. Entre esses aspectos estão tanto os que atingem a camada de apresentação (HTML) quanto a camada de processamento no servidor.</p>
-<p>Nessa abordagem da abstração de formulários do <a href="http://djangoproject.com">Django</a> existem, entre outros, dois componentes importantes: os <a href="http://docs.djangoproject.com/en/1.8/ref/forms/fields/">Form Fields</a> e os <a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/">Widgets</a>. Enquanto a responsabilidade dos Fields é a de gerenciar os dados e validá-los em uma submissão ao servidor, os <a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/">Widgets</a> são responsáveis por definir como esses campos serão apresentados no navegador para o usuário final.</p>
-<p>Uma vez que são os <a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/">Widgets</a> que definem como um campo de um formulário irá se apresentar na página HTML, nada mais coerente do que o próprio Widget suportar a atribuição das classes CSS desse campo. Assim sendo, de acordo com a própria <a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#styling-widget-instances">documentação oficial</a> do <a href="http://djangoproject.com">Django</a>, a forma de se estilizar os campos no HTML é informando atributos adicionais ao Widget no momento de sua instanciação e atribuição ao respectivo Field. Vamos aos exemplos.</p>
+<p>Tentando simplificar as diversas complexidades que existem na criação e
+manipulação de formulários em uma aplicação web, o framework <a href="http://djangoproject.com">Django</a> abstrai o
+componente de formulário em um conjunto de classes <a href="http://python.org">Python</a>. Trabalhando dessa
+forma o desenvolvedor tem a possibilidade de definir diversos aspectos de um
+formulário simplesmente através de programação com <a href="http://python.org">Python</a>. Entre esses
+aspectos estão tanto os que atingem a camada de apresentação (HTML) quanto a
+camada de processamento no servidor.</p>
+<p>Nessa abordagem da abstração de formulários do <a href="http://djangoproject.com">Django</a> existem, entre outros,
+dois componentes importantes: os <a href="http://docs.djangoproject.com/en/1.8/ref/forms/fields/">Form Fields</a> e os <a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/">Widgets</a>. Enquanto a
+responsabilidade dos Fields é a de gerenciar os dados e validá-los em uma
+submissão ao servidor, os <a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/">Widgets</a> são responsáveis por definir como esses
+campos serão apresentados no navegador para o usuário final.</p>
+<p>Uma vez que são os <a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/">Widgets</a> que definem como um campo de um formulário irá se
+apresentar na página HTML, nada mais coerente do que o próprio Widget suportar a
+atribuição das classes CSS desse campo. Assim sendo, de acordo com a própria
+<a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#styling-widget-instances">documentação oficial</a> do <a href="http://djangoproject.com">Django</a>, a forma de se estilizar os campos no HTML é
+informando atributos adicionais ao Widget no momento de sua instanciação e
+atribuição ao respectivo Field. Vamos aos exemplos.</p>
 <h3>Estilizando Widgets</h3>
-<p>De acordo com a documentação oficial uma das maneiras de se atribuir classes CSS a um widget é a seguinte:</p>
+<p>De acordo com a documentação oficial uma das maneiras de se atribuir classes CSS
+a um widget é a seguinte:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CommentForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;special&#39;</span><span class="p">}))</span>
     <span class="n">url</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">URLField</span><span class="p">()</span>
@@ -75,7 +82,8 @@
 </pre></div>
 
 
-<p>Outra maneira de fazer essa atribuição é através do atributo widget da classe Meta. Em um <a href="https://docs.djangoproject.com/en/1.8/topics/forms/modelforms/">ModelForm</a>, por exemplo, a atribuição ficaria assim:</p>
+<p>Outra maneira de fazer essa atribuição é através do atributo widget da classe
+Meta. Em um <a href="https://docs.djangoproject.com/en/1.8/topics/forms/modelforms/">ModelForm</a>, por exemplo, a atribuição ficaria assim:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MeuModelForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">MeuModel</span>
@@ -87,7 +95,9 @@
 </pre></div>
 
 
-<p>Entretanto, sabemos muito bem que em aplicações reais não somente o atributo class precisamos atribuir aos fields. Assim sendo o exemplo anterior pode facilmente evoluir para o seguinte exemplo:</p>
+<p>Entretanto, sabemos muito bem que em aplicações reais não somente o atributo
+class precisamos atribuir aos fields. Assim sendo o exemplo anterior pode
+facilmente evoluir para o seguinte exemplo:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MeuModelForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">MeuModel</span>
@@ -106,12 +116,33 @@
 </pre></div>
 
 
-<p>A tendência é que esse trecho do código aumente consideravelmente para formulários um pouco mais complexos, seja na quantidade de campos ou na forma com que os mesmos serão apresentados, precisando assim de classes CSS ou outros atributos HTML. Ainda assim, mesmo com mais código sendo produzido nesse ponto, não podemos negar que há certa organização.</p>
+<p>A tendência é que esse trecho do código aumente consideravelmente para
+formulários um pouco mais complexos, seja na quantidade de campos ou na forma
+com que os mesmos serão apresentados, precisando assim de classes CSS ou outros
+atributos HTML. Ainda assim, mesmo com mais código sendo produzido nesse ponto,
+não podemos negar que há certa organização.</p>
 <h3>Um problema ao se definir classes CSS nos atributos da classe Widget</h3>
-<p>Um problema que enfrentei recentemente relacionado à esse tema foi o de precisar voltar ao módulo de Forms (forms.py) somente para alterar o estilo de alguns formulários. Nessa oportunidade específica a pessoa que estava fazendo a manutenção nos templates ainda não tinha muito conhecimento de <a href="http://python.org">Python</a> e muito pouca familiaridade com a estrutura de um projeto <a href="http://djangoproject.com">Django</a>. Ela sabia muito bem de front-end e sabia se econtrar no diretório dos templates da aplicação apenas.</p>
-<p>Independente da experiência do desenvolvedor que estiver fazendo a manutenção dos formulários, se pensarmos um pouco, quando estamos alterando a apresentação de um form é muito mais comum nos encontrarmos manipulando arquivos de template, CSS e javascript do que o módulo <a href="http://python.org">Python</a> de formulários. Dessa forma, pelo menos na minha visão, seria preferível, na maior parte dos casos, definir as classes CSS no próprio arquivo de template do <a href="http://djangoproject.com">Django</a>, bem como os demais atributos HTML dos campos de um formulário.</p>
+<p>Um problema que enfrentei recentemente relacionado à esse tema foi o de precisar
+voltar ao módulo de Forms (forms.py) somente para alterar o estilo de alguns
+formulários. Nessa oportunidade específica a pessoa que estava fazendo a
+manutenção nos templates ainda não tinha muito conhecimento de <a href="http://python.org">Python</a> e muito
+pouca familiaridade com a estrutura de um projeto <a href="http://djangoproject.com">Django</a>. Ela sabia muito bem
+de front-end e sabia se econtrar no diretório dos templates da aplicação apenas.</p>
+<p>Independente da experiência do desenvolvedor que estiver fazendo a manutenção
+dos formulários, se pensarmos um pouco, quando estamos alterando a apresentação
+de um form é muito mais comum nos encontrarmos manipulando arquivos de template,
+CSS e javascript do que o módulo <a href="http://python.org">Python</a> de formulários. Dessa forma, pelo
+menos na minha visão, seria preferível, na maior parte dos casos, definir as
+classes CSS no próprio arquivo de template do <a href="http://djangoproject.com">Django</a>, bem como os demais
+atributos HTML dos campos de um formulário.</p>
 <h3>Utilizando django-widget-tweaks</h3>
-<p>A <a href="https://github.com/kmike/django-widget-tweaks">django-widget-tweaks</a> é uma biblioteca simples, direta e bem feita, que permite que possamos ajustar classes CSS e atributos HTML dos <a href="http://docs.djangoproject.com/en/1.8/ref/forms/fields/">Form Fields</a> do <a href="http://djangoproject.com">Django</a> nos próprios arquivos de template. Ela possibilita que desenvolvedores possam atualizar arquivos de template sem precisar se envolver diretamente com códigos <a href="http://python.org">Python</a>. Essa é uma grande vantagem quando se tem equipes com conhecimentos distintos ou mesmo quando se precisa pragmaticamente separar as definições de apresentação das instruções de código <a href="http://python.org">Python</a>.</p>
+<p>A <a href="https://github.com/kmike/django-widget-tweaks">django-widget-tweaks</a> é uma biblioteca simples, direta e bem feita, que
+permite que possamos ajustar classes CSS e atributos HTML dos <a href="http://docs.djangoproject.com/en/1.8/ref/forms/fields/">Form Fields</a> do
+<a href="http://djangoproject.com">Django</a> nos próprios arquivos de template. Ela possibilita que desenvolvedores
+possam atualizar arquivos de template sem precisar se envolver diretamente com
+códigos <a href="http://python.org">Python</a>. Essa é uma grande vantagem quando se tem equipes com
+conhecimentos distintos ou mesmo quando se precisa pragmaticamente separar as
+definições de apresentação das instruções de código <a href="http://python.org">Python</a>.</p>
 <p>Para utilizar a lib basta instalá-la através do <a href="http://caiocarrara.com.br/virtualenv-instalacao-e-utilizacao.html">pip</a>:</p>
 <div class="highlight"><pre><span></span>$ pip install django-widget-tweaks
 </pre></div>
@@ -125,7 +156,8 @@
 </pre></div>
 
 
-<p>Uma das formas de utilizá-la nos arquivos de template é através de <a href="https://docs.djangoproject.com/en/1.8/howto/custom-template-tags/#writing-custom-template-filters">filtros</a> como o a seguinte:</p>
+<p>Uma das formas de utilizá-la nos arquivos de template é através de <a href="https://docs.djangoproject.com/en/1.8/howto/custom-template-tags/#writing-custom-template-filters">filtros</a>
+como o a seguinte:</p>
 <div class="highlight"><pre><span></span>{% load widget_tweaks %}
 
 <span class="c">&lt;!-- adiciona 2 novas classes ao campo --&gt;</span>
@@ -133,7 +165,8 @@
 </pre></div>
 
 
-<p>Outros atributos HTML também podem ser atribuídos de maneira semelhante com filtros:</p>
+<p>Outros atributos HTML também podem ser atribuídos de maneira semelhante com
+filtros:</p>
 <div class="highlight"><pre><span></span>{% load widget_tweaks %}
 
 <span class="c">&lt;!-- muda o tipo do campo, por exemplo para conformidade com HTML5 --&gt;</span>
@@ -147,7 +180,8 @@
 </pre></div>
 
 
-<p>Mais detalhes e informações sobre a django-widget-tweaks podem ser encontrados no completo <a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#styling-widget-instances">README</a> do projeto no github. Não deixe de conferir se quiser usar.</p>
+<p>Mais detalhes e informações sobre a django-widget-tweaks podem ser encontrados
+no completo <a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#styling-widget-instances">README</a> do projeto no github. Não deixe de conferir se quiser usar.</p>
 <p>Até a próxima!</p>
             <div class="hr"></div>
             <a href="#" class="go-top">Go Top</a>
@@ -178,6 +212,10 @@
 </footer>        </div>
     </div>
 </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
     <script>
         var $top = $('.go-top');
 
@@ -200,6 +238,12 @@
         // don't scroll you back up the page.
         $('body').on('click', 'a[href="#"]', function(event) {
             event.preventDefault();
+        });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
         });
     </script>
     <script type="text/javascript">

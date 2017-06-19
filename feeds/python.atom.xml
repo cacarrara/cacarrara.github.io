@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Caio Carrara - python</title><link href="/" rel="alternate"></link><link href="/feeds/python.atom.xml" rel="self"></link><id>/</id><updated>2015-04-15T01:30:00-03:00</updated><entry><title>Django - atribuindo classes CSS e atributos HTML a Form Fields</title><link href="/django-atribuindo-classes-css-e-atributos-html-a-form-fields.html" rel="alternate"></link><published>2015-04-15T01:30:00-03:00</published><updated>2015-04-15T01:30:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2015-04-15:/django-atribuindo-classes-css-e-atributos-html-a-form-fields.html</id><summary type="html">&lt;p&gt;Nesse post eu falo sobre a distinção de responsabilidades entre Fields e Widgets no sistema de formulários do Django e um potencial problema nessa maneira de abstrair o Form quanto à sua apresentação. Assim sendo eu proponho uma maneira de se trabalhar utilizando a lib django-widget-twaks para solucionar o problema apresentado, reforçando a separação de responsabilidade entre a camada de apresentação e a de lógica de negócios.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Django Fields e Widgets&lt;/h2&gt;
-&lt;p&gt;Tentando simplificar as diversas complexidades que existem na criação e manipulação de formulários em uma aplicação web, o framework &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt; abstrai o componente de formulário em um conjunto de classes &lt;a href="http://python.org"&gt;Python&lt;/a&gt;. Trabalhando dessa forma o desenvolvedor tem a possibilidade de definir diversos aspectos de um formulário simplesmente através de programação com &lt;a href="http://python.org"&gt;Python&lt;/a&gt;. Entre esses aspectos estão tanto os que atingem a camada de apresentação (HTML) quanto a camada de processamento no servidor.&lt;/p&gt;
-&lt;p&gt;Nessa abordagem da abstração de formulários do &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt; existem, entre outros, dois componentes importantes: os &lt;a href="http://docs.djangoproject.com/en/1.8/ref/forms/fields/"&gt;Form Fields&lt;/a&gt; e os &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/"&gt;Widgets&lt;/a&gt;. Enquanto a responsabilidade dos Fields é a de gerenciar os dados e validá-los em uma submissão ao servidor, os &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/"&gt;Widgets&lt;/a&gt; são responsáveis por definir como esses campos serão apresentados no navegador para o usuário final.&lt;/p&gt;
-&lt;p&gt;Uma vez que são os &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/"&gt;Widgets&lt;/a&gt; que definem como um campo de um formulário irá se apresentar na página HTML, nada mais coerente do que o próprio Widget suportar a atribuição das classes CSS desse campo. Assim sendo, de acordo com a própria &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#styling-widget-instances"&gt;documentação oficial&lt;/a&gt; do &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt;, a forma de se estilizar os campos no HTML é informando atributos adicionais ao Widget no momento de sua instanciação e atribuição ao respectivo Field. Vamos aos exemplos.&lt;/p&gt;
+&lt;p&gt;Tentando simplificar as diversas complexidades que existem na criação e
+manipulação de formulários em uma aplicação web, o framework &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt; abstrai o
+componente de formulário em um conjunto de classes &lt;a href="http://python.org"&gt;Python&lt;/a&gt;. Trabalhando dessa
+forma o desenvolvedor tem a possibilidade de definir diversos aspectos de um
+formulário simplesmente através de programação com &lt;a href="http://python.org"&gt;Python&lt;/a&gt;. Entre esses
+aspectos estão tanto os que atingem a camada de apresentação (HTML) quanto a
+camada de processamento no servidor.&lt;/p&gt;
+&lt;p&gt;Nessa abordagem da abstração de formulários do &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt; existem, entre outros,
+dois componentes importantes: os &lt;a href="http://docs.djangoproject.com/en/1.8/ref/forms/fields/"&gt;Form Fields&lt;/a&gt; e os &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/"&gt;Widgets&lt;/a&gt;. Enquanto a
+responsabilidade dos Fields é a de gerenciar os dados e validá-los em uma
+submissão ao servidor, os &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/"&gt;Widgets&lt;/a&gt; são responsáveis por definir como esses
+campos serão apresentados no navegador para o usuário final.&lt;/p&gt;
+&lt;p&gt;Uma vez que são os &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/"&gt;Widgets&lt;/a&gt; que definem como um campo de um formulário irá se
+apresentar na página HTML, nada mais coerente do que o próprio Widget suportar a
+atribuição das classes CSS desse campo. Assim sendo, de acordo com a própria
+&lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#styling-widget-instances"&gt;documentação oficial&lt;/a&gt; do &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt;, a forma de se estilizar os campos no HTML é
+informando atributos adicionais ao Widget no momento de sua instanciação e
+atribuição ao respectivo Field. Vamos aos exemplos.&lt;/p&gt;
 &lt;h3&gt;Estilizando Widgets&lt;/h3&gt;
-&lt;p&gt;De acordo com a documentação oficial uma das maneiras de se atribuir classes CSS a um widget é a seguinte:&lt;/p&gt;
+&lt;p&gt;De acordo com a documentação oficial uma das maneiras de se atribuir classes CSS
+a um widget é a seguinte:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CommentForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Form&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TextInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;special&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}))&lt;/span&gt;
     &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;URLField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -12,7 +28,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Outra maneira de fazer essa atribuição é através do atributo widget da classe Meta. Em um &lt;a href="https://docs.djangoproject.com/en/1.8/topics/forms/modelforms/"&gt;ModelForm&lt;/a&gt;, por exemplo, a atribuição ficaria assim:&lt;/p&gt;
+&lt;p&gt;Outra maneira de fazer essa atribuição é através do atributo widget da classe
+Meta. Em um &lt;a href="https://docs.djangoproject.com/en/1.8/topics/forms/modelforms/"&gt;ModelForm&lt;/a&gt;, por exemplo, a atribuição ficaria assim:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MeuModelForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ModelForm&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Meta&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MeuModel&lt;/span&gt;
@@ -24,7 +41,9 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Entretanto, sabemos muito bem que em aplicações reais não somente o atributo class precisamos atribuir aos fields. Assim sendo o exemplo anterior pode facilmente evoluir para o seguinte exemplo:&lt;/p&gt;
+&lt;p&gt;Entretanto, sabemos muito bem que em aplicações reais não somente o atributo
+class precisamos atribuir aos fields. Assim sendo o exemplo anterior pode
+facilmente evoluir para o seguinte exemplo:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MeuModelForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ModelForm&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Meta&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MeuModel&lt;/span&gt;
@@ -43,12 +62,33 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;A tendência é que esse trecho do código aumente consideravelmente para formulários um pouco mais complexos, seja na quantidade de campos ou na forma com que os mesmos serão apresentados, precisando assim de classes CSS ou outros atributos HTML. Ainda assim, mesmo com mais código sendo produzido nesse ponto, não podemos negar que há certa organização.&lt;/p&gt;
+&lt;p&gt;A tendência é que esse trecho do código aumente consideravelmente para
+formulários um pouco mais complexos, seja na quantidade de campos ou na forma
+com que os mesmos serão apresentados, precisando assim de classes CSS ou outros
+atributos HTML. Ainda assim, mesmo com mais código sendo produzido nesse ponto,
+não podemos negar que há certa organização.&lt;/p&gt;
 &lt;h3&gt;Um problema ao se definir classes CSS nos atributos da classe Widget&lt;/h3&gt;
-&lt;p&gt;Um problema que enfrentei recentemente relacionado à esse tema foi o de precisar voltar ao módulo de Forms (forms.py) somente para alterar o estilo de alguns formulários. Nessa oportunidade específica a pessoa que estava fazendo a manutenção nos templates ainda não tinha muito conhecimento de &lt;a href="http://python.org"&gt;Python&lt;/a&gt; e muito pouca familiaridade com a estrutura de um projeto &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt;. Ela sabia muito bem de front-end e sabia se econtrar no diretório dos templates da aplicação apenas.&lt;/p&gt;
-&lt;p&gt;Independente da experiência do desenvolvedor que estiver fazendo a manutenção dos formulários, se pensarmos um pouco, quando estamos alterando a apresentação de um form é muito mais comum nos encontrarmos manipulando arquivos de template, CSS e javascript do que o módulo &lt;a href="http://python.org"&gt;Python&lt;/a&gt; de formulários. Dessa forma, pelo menos na minha visão, seria preferível, na maior parte dos casos, definir as classes CSS no próprio arquivo de template do &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt;, bem como os demais atributos HTML dos campos de um formulário.&lt;/p&gt;
+&lt;p&gt;Um problema que enfrentei recentemente relacionado à esse tema foi o de precisar
+voltar ao módulo de Forms (forms.py) somente para alterar o estilo de alguns
+formulários. Nessa oportunidade específica a pessoa que estava fazendo a
+manutenção nos templates ainda não tinha muito conhecimento de &lt;a href="http://python.org"&gt;Python&lt;/a&gt; e muito
+pouca familiaridade com a estrutura de um projeto &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt;. Ela sabia muito bem
+de front-end e sabia se econtrar no diretório dos templates da aplicação apenas.&lt;/p&gt;
+&lt;p&gt;Independente da experiência do desenvolvedor que estiver fazendo a manutenção
+dos formulários, se pensarmos um pouco, quando estamos alterando a apresentação
+de um form é muito mais comum nos encontrarmos manipulando arquivos de template,
+CSS e javascript do que o módulo &lt;a href="http://python.org"&gt;Python&lt;/a&gt; de formulários. Dessa forma, pelo
+menos na minha visão, seria preferível, na maior parte dos casos, definir as
+classes CSS no próprio arquivo de template do &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt;, bem como os demais
+atributos HTML dos campos de um formulário.&lt;/p&gt;
 &lt;h3&gt;Utilizando django-widget-tweaks&lt;/h3&gt;
-&lt;p&gt;A &lt;a href="https://github.com/kmike/django-widget-tweaks"&gt;django-widget-tweaks&lt;/a&gt; é uma biblioteca simples, direta e bem feita, que permite que possamos ajustar classes CSS e atributos HTML dos &lt;a href="http://docs.djangoproject.com/en/1.8/ref/forms/fields/"&gt;Form Fields&lt;/a&gt; do &lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt; nos próprios arquivos de template. Ela possibilita que desenvolvedores possam atualizar arquivos de template sem precisar se envolver diretamente com códigos &lt;a href="http://python.org"&gt;Python&lt;/a&gt;. Essa é uma grande vantagem quando se tem equipes com conhecimentos distintos ou mesmo quando se precisa pragmaticamente separar as definições de apresentação das instruções de código &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A &lt;a href="https://github.com/kmike/django-widget-tweaks"&gt;django-widget-tweaks&lt;/a&gt; é uma biblioteca simples, direta e bem feita, que
+permite que possamos ajustar classes CSS e atributos HTML dos &lt;a href="http://docs.djangoproject.com/en/1.8/ref/forms/fields/"&gt;Form Fields&lt;/a&gt; do
+&lt;a href="http://djangoproject.com"&gt;Django&lt;/a&gt; nos próprios arquivos de template. Ela possibilita que desenvolvedores
+possam atualizar arquivos de template sem precisar se envolver diretamente com
+códigos &lt;a href="http://python.org"&gt;Python&lt;/a&gt;. Essa é uma grande vantagem quando se tem equipes com
+conhecimentos distintos ou mesmo quando se precisa pragmaticamente separar as
+definições de apresentação das instruções de código &lt;a href="http://python.org"&gt;Python&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Para utilizar a lib basta instalá-la através do &lt;a href="http://caiocarrara.com.br/virtualenv-instalacao-e-utilizacao.html"&gt;pip&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip install django-widget-tweaks
 &lt;/pre&gt;&lt;/div&gt;
@@ -62,7 +102,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Uma das formas de utilizá-la nos arquivos de template é através de &lt;a href="https://docs.djangoproject.com/en/1.8/howto/custom-template-tags/#writing-custom-template-filters"&gt;filtros&lt;/a&gt; como o a seguinte:&lt;/p&gt;
+&lt;p&gt;Uma das formas de utilizá-la nos arquivos de template é através de &lt;a href="https://docs.djangoproject.com/en/1.8/howto/custom-template-tags/#writing-custom-template-filters"&gt;filtros&lt;/a&gt;
+como o a seguinte:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{% load widget_tweaks %}
 
 &lt;span class="c"&gt;&amp;lt;!-- adiciona 2 novas classes ao campo --&amp;gt;&lt;/span&gt;
@@ -70,7 +111,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Outros atributos HTML também podem ser atribuídos de maneira semelhante com filtros:&lt;/p&gt;
+&lt;p&gt;Outros atributos HTML também podem ser atribuídos de maneira semelhante com
+filtros:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{% load widget_tweaks %}
 
 &lt;span class="c"&gt;&amp;lt;!-- muda o tipo do campo, por exemplo para conformidade com HTML5 --&amp;gt;&lt;/span&gt;
@@ -84,77 +126,101 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Mais detalhes e informações sobre a django-widget-tweaks podem ser encontrados no completo &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#styling-widget-instances"&gt;README&lt;/a&gt; do projeto no github. Não deixe de conferir se quiser usar.&lt;/p&gt;
-&lt;p&gt;Até a próxima!&lt;/p&gt;</content><category term="python"></category><category term="django"></category></entry><entry><title>Migrando do Wordpress para o Pelican</title><link href="/migrando-do-wordpress-para-o-pelican.html" rel="alternate"></link><published>2014-09-02T00:45:00-03:00</published><updated>2014-09-02T00:45:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2014-09-02:/migrando-do-wordpress-para-o-pelican.html</id><summary type="html">&lt;p&gt;Aqui eu explico quais os motivos me levaram a migrar meu antigo blog Wordpress para Pelican + Github Pages. Além disso explico passo a passo como fazer essa migração.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hoje pela manhã eu terminei a migração desse meu blog do &lt;a href="http://wordpress.org"&gt;Wordpress&lt;/a&gt; para o &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;. Eu utilizava o antigo 
-sistema gerenciador de conteúdo há algum tempo, desde quando comecei as atividades aqui no &lt;em&gt;caiocarrara.com.br&lt;/em&gt;. 
-Na ocasião era a única ferramenta que conhecia e eu achava fácil para instalar e customizar, portanto foi a 
-escolha mais óbvia para mim. De lá para cá, ainda que a utilização não tenha sido intensa, e talvez justamente por isso, 
-o Wordpress estava suprindo minhas necessidades. Nos últimos dias comecei acessá-lo regularmente para rascunhar alguns 
-artigos e juntamente com a utilização mais recorrente eu comecei a desgostar da ferramenta.  &lt;/p&gt;
-&lt;p&gt;Assim como é muito mais rápido e convidativo abrir um editor de textos como o &lt;a href="http://sublimetext.com"&gt;Sublime&lt;/a&gt; do que uma IDE como o &lt;a href="http://eclipse.org"&gt;Eclipse&lt;/a&gt; para 
-programar, ou mesmo o console interativo do &lt;a href="http://python.org"&gt;Python&lt;/a&gt; para uma validação de código rápida, acho muito mais convidativo abrir um editor
-de textos simples de minha preferência para rascunhar e escrever um artigo do que ter que sofrer as "intempéries" da Internet 
-brasileira para abrir uma página de autenticação, se autenticar, clicar para escrever um post, esperar todo aquele editor 
-de textos com recursos que raramente utilizo carregar para só então colocar um pedaço de ideia "no papel". Muitas vezes um 
-texto é construído com a união de pequenas ideias que vão aparecendo. Repetir esse ciclo todo e juntar todas as ideias 
-estava ficando lento. Naturalmente passei a anotar minhas ideias em arquivos de texto simples e o Pelican então caiu como 
-uma luva!&lt;/p&gt;
+&lt;p&gt;Mais detalhes e informações sobre a django-widget-tweaks podem ser encontrados
+no completo &lt;a href="https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#styling-widget-instances"&gt;README&lt;/a&gt; do projeto no github. Não deixe de conferir se quiser usar.&lt;/p&gt;
+&lt;p&gt;Até a próxima!&lt;/p&gt;</content><category term="python"></category><category term="django"></category></entry><entry><title>Migrando do Wordpress para o Pelican</title><link href="/migrando-do-wordpress-para-o-pelican.html" rel="alternate"></link><published>2014-09-02T00:45:00-03:00</published><updated>2014-09-02T00:45:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2014-09-02:/migrando-do-wordpress-para-o-pelican.html</id><summary type="html">&lt;p&gt;Aqui eu explico quais os motivos me levaram a migrar meu antigo blog Wordpress para Pelican + Github Pages. Além disso explico passo a passo como fazer essa migração.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hoje pela manhã eu terminei a migração desse meu blog do &lt;a href="http://wordpress.org"&gt;Wordpress&lt;/a&gt; para o
+&lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt;. Eu utilizava o antigo sistema gerenciador de conteúdo há algum tempo,
+desde quando comecei as atividades aqui no &lt;em&gt;caiocarrara.com.br&lt;/em&gt;.  Na ocasião era
+a única ferramenta que conhecia e eu achava fácil para instalar e customizar,
+portanto foi a escolha mais óbvia para mim. De lá para cá, ainda que a
+utilização não tenha sido intensa, e talvez justamente por isso, o Wordpress
+estava suprindo minhas necessidades. Nos últimos dias comecei acessá-lo
+regularmente para rascunhar alguns artigos e juntamente com a utilização mais
+recorrente eu comecei a desgostar da ferramenta.  &lt;/p&gt;
+&lt;p&gt;Assim como é muito mais rápido e convidativo abrir um editor de textos como o
+&lt;a href="http://sublimetext.com"&gt;Sublime&lt;/a&gt; do que uma IDE como o &lt;a href="http://eclipse.org"&gt;Eclipse&lt;/a&gt; para programar, ou mesmo o console
+interativo do &lt;a href="http://python.org"&gt;Python&lt;/a&gt; para uma validação de código rápida, acho muito mais
+convidativo abrir um editor de textos simples de minha preferência para
+rascunhar e escrever um artigo do que ter que sofrer as "intempéries" da
+Internet brasileira para abrir uma página de autenticação, se autenticar, clicar
+para escrever um post, esperar todo aquele editor de textos com recursos que
+raramente utilizo carregar para só então colocar um pedaço de ideia "no papel".
+Muitas vezes um texto é construído com a união de pequenas ideias que vão
+aparecendo. Repetir esse ciclo todo e juntar todas as ideias estava ficando
+lento. Naturalmente passei a anotar minhas ideias em arquivos de texto simples e
+o Pelican então caiu como uma luva!&lt;/p&gt;
 &lt;h3&gt;Pelican&lt;/h3&gt;
-&lt;p&gt;Basicamente o Pelican é um gerador de páginas HTML estáticas. Ele faz seu trabalho a partir de arquivos de textos com 
-marcações especiais, como o &lt;a href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt; ou o &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; (minha preferência). Eu poderia me aprofundar nessa parte, 
-mas o &lt;a href="http://twitter.com/Arthur_4lves"&gt;Arthur Alves&lt;/a&gt; já fez um belo trabalho lá no PythonClub explicando bem o Pelican no seu artigo &lt;a href="http://pythonclub.com.br/criando-sites-estaticos-com-pelican.html"&gt;Criando sites estáticos 
-com Pelican Framework&lt;/a&gt;. Se alguém quiser saber mais os fundamentos do Pelican, esse artigo será ótimo!&lt;/p&gt;
+&lt;p&gt;Basicamente o Pelican é um gerador de páginas HTML estáticas. Ele faz seu
+trabalho a partir de arquivos de textos com marcações especiais, como o
+&lt;a href="http://docutils.sourceforge.net/rst.html"&gt;reStructuredText&lt;/a&gt; ou o &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; (minha preferência). Eu poderia me aprofundar
+nessa parte, mas o &lt;a href="http://twitter.com/Arthur_4lves"&gt;Arthur Alves&lt;/a&gt; já fez um belo trabalho lá no PythonClub
+explicando bem o Pelican no seu artigo &lt;a href="http://pythonclub.com.br/criando-sites-estaticos-com-pelican.html"&gt;Criando sites estáticos com Pelican
+Framework&lt;/a&gt;. Se alguém quiser saber mais os fundamentos do Pelican, esse artigo
+será ótimo!&lt;/p&gt;
 &lt;h3&gt;Migrando Wordpress para o Pelican&lt;/h3&gt;
-&lt;p&gt;Depois de brincar um pouco com o Pelican e me sentir um pouco mais familiarizado com o gerador e seus comandos resolvi 
-colocar a mão na massa e partir para a migração. A seguir vou colocar uma receitinha de como fazer isso, os passos são os 
-que lembro de ter feito.  &lt;/p&gt;
-&lt;p&gt;O Pelican já possui uma ferramenta que faz todo o trabalho pesado de importação pra gente, chama-se &lt;code&gt;pelican-import&lt;/code&gt;. Esse 
-recurso atua sobre o xml de exportação gerado em seu site Wordpress. Para gerar esse arquivo acesse o painel de administração 
-do seu Wordpress, no meu lateral esquerdo acesse &lt;code&gt;Tools &amp;gt; Export&lt;/code&gt;. No meu caso eu selecionei para exportar &lt;code&gt;All Content&lt;/code&gt; e 
-cliquei para fazer o download.  &lt;/p&gt;
-&lt;p&gt;Tendo o arquivo xml gerado, vamos certificar de ter instalado as dependências para se importar o conteúdo do XML. O Pelican 
-utiliza os pacotes &lt;em&gt;BeautifulSoup4&lt;/em&gt; e &lt;em&gt;lxml&lt;/em&gt;. A instalação é feita como com qualquer outro pacote:&lt;/p&gt;
+&lt;p&gt;Depois de brincar um pouco com o Pelican e me sentir um pouco mais familiarizado
+com o gerador e seus comandos resolvi colocar a mão na massa e partir para a
+migração. A seguir vou colocar uma receitinha de como fazer isso, os passos são
+os que lembro de ter feito.  &lt;/p&gt;
+&lt;p&gt;O Pelican já possui uma ferramenta que faz todo o trabalho pesado de importação
+pra gente, chama-se &lt;code&gt;pelican-import&lt;/code&gt;. Esse recurso atua sobre o xml de
+exportação gerado em seu site Wordpress. Para gerar esse arquivo acesse o painel
+de administração do seu Wordpress, no meu lateral esquerdo acesse &lt;code&gt;Tools &amp;gt;
+Export&lt;/code&gt;. No meu caso eu selecionei para exportar &lt;code&gt;All Content&lt;/code&gt; e cliquei para
+fazer o download.  &lt;/p&gt;
+&lt;p&gt;Tendo o arquivo xml gerado, vamos certificar de ter instalado as dependências
+para se importar o conteúdo do XML. O Pelican utiliza os pacotes
+&lt;em&gt;BeautifulSoup4&lt;/em&gt; e &lt;em&gt;lxml&lt;/em&gt;. A instalação é feita como com qualquer outro pacote:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip install BeautifulSoup4 lxml
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Estando com as dependências em ordem, já podemos rodar o &lt;code&gt;pelican-import&lt;/code&gt;. Esse utilitário é capaz de importar um site 
-de diversas fontes para o formato esperado pelo Pelican. Como estamos focando no Wordpress, o comando é o seguinte:  &lt;/p&gt;
+&lt;p&gt;Estando com as dependências em ordem, já podemos rodar o &lt;code&gt;pelican-import&lt;/code&gt;. Esse
+utilitário é capaz de importar um site de diversas fontes para o formato
+esperado pelo Pelican. Como estamos focando no Wordpress, o comando é o
+seguinte:  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pelican-import --wpfile -m -o content/ /path/to/export.xml
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;No comando acima, além da chamada do utilitário de importação foram passados alguns parâmetros:  &lt;/p&gt;
+&lt;p&gt;No comando acima, além da chamada do utilitário de importação foram passados
+alguns parâmetros:  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;--wpfile&lt;/code&gt;: indica que a importação deverá utilizar um arquivo XML de exportação do Wordpress;  &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-m&lt;/code&gt;: indica que o arquivo de saída deverá estar no formado Markdown. O padrão é rst;  &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-o content/&lt;/code&gt;: indica o diretório nos quais os arquivos Mardown gerados deverão ser escritos;  &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;/path/to/export.xml&lt;/code&gt;: o arquivo exportado do Wordpress.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Para testar a importação, basta executar o Pelican para gerar os arquivos html estáticos e rodar o servidor HTTP 
-de desenvolvimento:  &lt;/p&gt;
+&lt;p&gt;Para testar a importação, basta executar o Pelican para gerar os arquivos html
+estáticos e rodar o servidor HTTP de desenvolvimento:  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pelican content
 $ ./development_server.sh start
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Acesse &lt;code&gt;localhost:8000&lt;/code&gt; para ver como ficou.  &lt;/p&gt;
-&lt;p&gt;No geral e para os tipos de posts e páginas que eu tinha no meu Wordpress essa sequência simples foi praticamente o 
-suficiente. Adicionalmente eu precisei editar alguns links que ficaram quebrados e fazer algumas melhorias 
-nos &lt;em&gt;metadata&lt;/em&gt; dos arquivos do Pelican.  &lt;/p&gt;
+&lt;p&gt;No geral e para os tipos de posts e páginas que eu tinha no meu Wordpress essa
+sequência simples foi praticamente o suficiente. Adicionalmente eu precisei
+editar alguns links que ficaram quebrados e fazer algumas melhorias nos
+&lt;em&gt;metadata&lt;/em&gt; dos arquivos do Pelican.  &lt;/p&gt;
 &lt;h3&gt;Deploy no Github Pages&lt;/h3&gt;
-&lt;p&gt;Antes eu usava uma hospedagem particular para rodar o Wordpress, mas agora com as páginas estáticas eu não tenho mais 
-a necessidade de ter o &lt;a href="http://php.net"&gt;PHP&lt;/a&gt; e &lt;a href="http://mysql.com"&gt;MySql&lt;/a&gt;, basta um servidor &lt;a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"&gt;HTTP&lt;/a&gt; bem simples. Resolvi simplificar ainda mais e  delegar isso 
-para o serviço provido pelo próprio &lt;a href="http://github.com"&gt;Github&lt;/a&gt;, o &lt;a href="http://pages.github.com"&gt;Github Pages&lt;/a&gt;. Essa foi a escolha mais imediata pois já  estou utilizando 
-o Github para versionar os meus artigos.  &lt;/p&gt;
-&lt;p&gt;Todo usuário do Github já possui previamente uma conta no serviço &lt;a href="http://pages.github.com"&gt;Pages&lt;/a&gt;, basta criar um repositório cujo nome seja 
-&lt;code&gt;[username].github.io&lt;/code&gt;. No meu caso o repositório ficou com o nome &lt;code&gt;cacarrara.github.io&lt;/code&gt;. Os arquivos que estiverem 
-no branch &lt;code&gt;master&lt;/code&gt; desse repositório são utilizados pelo Pages para exibir as páginas do site na url com o mesmo 
-nome do repositório criado.  &lt;/p&gt;
-&lt;p&gt;Seguindo a mesma ideia do pessoal do &lt;a href="http://pythonclub.com.br"&gt;PythonClub&lt;/a&gt;, eu criei um branch chamado &lt;code&gt;pelican&lt;/code&gt; para os arquivos do 
-Pelican e os &lt;em&gt;Markdown&lt;/em&gt; originais das minhas publicações e o branch &lt;code&gt;master&lt;/code&gt; abriga somente as páginas html geradas. Para 
-ajudar um pouco nesse processo de subir para o Github os arquivos a cada geração, eu utilizo um utilitário chamado 
-&lt;code&gt;ghp-import&lt;/code&gt;. Para instalá-lo utilize o &lt;em&gt;pip&lt;/em&gt; também:  &lt;/p&gt;
+&lt;p&gt;Antes eu usava uma hospedagem particular para rodar o Wordpress, mas agora com
+as páginas estáticas eu não tenho mais a necessidade de ter o &lt;a href="http://php.net"&gt;PHP&lt;/a&gt; e &lt;a href="http://mysql.com"&gt;MySql&lt;/a&gt;,
+basta um servidor &lt;a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"&gt;HTTP&lt;/a&gt; bem simples. Resolvi simplificar ainda mais e  delegar
+isso para o serviço provido pelo próprio &lt;a href="http://github.com"&gt;Github&lt;/a&gt;, o &lt;a href="http://pages.github.com"&gt;Github Pages&lt;/a&gt;. Essa foi a
+escolha mais imediata pois já  estou utilizando o Github para versionar os meus
+artigos.  &lt;/p&gt;
+&lt;p&gt;Todo usuário do Github já possui previamente uma conta no serviço &lt;a href="http://pages.github.com"&gt;Pages&lt;/a&gt;, basta
+criar um repositório cujo nome seja &lt;code&gt;[username].github.io&lt;/code&gt;. No meu caso o
+repositório ficou com o nome &lt;code&gt;cacarrara.github.io&lt;/code&gt;. Os arquivos que estiverem no
+branch &lt;code&gt;master&lt;/code&gt; desse repositório são utilizados pelo Pages para exibir as
+páginas do site na url com o mesmo nome do repositório criado.  &lt;/p&gt;
+&lt;p&gt;Seguindo a mesma ideia do pessoal do &lt;a href="http://pythonclub.com.br"&gt;PythonClub&lt;/a&gt;, eu criei um branch chamado
+&lt;code&gt;pelican&lt;/code&gt; para os arquivos do Pelican e os &lt;em&gt;Markdown&lt;/em&gt; originais das minhas
+publicações e o branch &lt;code&gt;master&lt;/code&gt; abriga somente as páginas html geradas. Para
+ajudar um pouco nesse processo de subir para o Github os arquivos a cada
+geração, eu utilizo um utilitário chamado &lt;code&gt;ghp-import&lt;/code&gt;. Para instalá-lo utilize
+o &lt;em&gt;pip&lt;/em&gt; também:  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip install ghp-import
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -167,58 +233,57 @@ ajudar um pouco nesse processo de subir para o Github os arquivos a cada geraç�
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;output&lt;/code&gt;: indica o diretório onde estão os arquivos gerados pelo Pelican  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;O comando &lt;code&gt;ghp-import&lt;/code&gt; atualiza o branch local de nome &lt;code&gt;gh-pages&lt;/code&gt; com o conteúdo do diretório &lt;code&gt;output&lt;/code&gt;. Depois disso, basta fazer 
-o &lt;code&gt;push&lt;/code&gt; do branch &lt;code&gt;gh-pages&lt;/code&gt; para o branch &lt;code&gt;master&lt;/code&gt; do reposiório remoto:  &lt;/p&gt;
+&lt;p&gt;O comando &lt;code&gt;ghp-import&lt;/code&gt; atualiza o branch local de nome &lt;code&gt;gh-pages&lt;/code&gt; com o conteúdo
+do diretório &lt;code&gt;output&lt;/code&gt;. Depois disso, basta fazer o &lt;code&gt;push&lt;/code&gt; do branch &lt;code&gt;gh-pages&lt;/code&gt;
+para o branch &lt;code&gt;master&lt;/code&gt; do reposiório remoto:  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git push origin gh-pages:master
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;E pronto! Pode ser que a sincronia do Github Pages demore um pouquinho para de fato publicar a primeira versão da sua página, 
-mas se tudo deu certo logo estará no ar!&lt;/p&gt;
-&lt;p&gt;Além disso também atualizei meu DNS para utilizar o domínio caiocarrara.com.br no Github Pages, caso essa também seja a 
-vontade de quem lê esse artigo, recomendo a própria documentação do Github para isso: &lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages"&gt;Github Pages - Custom URLs&lt;/a&gt;. Qualquer 
-dúvida deixa nos comentários que posso ajudar!  &lt;/p&gt;
-&lt;p&gt;Para quem quiser dar uma olhada, o repositório desse site está no meu Github: &lt;a href="https://github.com/cacarrara/cacarrara.github.io/"&gt;cacarrara.github.io&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Bom, é isso. Até a próxima! &lt;/p&gt;</content><category term="python"></category><category term="pelican"></category></entry><entry><title>Python: breve introdução</title><link href="/python-breve-introducao.html" rel="alternate"></link><published>2013-11-28T21:07:00-02:00</published><updated>2013-11-28T21:07:00-02:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2013-11-28:/python-breve-introducao.html</id><summary type="html">&lt;p&gt;Slides da minha apresentação de introdução da linguagem Python para alunos da faculdade Pitágoras de Votorantim/SP.&lt;/p&gt;</summary><content type="html">&lt;p&gt;No começo do ano de 2013 tive a oportunidade de apresentar a linguagem
-Python em um seminário de tecnologia promovido pela faculdade Pitágoras
-de Votorantim/SP. O público era de estudantes de cursos de computação.
-Infelizmente eu não tive o prazer de conhecer Python durante minha
-graduação, portanto quando surgiu a oportunidade de mostrar algo
-diferente aos estudantes não pensei duas vezes.  &lt;/p&gt;
-&lt;p&gt;Agora estou compartilhando com vocês os slides da apresentação. Estão
-bem descritivos, para quem desejar um conhecimento rápido, pode ser bem
-útil:&lt;/p&gt;
+&lt;p&gt;E pronto! Pode ser que a sincronia do Github Pages demore um pouquinho para de
+fato publicar a primeira versão da sua página, mas se tudo deu certo logo estará
+no ar!&lt;/p&gt;
+&lt;p&gt;Além disso também atualizei meu DNS para utilizar o domínio caiocarrara.com.br
+no Github Pages, caso essa também seja a vontade de quem lê esse artigo,
+recomendo a própria documentação do Github para isso: &lt;a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages"&gt;Github Pages - Custom
+URLs&lt;/a&gt;. Qualquer dúvida deixa nos comentários que posso ajudar!  &lt;/p&gt;
+&lt;p&gt;Para quem quiser dar uma olhada, o repositório desse site está no meu Github:
+&lt;a href="https://github.com/cacarrara/cacarrara.github.io/"&gt;cacarrara.github.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Bom, é isso. Até a próxima! &lt;/p&gt;</content><category term="python"></category><category term="pelican"></category></entry><entry><title>Python: breve introdução</title><link href="/python-breve-introducao.html" rel="alternate"></link><published>2013-11-28T21:07:00-02:00</published><updated>2013-11-28T21:07:00-02:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2013-11-28:/python-breve-introducao.html</id><summary type="html">&lt;p&gt;Slides da minha apresentação de introdução da linguagem Python para alunos da faculdade Pitágoras de Votorantim/SP.&lt;/p&gt;</summary><content type="html">&lt;p&gt;No começo do ano de 2013 tive a oportunidade de apresentar a linguagem Python em
+um seminário de tecnologia promovido pela faculdade Pitágoras de Votorantim/SP.
+O público era de estudantes de cursos de computação.  Infelizmente eu não tive o
+prazer de conhecer Python durante minha graduação, portanto quando surgiu a
+oportunidade de mostrar algo diferente aos estudantes não pensei duas vezes.  &lt;/p&gt;
+&lt;p&gt;Agora estou compartilhando com vocês os slides da apresentação. Estão bem
+descritivos, para quem desejar um conhecimento rápido, pode ser bem útil:&lt;/p&gt;
 &lt;p&gt;Link: &lt;a href="https://speakerdeck.com/cacarrara/python-breve-introducao"&gt;https://speakerdeck.com/cacarrara/python-breve-introducao&lt;/a&gt;  &lt;/p&gt;
 &lt;p&gt;Aquele abraço!&lt;/p&gt;</content><category term="desenvolvimento"></category><category term="python"></category></entry><entry><title>Virtualenv: Instalação e utilização</title><link href="/virtualenv-instalacao-e-utilizacao.html" rel="alternate"></link><published>2013-11-24T18:08:00-02:00</published><updated>2013-11-24T18:08:00-02:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2013-11-24:/virtualenv-instalacao-e-utilizacao.html</id><summary type="html">&lt;p&gt;Virtualenv é uma ferramenta indispensável para quem desenvolve software utilizando Python. Nesse artigo mostro os motivos pelos quais você deveria utilizar e como fazer a instalação e configuração inicial.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;O que é virtualenv:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;De acordo com o próprio site do virtualenv, trata-se de uma ferramenta
-para a criação de ambientes Python isolados (ambientes virtuais, virtual
-environments, virtualenv). Essa própria descrição é bastante
-elucidativa, o que ainda pode estar em dúvida é a necessidade de se
-utilizar o virtualenv, ou de se ter ambientes isolados.&lt;/p&gt;
+&lt;p&gt;De acordo com o próprio site do virtualenv, trata-se de uma ferramenta para a
+criação de ambientes Python isolados (ambientes virtuais, virtual environments,
+virtualenv). Essa própria descrição é bastante elucidativa, o que ainda pode
+estar em dúvida é a necessidade de se utilizar o virtualenv, ou de se ter
+ambientes isolados.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Por que eu deveria utilizar o virtualenv?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Limitando-se às necessidades de um desenvolvedor, ambientes Python
-isolados são necessários pois possibilitam o desenvolvimento de soluções
-em diferentes vesões do Python e de seus módulos sem haver interferência
-entre os ambientes.&lt;/p&gt;
-&lt;p&gt;Um exemplo bastante prático que me fez utilizar o virtualenv pela
-primeira vez foi a necessidade de manutenção de um sistema desenvolvido
-em Django em uma versão mais antiga. Atualmente eu tenho o Django mais
-recente (1.5.1) instalado no meu ambiente real. Entretanto apareceu um
-freelancer para eu fazer a manutenção em um sistema que foi desenvolvido
-no Django 1.3.0. Logo, na preparação do ambiente para subir esse sistema
-na minha máquina eu pensei: e agora? Não estava nem um pouco disposto a
-reinstalar uma versão do Django.&lt;/p&gt;
-&lt;p&gt;Eu já tinha ouvido falar muito do virtualenv, mas não tinha realmente
-precisado utilizar, então sempre posterguei sua utilização, mas chegou a
-hora. Como fazer?&lt;/p&gt;
+&lt;p&gt;Limitando-se às necessidades de um desenvolvedor, ambientes Python isolados são
+necessários pois possibilitam o desenvolvimento de soluções em diferentes vesões
+do Python e de seus módulos sem haver interferência entre os ambientes.&lt;/p&gt;
+&lt;p&gt;Um exemplo bastante prático que me fez utilizar o virtualenv pela primeira vez
+foi a necessidade de manutenção de um sistema desenvolvido em Django em uma
+versão mais antiga. Atualmente eu tenho o Django mais recente (1.5.1) instalado
+no meu ambiente real. Entretanto apareceu um freelancer para eu fazer a
+manutenção em um sistema que foi desenvolvido no Django 1.3.0. Logo, na
+preparação do ambiente para subir esse sistema na minha máquina eu pensei: e
+agora? Não estava nem um pouco disposto a reinstalar uma versão do Django.&lt;/p&gt;
+&lt;p&gt;Eu já tinha ouvido falar muito do virtualenv, mas não tinha realmente precisado
+utilizar, então sempre posterguei sua utilização, mas chegou a hora. Como fazer?&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Instalando o virtualenv:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;A instalação do virtualenv é rápida, fácil e indolor. Vou mostrar como
-fiz no Fedora 18.&lt;/p&gt;
+&lt;p&gt;A instalação do virtualenv é rápida, fácil e indolor. Vou mostrar como fiz no
+Fedora 18.&lt;/p&gt;
 &lt;p&gt;Primeiro você deverá ter instalado o setuptools, caso não tenha siga as
-instruções da versão desejada em:
-&lt;a href="https://pypi.python.org/pypi/setuptools"&gt;https://pypi.python.org/pypi/setuptools&lt;/a&gt;. O setuptools é um ferramenta
-para a instalação, build, atualização e demais tarefas relativas à
-pacotes Python. A sua forma de utilização é bastante simples:&lt;/p&gt;
+instruções da versão desejada em: &lt;a href="https://pypi.python.org/pypi/setuptools"&gt;https://pypi.python.org/pypi/setuptools&lt;/a&gt;. O
+setuptools é um ferramenta para a instalação, build, atualização e demais
+tarefas relativas à pacotes Python. A sua forma de utilização é bastante
+simples:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# easy_install &amp;lt;Pacote_a_ser_instalado&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -229,13 +294,12 @@ pacotes Python. A sua forma de utilização é bastante simples:&lt;/p&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Utilizando o virtualenv:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Tendo o virtualenv instalado, é hora de colocarmos a mão na massa.
-Inicialmente escolha um diretório qualquer onde ficará o seu ambiente
-virtual. Caso esteja fazendo um ambiente dedicado à um projeto (que é
-meu caso), pode nomear o diretório com o nome do projeto. Você pode
-criar o diretório manualmente, caso o virtualenv seja utilizado com um
-diretório que não existe ele se encarrega de criá-lo, sendo assim vamos
-criar nosso ambiente:&lt;/p&gt;
+&lt;p&gt;Tendo o virtualenv instalado, é hora de colocarmos a mão na massa.  Inicialmente
+escolha um diretório qualquer onde ficará o seu ambiente virtual. Caso esteja
+fazendo um ambiente dedicado à um projeto (que é meu caso), pode nomear o
+diretório com o nome do projeto. Você pode criar o diretório manualmente, caso o
+virtualenv seja utilizado com um diretório que não existe ele se encarrega de
+criá-lo, sendo assim vamos criar nosso ambiente:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ virtualenv ~/meu_ambiente
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -247,15 +311,14 @@ diretório pode perceber que foram criados os subdiretórios:&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;lib:&lt;/strong&gt; módulos e bibliotecas python exclusivas para o ambiente&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;include:&lt;/strong&gt; headers exclusivos para o ambiente&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Pronto! O ambiente isolado já está criado. Estando no diretório do
-ambiente, para ativar o mesmo e não utilizar o ambiente Python do
-sistema basta o comando:&lt;/p&gt;
+&lt;p&gt;Pronto! O ambiente isolado já está criado. Estando no diretório do ambiente,
+para ativar o mesmo e não utilizar o ambiente Python do sistema basta o comando:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;~/meu_ambiente&lt;span class="o"&gt;]&lt;/span&gt;$ &lt;span class="nb"&gt;source&lt;/span&gt; bin/activate
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Você perceberá que o ambiente está ativado pelo próprio console, que
-agora está assim:&lt;/p&gt;
+&lt;p&gt;Você perceberá que o ambiente está ativado pelo próprio console, que agora está
+assim:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;meu_ambiente&lt;span class="o"&gt;)[&lt;/span&gt;~/meu_ambiente&lt;span class="o"&gt;]&lt;/span&gt;$
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -271,10 +334,10 @@ agora está assim:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;A instalação de pacotes e módulos no ambiente virtual do virtualenv é
-bem simples, como acabamos de ver caso tenha sido necessário instalar o
-pip. Estando com o ambiente ativado, vamos instalar o yolk (usado para
-listar os pacotes Python instalados):&lt;/p&gt;
+&lt;p&gt;A instalação de pacotes e módulos no ambiente virtual do virtualenv é bem
+simples, como acabamos de ver caso tenha sido necessário instalar o pip. Estando
+com o ambiente ativado, vamos instalar o yolk (usado para listar os pacotes
+Python instalados):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;meu_ambiente&lt;span class="o"&gt;)[&lt;/span&gt;~/meu_ambiente&lt;span class="o"&gt;]&lt;/span&gt;$ pip install yolk
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -285,24 +348,24 @@ listar os pacotes Python instalados):&lt;/p&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Instalando Django no ambiente virtual:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Como dito no início do post, a minha necessidade em utilizar o
-virtualenv foi para usar uma versão do Django específica para
-desenvolvimento. Assim sendo, caso deseje instalar uma versão
-determinada do framework, basta usar o pip para isso:&lt;/p&gt;
+&lt;p&gt;Como dito no início do post, a minha necessidade em utilizar o virtualenv foi
+para usar uma versão do Django específica para desenvolvimento. Assim sendo,
+caso deseje instalar uma versão determinada do framework, basta usar o pip para
+isso:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;meu_ambiente&lt;span class="o"&gt;)[&lt;/span&gt;~/meu_ambiente&lt;span class="o"&gt;]&lt;/span&gt;$ pip install &lt;span class="nv"&gt;Django&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.3.0
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;O comando acima irá instalar a versão 1.3.0 do framework. Após o término
-da instalação pode-se verificar através do yolk mais uma vez:&lt;/p&gt;
+&lt;p&gt;O comando acima irá instalar a versão 1.3.0 do framework. Após o término da
+instalação pode-se verificar através do yolk mais uma vez:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;meu_ambiente&lt;span class="o"&gt;)[&lt;/span&gt;~/meu_ambiente&lt;span class="o"&gt;]&lt;/span&gt;$ yolk -l
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;É isso ai! Já existe bastante material sobre a utilização do virtualenv
-pela internet, mas em português há poucos que sejam direto ao ponto,
-então resolvi escrever. Esse meu post baseou-se nas fontes abaixo que
-sugiro enormente a visita:&lt;/p&gt;
+&lt;p&gt;É isso ai! Já existe bastante material sobre a utilização do virtualenv pela
+internet, mas em português há poucos que sejam direto ao ponto, então resolvi
+escrever. Esse meu post baseou-se nas fontes abaixo que sugiro enormente a
+visita:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://pypi.python.org/pypi/setuptools/0.9.8"&gt;https://pypi.python.org/pypi/setuptools/0.9.8&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.virtualenv.org/en/latest/"&gt;http://www.virtualenv.org/en/latest/&lt;/a&gt;&lt;/li&gt;
