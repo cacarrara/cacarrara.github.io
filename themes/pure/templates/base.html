@@ -28,18 +28,20 @@
     <link href="{{ SITEURL }}/{{ FAVICON }}" rel="icon">
     {% endif %}
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pure.css">
-    {% block head_css %}{% endblock %}
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    {% block head_js %}{% endblock %}
+    {% block head_css %}{% endblock %}
 </head>
 
 <body>
     {% block content %}
     {% endblock %}
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
     <script>
         var $top = $('.go-top');
 
@@ -64,6 +66,7 @@
             event.preventDefault();
         });
     </script>
+    {% block extra_js %}{% endblock %}
     {% include 'analytics.html' %}
 </body>
 </html>
