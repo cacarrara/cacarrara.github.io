@@ -5,8 +5,6 @@ Slug: novo-desenvolvedor-na-olist
 Summary: Faz algum tempo que comecei a trabalhar na Olist e desde as primeiras semanas venho me surpreendendo positivamente. Surpresas não são incomuns quando você começa a trabalhar em um lugar novo. Porém depois de passar por diversas empresas diferentes nos últimos anos, não seria qualquer entusiasmo de emprego novo que me motivaria a parar para escrever.
 
 
-# Novo desenvolvedor na Olist
-
 ## O que posso dizer até agora
 
 ![](https://cdn-images-1.medium.com/max/800/1*XOUhKm9F285fBF078Q4xqA.png)
