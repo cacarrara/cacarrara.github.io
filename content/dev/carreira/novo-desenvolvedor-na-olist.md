@@ -7,8 +7,7 @@ Summary: Faz algum tempo que comecei a trabalhar na Olist e desde as primeiras s
 
 ## O que posso dizer até agora
 
-![](https://cdn-images-1.medium.com/max/800/1*XOUhKm9F285fBF078Q4xqA.png)
-<span class="figcaption_hack">Sem mimimi, um dos nossos valores</span>
+![sem mimimi, um dos nossos valores](https://cdn-images-1.medium.com/max/800/1*XOUhKm9F285fBF078Q4xqA.png)
 
 Faz algum tempo que comecei a trabalhar na [Olist](http://olist.com/) e desde as
 primeiras semanas venho me surpreendendo positivamente. Surpresas não são
