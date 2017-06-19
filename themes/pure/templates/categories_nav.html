@@ -1,0 +1,5 @@
+<p class="post-meta">
+  {% for category in categories %}
+    <a class="post-category" href="{{ SITEURL }}/{{ category.0.url }}">{{ category.0.name }}</a>
+  {% endfor %}
+</p>
