@@ -5,44 +5,51 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/index.html</loc>
-<lastmod>2017-06-19T10:21:34-00:00</lastmod>
+<lastmod>2017-06-22T18:19:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2017-06-19T10:21:34-00:00</lastmod>
+<lastmod>2017-06-22T18:19:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2017-06-19T10:21:34-00:00</lastmod>
+<lastmod>2017-06-22T18:19:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2017-06-19T10:21:34-00:00</lastmod>
+<lastmod>2017-06-22T18:19:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/contato.html</loc>
-<lastmod>2017-06-19T10:21:34-00:00</lastmod>
+<lastmod>2017-06-22T18:19:11-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
 </url>
 
 <url>
 <loc>/sobre.html</loc>
-<lastmod>2017-06-19T10:21:34-00:00</lastmod>
+<lastmod>2017-06-22T18:19:11-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
+</url>
+
+<url>
+<loc>/vim-formatando-json.html</loc>
+<lastmod>2017-06-22T18:00:00:%s</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
 </url>
 
 <url>
@@ -151,8 +158,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/category/dicas.html</loc>
+<lastmod>2017-06-22T18:00:00:%s</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/category/python.html</loc>
 <lastmod>2015-04-15T01:30:00:%s</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/desenvolvimento.html</loc>
+<lastmod>2017-06-22T18:00:00:%s</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/dicas.html</loc>
+<lastmod>2017-06-22T18:00:00:%s</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/vim.html</loc>
+<lastmod>2017-06-22T18:00:00:%s</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -174,13 +209,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/tag/django.html</loc>
 <lastmod>2015-04-15T01:30:00:%s</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/desenvolvimento.html</loc>
-<lastmod>2014-10-09T10:00:00:%s</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -264,7 +292,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/author/caio-carrara.html</loc>
-<lastmod>2017-05-06T13:00:00:%s</lastmod>
+<lastmod>2017-06-22T18:00:00:%s</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
