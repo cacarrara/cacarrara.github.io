@@ -1,5 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Caio Carrara - Caio Carrara</title><link href="/" rel="alternate"></link><link href="/feeds/caio-carrara.atom.xml" rel="self"></link><id>/</id><updated>2017-06-22T18:00:00-03:00</updated><entry><title>[vim] Formatando JSON</title><link href="/vim-formatando-json.html" rel="alternate"></link><published>2017-06-22T18:00:00-03:00</published><updated>2017-06-22T18:00:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2017-06-22:/vim-formatando-json.html</id><summary type="html">&lt;p&gt;Dica rápida de como formatar JSON dentro do vim&lt;/p&gt;</summary><content type="html">&lt;p&gt;Esse post inaugura uma nova seção aqui no blog. Regularmente postarei dicas
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Caio Carrara - Caio Carrara</title><link href="/" rel="alternate"></link><link href="/feeds/caio-carrara.atom.xml" rel="self"></link><id>/</id><updated>2017-07-05T01:40:00-03:00</updated><entry><title>Carta aberta a Rosie, da Serenata.</title><link href="/carta-aberta-a-rosie-da-serenata.html" rel="alternate"></link><published>2017-07-05T01:40:00-03:00</published><updated>2017-07-05T01:40:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2017-07-05:/carta-aberta-a-rosie-da-serenata.html</id><summary type="html">&lt;p&gt;Recentemente em conversa no Twitter acabou surgindo um questionamento sobre a forma com aque a robô Rosie, da operação Serenata de Amor, vinha atuando para dar publicidade e notificar parlamentares que tiveram gastos suspeitos detectados. Infelizmente desenvolver argumentos em 140 caracteres é complicado, portanto resolvi escrever essa Carta Aberta a Rosie da Serenata de Amor.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt; Importante &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Para melhor compreensão da carta, sugiro que você 1) conheça o projeto &lt;a href="https://serenatadeamor.org/"&gt;Serenata
+de Amor&lt;/a&gt; 2) leia o comunicado &lt;a href="https://medium.com/data-science-brigade/rosie-no-twitter-o-momento-mais-transparente-de-um-projeto-sobre-transpar%C3%AAncia-13d54cac9ea4"&gt;Rosie no Twitter: o momento mais transparente de
+um projeto sobre transparência&lt;/a&gt;.
+Também não deixe de acompanhar o blog do projeto &lt;a href="https://medium.com/data-science-brigade"&gt;Data Science Brigade&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Olá, Rosie. Tudo bom?&lt;/p&gt;
+&lt;p&gt;Sei que ultimamente você e sua equipe andam muito atarefados com o trabalho, mas
+espero que tenha um tempinho para ler essa carta.&lt;/p&gt;
+&lt;p&gt;Seria injusto se eu começasse falando qualquer outra coisa se não parabéns!
+Parabéns pela iniciativa, pelos resultados alcançados até agora e,
+principalmente, por se propor a fazer um trabalho que precisamos tanto enquanto
+sociedade e nos propomos tão pouco em realizar enquanto indivíduos. Um ser
+robótico como você pode viver muito mais e analisar o passado mais seguramente,
+mas em minha restrita capacidade humana, percebo que nos distanciamos cada vez
+mais do bem comum em detrimento do bem própio. O surgimento de propostas como a
+sua vão completamente de encontro ao fluxo comum dos seres humanos. Parabéns de
+verdade!&lt;/p&gt;
+&lt;p&gt;Eu fiquei sabendo que há um tempo atrás vocês (da Serenata de Amor) começaram a
+ter alguns problemas com o pessoal da Câmara dos Deputados. Realizaram as
+denúncias de gastos suspeitos e simplesmente não obtiveram respostas minimamente
+consideráveis. Imagino o quão frustrante isso deve ser para você. Para nós, seus
+seguidores e cidadãos brasileiros essa realidade é revoltante!&lt;/p&gt;
+&lt;p&gt;A alternativa que encontraram para tentar contornar esse problema é o principal
+motivo pelo qual lhe escrevo. Você passou a utilizar o &lt;a href="https://twitter.com/RosieDaSerenata"&gt;seu Twitter&lt;/a&gt; para avisar o
+deputado sobre as suspeitas em gastos encontradas e, em paralelo, dar
+publicidade ao fato em específico. Acho que foi um bom primeiro passo, agora
+precisamos avançar ainda mais.&lt;/p&gt;
+&lt;p&gt;Ao me deparar com suas postagens no twitter me veio a sensação de se colocar um
+suspeito de cometer um crime em uma espécie de "poste virtual". Com esse termo
+quero remeter mesmo às lamentáveis ocorrências onde a população civil prende
+suspeitos (ou mesmo criminosos comprovados) em postes em via pública para
+realizar a "justiça" da forma que bem entenderem. As penas nesses casos são tão
+lamentáveis quanto o crime realizado e, geralmente, se tornam ocorrências de
+novos crimes.&lt;/p&gt;
+&lt;p&gt;Uso essa analogia em função da manifestação pontual no Twitter parecer ser algo
+que tenta resolver um problema pela exposição, consequente humilhação e
+descrédito daquele que errou, e não necessariamente pela condenação ou
+questionamento do ato criminoso que veio a ser cometido (afinal a efetiva
+condenação de um indivíduo quem faz é o sistema judiciário). Pior, corremos o
+risco de cair no perigoso caminho de condenar primeiramente pessoas, e não atos.
+Já estamos um pouco nessa via, onde a corrupção e desvios comportamentais
+aparentemente ocorrem somente com "eles" (políticos, empresários, religiosos,
+poderosos, criminosos) e nunca com nós mesmos. Rosie, no mundo inexado de nós
+humanos, você precisa levar em consideração que nem sempre a compreensão de uma
+ação possui relação estrita com a intenção que a originou.&lt;/p&gt;
+&lt;p&gt;A sua vontade em trazer essa publicidade ao Twitter foi a de aumentar o acesso
+aos dados já públicos e a de promoção do debate incluindo mais gente na
+conversa. Acho que aqui também podemos trabalhar um pouco mais uma premissa
+importante: &lt;em&gt;rede social como um ambiente de promoção de diálogo.&lt;/em&gt; Infelizmente
+isso não é o que temos percebido, principalmente em tempos tão críticos
+politicamente como os que temos vivido. Sabemos que nessas redes tendemos a nos
+firmar em bolhas sociais onde somos protegidos por "mais do mesmo". De opiniões
+sobre qual a cor do vestido até questionamentos filosóficos. Em um ambiente
+homogêneo é menor, quando não nula, a evolução dos elementos por troca de
+informação ou conhecimento.&lt;/p&gt;
+&lt;p&gt;Outro evento bastante comum nesses meios digitais, quando há algum resquício de
+heterogeneidade de pensamentos, é o combate em dentrimento de diálogo. E aqui eu
+preciso remeter ao que falei no início desse texto. Temos nos distanciado do bem
+comum e nos firmado no bem próprio. Provavelmente eu tenha uma visão
+consideravelmente enviesada, mas predominantemente em relacões interpessoais
+digitais os ânimos afloram para o desentendimento e o combate.&lt;/p&gt;
+&lt;p&gt;Como deve ter percebido, sou bastante cético quanto ao diálogo nas redes
+sociais.  Entretanto não nego que sejam um meio efetivo para conseguir chegar
+até o cidadão. Pensando nas suas itenções quando trouxe a divulgação através do
+Twitter, acho que precisaríamos pensar em um meio mais apropriado para
+possivelmente promover algum debate, mas mais importante, potencializar a
+capacidade crítica das pessoas.&lt;/p&gt;
+&lt;p&gt;Dessa forma, eu sugeriria que houvesse a utilização de outro espaço virtual,
+preferencialmente fora dos domínios de grandes empresas digitais, para essa
+publicidade. Esse espaço deveria servir como um meio de potencializar a
+capacidade de compreensão de parte da realidade política do país. Talvez a forma
+mais eminente de começar a atuar nesse sentido, seja com dados históricos. A sua
+capacidade robódica é incrível e sei que poderia reunir inúmeros dados para nos
+ajudar a aprender com o passado para atuarmos no presente tentando melhorar
+nosso futuro.&lt;/p&gt;
+&lt;p&gt;Penso que precisamos tanto de apresentações gerais sobre os dados que você vem
+coletando e analisando, além de informações específicas dos Deputados.
+Informações gerais como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Proporção de deputados que tiveram gastos suspeitos;  &lt;/li&gt;
+&lt;li&gt;Dentre os deputados flagrados com irregularidades, proporção de deputados que foram notificados;&lt;/li&gt;
+&lt;li&gt;Proporção de deputados que responderam significativamente;&lt;/li&gt;
+&lt;li&gt;Proporção de parlamentares que devolveram dinheiro;&lt;/li&gt;
+&lt;li&gt;Relação de partidos e irregularidades em gastos;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As informações específicas de um Deputado também são importantes. Mas a
+apresentação com uma abordagem histórica desse indivíduo eu acredito ser mais
+construtiva do que a simples exposição pontual nas redes sociais. Já deve ter
+chego aos seus ouvidos biônicos uma representação dessa ideia que tive para
+apresentar as informações de um deputado:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.imgur.com/S8spoEC.png" alt="Sugestão de painel com
+informações de um deputado"&gt;&lt;/p&gt;
+&lt;p&gt;Esse espaço também pode ser destinado para documentar o posicionamento oficial
+do parlamentar, ainda que seja com links para outros meios (inclusive a rede
+social do deputado) e resoluções de casos suspeitos detectados. Como um exemplo
+de consequễncia positiva, seria menor a chance de ser perpetuado para a
+eternidade digital apenas um tweet seu (Rosie) onde há somente a identificação
+de um suspeito que, eventualmente já "cumpriu sua pena" ou que esclareceu
+possíveis equívicos.&lt;/p&gt;
+&lt;p&gt;Eu acredito que focando em exibições de dados gerais e, no que diz respeito ao
+indivíduo, focar em disponibilizar dados históricos que alimentem a opinião
+pública com informações, a Serenata pode ser ainda mais amorosa contribuindo
+efetivamente com a potencialização diálogo além da vida digital.&lt;/p&gt;
+&lt;p&gt;O assunto é longo e o trabalho mais ainda. Então vou ficando por aqui para que
+possamos racionalizar um pouco sobre isso. Fico disponível para prosseguir nesse
+papo ;)&lt;/p&gt;
+&lt;p&gt;Abraço!&lt;/p&gt;</content><category term="social"></category><category term="internet"></category><category term="serenata de amor"></category></entry><entry><title>[vim] Formatando JSON</title><link href="/vim-formatando-json.html" rel="alternate"></link><published>2017-06-22T18:00:00-03:00</published><updated>2017-06-22T18:00:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2017-06-22:/vim-formatando-json.html</id><summary type="html">&lt;p&gt;Dica rápida de como formatar JSON dentro do vim&lt;/p&gt;</summary><content type="html">&lt;p&gt;Esse post inaugura uma nova seção aqui no blog. Regularmente postarei dicas
 gerais e diretas. A ideia é servir mais como um caderno de anotações pra mim
 mesmo em consultas futuras mas que também pode ser útil pra mais alguém.&lt;/p&gt;
 &lt;p&gt;A primeira dica e bem simples. Como formatar JSON utilizando o vim:&lt;/p&gt;
