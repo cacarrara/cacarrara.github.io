@@ -60,10 +60,11 @@ outros assuntos com aplicações e exemplos em Python. Algumas sugestões são:
 
 Outra possibilidade é aprender Python através de cursos online. Ainda que haja
 diversas opções dessa modalidade disponíveis, aqui vale ressaltar o belo
-trabalho do professor  Fernando Massanori: o curso [Python para
-Zumbis](https://www.pycursos.com/python-para-zumbis/). O curso é completamente
-gratuito e vai desde as mais simples regras sintáticas de Python até programação
-orientada a objetos além de diversos outros apêndices com outros temas.
+trabalho do professor  [Fernando Massanori](https://twitter.com/fmasanori): o
+curso [Python para Zumbis](https://www.pycursos.com/python-para-zumbis/). O
+curso é completamente gratuito e vai desde as mais simples regras sintáticas de
+Python até programação orientada a objetos além de diversos outros apêndices com
+outros temas.
 
 Eu costumo dizer que programação é um ofício ao mesmo tempo prático e
 intelectual. Uma pessoa se torna ótima programadora quando dedica tempo para
