@@ -4,24 +4,25 @@ Tags: desenvolvimento, carreira
 Slug: do-python-ao-infinito-e-alem
 Summary: Muitas pessoas tem me perguntado como começar a estudar Python ou mesmo o que precisa aprender para arrumar um emprego e trabalhar com Python a maior parte do tempo. Com as experiências me relacionando com essas pessoas que desejam iniciar no desenvolvimento Python e na programação de uma forma mais ampla, percebo que o foco ainda está um pouco limitado sobre o que realmente significa trabalhar com desenvolvimento de software hoje em dia. Pensando em explorar um pouco esse tema vamos fazer uma viagem que irá do Python ao Infinito e Além!
 
-Estando trabalhando com Python por pelo menos os últinos 5 anos e envolvido com
+Estando trabalhando com Python por pelo menos os últimos 5 anos e envolvido com
 a comunidade, é comum aparecer diversas pessoas me perguntando como aprender
 Python, como começar a aprender ou mesmo até como encontrar um trabalho em que
 possa utilizar Python no dia-a-dia. Cada uma dessas perguntas possuem uma
 resposta diferente, mas que na realidade independem da linguagem de programação
 ou tecnologia que quer aprender ou com a qual quer trabalhar. Além disso, em
 especial ao questionamento sobre o trabalho com Python, vale a ressaltar que
-Python é uma pequena parte das exigências para de fato trabalhar com Python.
+saber Python é uma pequena parte das exigências para de fato trabalhar com
+Python.
 
 ##Começando estudar Python
 
-Gostaria de começar falando primeiro sobre o questionamento que se refere a como
-aprender determinada coisa, no nosso caso, a linguagem de programação Python.
-Essa é uma questão complexa de responder absolutamente porque varia de acordo
-com o perfil de cada pessoa. Há aqueles que aprendem melhor lendo um livro do
-começo ao fim, outros que aprendem melhor indo capítulo a capítulo do livro não
-necessariamente em uma ordem, outros preferem assistir uma série de vídeo aulas
-ou talvez até se debruçar sobre a própria documentação da linguagem.
+Gostaria de começar falando sobre o questionamento que se refere a como aprender
+determinada coisa, no nosso caso, a linguagem de programação Python.  Essa é uma
+questão complexa de responder absolutamente porque varia de acordo com o perfil
+de cada pessoa. Há aqueles que aprendem melhor lendo um livro do começo ao fim,
+outros que aprendem melhor indo capítulo a capítulo do livro não necessariamente
+em uma ordem, outros preferem assistir uma série de vídeo aulas ou talvez até se
+debruçar sobre a própria documentação da linguagem.
 
 Independente qual seja o método de aprendizagem mais indicado para cada pessoa,
 uma das vantagens do Python é a abundância de material em diversos formatos. Há
@@ -71,9 +72,9 @@ Brasil](https://wiki.python.org.br/ListaDeExercicios).
 A partir do momento que os tipos de exercícios de cursos de programação, como os
 que foram sugeridos acima, começarem a se tornar monótonos, há um próximo passo
 a seguir. Há diversas plataformas para exercitar a prática de programação de
-modo geral, independente da linguagem de programação escolhida.Muitas dessas
+modo geral, independente da linguagem de programação escolhida. Muitas dessas
 plataformas são integradas com outras de busca de emprego, o que pode inclusive
-ajudar a busca do primeiro emprego com Python. Um dos exemplos mais expoentes
+ajudar na busca do primeiro emprego com Python. Um dos exemplos mais expoentes
 dessas soluções é o [Hacker Rank](www.hackerrank.com).
 
 Como tantas outras atividades que podemos desempenhar, programar é uma das que a
@@ -98,11 +99,11 @@ todas as disciplinas englobadas dentro do contexto de Quality Assurance. Porém
 há uma considerável parcela dessas disciplinas que todo  profissional de
 desenvolvimento de software precisa dominar.
 
-Um dos destaques da linguagem Python é que ela já vem com as chamadas “bateriras
+Um dos destaques da linguagem Python é que ela já vem com as chamadas “baterias
 inclusas”. São as bibliotecas padrão da linguagem. Dentre elas há o framework
 para testes unitários, por exemplo. Uma boa leitura é a [própria documentação do
 unittest](https://docs.python.org/3.5/library/unittest.html) para quem já tem
-alguma noção de testes unitários .  Porém o framework padrão de Python para
+alguma noção de testes unitários. Porém o framework padrão de Python para
 testes unitários não é a única opção. Existe uma alternativa, bastante utilizada
 dentro do ecossistema Python, que é a biblioteca pytest. Uma leitura recomendada
 pode ser o livro:
@@ -113,11 +114,12 @@ Uma outra característica marcante da linguagem Python é a sua simplicidade
 sintática e foco na legibilidade das pessoas que a utiliza. Esse é um dos
 fatores da comunidade Python possuir pessoas das mais variadas áreas do
 conhecimento e não somente da computação. É comum em conferências nacionais e
-internacionais sobre Python encontrarmos estatísticos, biólogos, geólogos,
-jornalistas, dentre outros profissionais. Ou seja, sabendo programar em Python
-um profissional pode atuar em diversos segmentos e com diversas abordagens da
-computação moderna: data science, data mining, web scrapping, business
-intelligence, desenvolvimento web e de sistemas distribuídos, entre outros.
+internacionais sobre Python encontrarmos profissionais das áreas de estatística,
+biologia, geólogia, jornalismo, dentre outros. Ou seja, sabendo programar em
+Python um profissional pode atuar em diversos segmentos e com diversas
+abordagens da computação moderna: data science, data mining, web scrapping,
+business intelligence, desenvolvimento web e de sistemas distribuídos, entre
+outros.
 
 Dentro de cada uma das áreas de atuação citadas, há um universo vasto para ser
 explorado no quesito de conhecimento e ferramentas. Python pode ser uma das
@@ -169,16 +171,16 @@ tomada de decisão, é crucial para uma evolução saudável profissionalmente.
 Estamos em um momento da nossa história como sociedade e como profissionais onde
 ao mesmo tempo que vemos [carros no
 espaço](https://tecnoblog.net/233812/spacex-falcon-heavy-tesla-espaco/),
-foguetes pousando, também vemos um carro autônomos [tirar a vida de uma
+foguetes pousando, também vemos um carro autônomo [tirar a vida de uma
 pessoa](https://carros.uol.com.br/noticias/reuters/2018/03/19/mulher-morre-apos-ser-atropelada-por-suv-autonomo-do-uber-nos-eua.htm)
 que andava de bicicleta. Não chegaríamos em nenhuma das situações se não fosse
-pelo desenvolvimento de software e pelas atividades, e decisões, de diversos
-programadores.  Principalmente quando estamos iniciando na área de programação
-ou na carreira profissional, temos a falsa impressão de que nosso ofício diz
-respeito sobre a criação de programas de computador e escrita de código fonte.
-Talvez um dia de fato tenha sido, porém atualmente uma instrução escrita no
-editor de texto, é uma decisão tomada, com todos as implicações e desafios
-descritos acima.
+pelo desenvolvimento de software e pelas atividades, incluindo as decisões, de
+diversos programadores.  Principalmente quando estamos iniciando na área de
+programação ou na carreira profissional, temos a falsa impressão de que nosso
+ofício diz respeito sobre a criação de programas de computador e escrita de
+código fonte.  Talvez um dia de fato tenha sido, porém atualmente uma instrução
+escrita no editor de texto, é uma decisão tomada, com todos as implicações e
+desafios descritos acima.
 
 Programe em Python ou em qualquer outra linguagem. Mas entenda que desenvolver
 software nos dias de hoje é uma atividade altamente complexa e com uma bagagem
