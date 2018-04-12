@@ -29,27 +29,34 @@ uma das vantagens do Python é a abundância de material em diversos formatos. H
 incontáveis livros estritamente sobre a linguagem Python ou mesmo envolvendo
 outros assuntos com aplicações e exemplos em Python. Algumas sugestões são:
 
-* Pense em Python. Downey, Allen – um livro que ensina programação para quem
-  nunca programou, usando Python nos exemplos. Possui edição física  do livro ou
-  acesso gratutito através do site [Pense em
+* [Pense em Python. Downey,
+  Allen](https://novatec.com.br/livros/pense-em-python/) – um livro que ensina
+  programação para quem nunca programou, usando Python nos exemplos. Possui
+  edição física  do livro ou acesso gratutito através do site [Pense em
   Python](https://penseallen.github.io/PensePython2e/); 
 
-* Python para Desenvolvedores. Borges, Luiz Eduardo – um livro com abordagem
-  simples e linguagem direta. Uma ótima escolha para quem está começando com
-  Python.
+* [Python para Desenvolvedores. Borges, Luiz
+  Eduardo](https://novatec.com.br/livros/python-para-desenvolvedores/) – um
+  livro com abordagem simples e linguagem direta. Uma ótima escolha para quem
+  está começando com Python.
 
-* Python Fluente. Ramalho, Luciano – um dos melhores livros de Python lançado
-  recentemente, aclamado tanto nacionalmente quanto internacionalmente. É a
-  escolha certa para quem quer aprofundar o conhecimento em Python.
+* [Python Fluente. Ramalho,
+  Luciano](https://novatec.com.br/livros/pythonfluente/) – um dos melhores
+  livros de Python lançado recentemente, aclamado tanto nacionalmente quanto
+  internacionalmente. É a escolha certa para quem quer aprofundar o conhecimento
+  em Python.
 
-* Learning Python. Lutz, Mark – livro para quem já sabe programar e gostaria de
-  não ter somente uma abordagem superficial da linguagem. Um dos livros mais
-  completos, porém não complexo para quem está começando estudar Python. O livro
-  é antigo mas as ultimas edições já possui exemplos em Python 3.
+* [Learning Python. Lutz,
+  Mark](http://shop.oreilly.com/product/0636920028154.do) – livro para quem já
+  sabe programar e gostaria de não ter somente uma abordagem superficial da
+  linguagem. Um dos livros mais completos, porém não complexo para quem está
+  começando estudar Python. O livro é antigo mas as ultimas edições já possui
+  exemplos em Python 3.
 
-* Automate the Boring Stuff with Python. Sweigart, Al – livro também para quem
-  já sabe programar e gosta de estudar com uma abordagem mais prática. Nunca li,
-  mas já ouvi boas recomendações.
+* [Automate the Boring Stuff with Python. Sweigart,
+  Al](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593275994)
+  – livro também para quem já sabe programar e gosta de estudar com uma
+  abordagem mais prática. Nunca li, mas já ouvi boas recomendações.
 
 Outra possibilidade é aprender Python através de cursos online. Ainda que haja
 diversas opções dessa modalidade disponíveis, aqui vale ressaltar o belo
