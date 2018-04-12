@@ -4,6 +4,12 @@ Tags: desenvolvimento, carreira
 Slug: do-python-ao-infinito-e-alem
 Summary: Muitas pessoas tem me perguntado como começar a estudar Python ou mesmo o que precisa aprender para arrumar um emprego e trabalhar com Python a maior parte do tempo. Com as experiências me relacionando com essas pessoas que desejam iniciar no desenvolvimento Python e na programação de uma forma mais ampla, percebo que o foco ainda está um pouco limitado sobre o que realmente significa trabalhar com desenvolvimento de software hoje em dia. Pensando em explorar um pouco esse tema vamos fazer uma viagem que irá do Python ao Infinito e Além!
 
+*Disclaimer I:* esse artigo completo é indicado para iniciantes em programação
+ou iniciantes nos estudos da linguagem Python.
+
+*Disclaimer II:* se você já trabalha com Python, talvez a última parte desse
+artigo (Indo Além) seja a mais importante.
+
 Trabalhando com Python por pelo menos os últimos 5 anos e envolvido com
 a comunidade, é comum aparecer diversas pessoas me perguntando como aprender
 Python, como começar a aprender ou mesmo até como encontrar um trabalho em que
