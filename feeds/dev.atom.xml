@@ -111,7 +111,8 @@ testes unitários não é a única opção. Existe uma alternativa, bastante uti
 dentro do ecossistema Python, que é a biblioteca pytest. Uma leitura recomendada
 pode ser o livro:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Python Testing with pytest. Okken, Brian&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shop.oreilly.com/product/9781680502404.do"&gt;Python Testing with pytest. Okken,
+  Brian&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Uma outra característica marcante da linguagem Python é a sua simplicidade
 sintática e foco na legibilidade das pessoas que a utiliza. Esse é um dos
