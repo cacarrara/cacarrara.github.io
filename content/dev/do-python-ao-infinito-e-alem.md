@@ -89,7 +89,7 @@ a seguir. Há diversas plataformas para exercitar a prática de programação de
 modo geral, independente da linguagem de programação escolhida. Muitas dessas
 plataformas são integradas com outras de busca de emprego, o que pode inclusive
 ajudar na busca do primeiro emprego com Python. Um dos exemplos mais expoentes
-dessas soluções é o [Hacker Rank](www.hackerrank.com).
+dessas soluções é o [Hacker Rank](https://www.hackerrank.com/).
 
 Como tantas outras atividades que podemos desempenhar, programar é uma das que a
 prática também ajuda alcançar a perfeição. Portanto tenha constância nos estudos
