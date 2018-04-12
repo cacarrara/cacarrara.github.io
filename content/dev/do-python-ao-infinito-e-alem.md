@@ -30,7 +30,8 @@ outros assuntos com aplicações e exemplos em Python. Algumas sugestões são:
 
 * Pense em Python. Downey, Allen – um livro que ensina programação para quem
   nunca programou, usando Python nos exemplos. Possui edição física  do livro ou
-  acesso gratutito através do site https://penseallen.github.io/PensePython2e/; 
+  acesso gratutito através do site [Pense em
+  Python](https://penseallen.github.io/PensePython2e/); 
 
 * Python para Desenvolvedores. Borges, Luiz Eduardo – um livro com abordagem
   simples e linguagem direta. Uma ótima escolha para quem está começando com
@@ -51,9 +52,9 @@ outros assuntos com aplicações e exemplos em Python. Algumas sugestões são:
 
 Outra possibilidade é aprender Python através de cursos online. Ainda que haja
 diversas opções dessa modalidade disponíveis, aqui vale ressaltar o belo
-trabalho do professor  Fernando Massanori: o curso Python para Zumbis
-(https://www.pycursos.com/python-para-zumbis/). O curso é completamente gratuito
-e vai desde as mais simples regras sintáticas de Python até programação
+trabalho do professor  Fernando Massanori: o curso [Python para
+Zumbis](https://www.pycursos.com/python-para-zumbis/). O curso é completamente
+gratuito e vai desde as mais simples regras sintáticas de Python até programação
 orientada a objetos além de diversos outros apêndices com outros temas.
 
 Eu costumo dizer que programação é um ofício ao mesmo tempo prático e
@@ -64,7 +65,8 @@ não limite-se as leituras e pratique! O próprio curso Python para Zumbis possu
 alguns exercícios interessantes. Outra opção é uma página na wiki da associação
 Python Brasil com centenas de exercícios separadas por temas como estrturas
 sequenciais, estruturas de repetição, operação com arquivos, classes, etc. A
-lista pode ser encontrada no site https://wiki.python.org.br/ListaDeExercicios.
+lista pode ser encontrada na [wiki da Python
+Brasil](https://wiki.python.org.br/ListaDeExercicios).
 
 A partir do momento que os tipos de exercícios de cursos de programação, como os
 que foram sugeridos acima, começarem a se tornar monótonos, há um próximo passo
@@ -72,7 +74,7 @@ a seguir. Há diversas plataformas para exercitar a prática de programação de
 modo geral, independente da linguagem de programação escolhida.Muitas dessas
 plataformas são integradas com outras de busca de emprego, o que pode inclusive
 ajudar a busca do primeiro emprego com Python. Um dos exemplos mais expoentes
-dessas soluções é o Hacker Rank (www.hackerrank.com).
+dessas soluções é o [Hacker Rank](www.hackerrank.com).
 
 Como tantas outras atividades que podemos desempenhar, programar é uma das que a
 prática também ajuda alcançar a perfeição. Portanto tenha constância nos estudos
@@ -98,12 +100,12 @@ desenvolvimento de software precisa dominar.
 
 Um dos destaques da linguagem Python é que ela já vem com as chamadas “bateriras
 inclusas”. São as bibliotecas padrão da linguagem. Dentre elas há o framework
-para testes unitários, por exemplo. Uma boa leitura é a própria documentação do
-unittest para quem já tem alguma noção de testes unitários
-(https://docs.python.org/3.5/library/unittest.html).  Porém o framework padrão
-de Python para testes unitários não é a única opção. Existe uma alternativa,
-bastante utilizada dentro do ecossistema Python, que é a biblioteca pytest. Uma
-leitura recomendada pode ser o livro:
+para testes unitários, por exemplo. Uma boa leitura é a [própria documentação do
+unittest](https://docs.python.org/3.5/library/unittest.html) para quem já tem
+alguma noção de testes unitários .  Porém o framework padrão de Python para
+testes unitários não é a única opção. Existe uma alternativa, bastante utilizada
+dentro do ecossistema Python, que é a biblioteca pytest. Uma leitura recomendada
+pode ser o livro:
 
 * Python Testing with pytest. Okken, Brian
 
@@ -165,15 +167,18 @@ momentos semelhantes e, mais importante, aprender a lidar com os erros de uma
 tomada de decisão, é crucial para uma evolução saudável profissionalmente.
 
 Estamos em um momento da nossa história como sociedade e como profissionais onde
-ao mesmo tempo que vemos carros no espaço, foguetes pousando, também vemos um
-carro autônomos tirar a vida de uma pessoa que andava de bicicleta. Não
-chegaríamos em nenhuma das situações se não fosse pelo desenvolvimento de
-software e pelas atividades, e decisões, de diversos programadores.
-Principalmente quando estamos iniciando na área de programação ou na carreira
-profissional, temos a falsa impressão de que nosso ofício diz respeito sobre a
-criação de programas de computador e escrita de código fonte. Talvez um dia de
-fato tenha sido, porém atualmente uma instrução escrita no editor de texto, é
-uma decisão tomada, com todos as implicações e desafios descritos acima.
+ao mesmo tempo que vemos [carros no
+espaço](https://tecnoblog.net/233812/spacex-falcon-heavy-tesla-espaco/),
+foguetes pousando, também vemos um carro autônomos [tirar a vida de uma
+pessoa](https://carros.uol.com.br/noticias/reuters/2018/03/19/mulher-morre-apos-ser-atropelada-por-suv-autonomo-do-uber-nos-eua.htm)
+que andava de bicicleta. Não chegaríamos em nenhuma das situações se não fosse
+pelo desenvolvimento de software e pelas atividades, e decisões, de diversos
+programadores.  Principalmente quando estamos iniciando na área de programação
+ou na carreira profissional, temos a falsa impressão de que nosso ofício diz
+respeito sobre a criação de programas de computador e escrita de código fonte.
+Talvez um dia de fato tenha sido, porém atualmente uma instrução escrita no
+editor de texto, é uma decisão tomada, com todos as implicações e desafios
+descritos acima.
 
 Programe em Python ou em qualquer outra linguagem. Mas entenda que desenvolver
 software nos dias de hoje é uma atividade altamente complexa e com uma bagagem
