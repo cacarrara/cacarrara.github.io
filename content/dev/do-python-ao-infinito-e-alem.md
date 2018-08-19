@@ -78,7 +78,7 @@ estudos teóricos com livros, cursos e até mesmo conversas com colegas, mas
 também que dedique uma considerável parcela do tempo programando. Assim sendo,
 não limite-se as leituras e pratique! O próprio curso Python para Zumbis possui
 alguns exercícios interessantes. Outra opção é uma página na wiki da associação
-Python Brasil com centenas de exercícios separadas por temas como estrturas
+Python Brasil com centenas de exercícios separadas por temas como estruturas
 sequenciais, estruturas de repetição, operação com arquivos, classes, etc. A
 lista pode ser encontrada na [wiki da Python
 Brasil](https://wiki.python.org.br/ListaDeExercicios).
@@ -126,11 +126,11 @@ pode ser o livro:
   Brian](http://shop.oreilly.com/product/9781680502404.do)
 
 Uma outra característica marcante da linguagem Python é a sua simplicidade
-sintática e foco na legibilidade das pessoas que a utiliza. Esse é um dos
+sintática e foco na legibilidade das pessoas que a utilizam. Esse é um dos
 fatores da comunidade Python possuir pessoas das mais variadas áreas do
 conhecimento e não somente da computação. É comum em conferências nacionais e
 internacionais sobre Python encontrarmos profissionais das áreas de estatística,
-biologia, geólogia, jornalismo, dentre outros. Ou seja, sabendo programar em
+biologia, geologia, jornalismo, dentre outros. Ou seja, sabendo programar em
 Python um profissional pode atuar em diversos segmentos e com diversas
 abordagens da computação moderna: data science, data mining, web scrapping,
 business intelligence, desenvolvimento web e de sistemas distribuídos, entre
