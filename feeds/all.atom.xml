@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Caio Carrara</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2018-04-12T00:30:00-03:00</updated><entry><title>Do Python ao Infinito e Além!</title><link href="/do-python-ao-infinito-e-alem.html" rel="alternate"></link><published>2018-04-12T00:30:00-03:00</published><updated>2018-04-12T00:30:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2018-04-12:/do-python-ao-infinito-e-alem.html</id><summary type="html">&lt;p&gt;Muitas pessoas tem me perguntado como começar a estudar Python ou mesmo o que precisa aprender para arrumar um emprego e trabalhar com Python a maior parte do tempo. Com as experiências me relacionando com essas pessoas que desejam iniciar no desenvolvimento Python e na programação de uma forma mais ampla, percebo que o foco ainda está um pouco limitado sobre o que realmente significa trabalhar com desenvolvimento de software hoje em dia. Pensando em explorar um pouco esse tema vamos fazer uma viagem que irá do Python ao Infinito e Além!&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Disclaimer I:&lt;/em&gt; esse artigo completo é indicado para iniciantes em programação
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Caio Carrara</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2018-08-27T23:00:00-03:00</updated><entry><title>Unnamed Hacker Clube: a chamada</title><link href="/unnamed-hacker-clube-a-chamada.html" rel="alternate"></link><published>2018-08-27T23:00:00-03:00</published><updated>2018-08-27T23:00:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2018-08-27:/unnamed-hacker-clube-a-chamada.html</id><summary type="html">&lt;p&gt;Chamada para o primeiro encontro do que eu venho chamando de &lt;em&gt;Unnamed Hacker Clube&lt;/em&gt;. Será realizado em Sorocaba/SP no dia 30/08/2018.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Chamada para o primeiro encontro do que eu venho chamando de &lt;em&gt;Unnamed
+Hacker Clube&lt;/em&gt;. Segue os detalhes:&lt;/p&gt;
+&lt;h1&gt;O que&lt;/h1&gt;
+&lt;p&gt;Primeiro encontro do &lt;em&gt;Unnamed Hacker Clube&lt;/em&gt;&lt;/p&gt;
+&lt;h1&gt;Quando&lt;/h1&gt;
+&lt;p&gt;Quinta, 30 de agosto de 2018.  19h&lt;/p&gt;
+&lt;h1&gt;Onde&lt;/h1&gt;
+&lt;p&gt;Base 12 - Centro Cultural Rua Yugoslávia, 164. Jardim Europa, Sorocaba.
+_Mais informações ou mapa de como chegar acesse
+&lt;a href="http://base12.com.br"&gt;www.base12.com.br&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Vai rolar&lt;/h1&gt;
+&lt;p&gt;Breve introdução sobre o propósito do grupo, o que é um hacker clube,
+alguns princípios e quando/como os encontros presenciais irão ocorrer.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Importante&lt;/strong&gt; esse primeiro encontro será colaborativo. Portanto venha
+disposto a participar também.&lt;/p&gt;
+&lt;h1&gt;Para quem é o encontro&lt;/h1&gt;
+&lt;p&gt;Para todas as pessoas. Não é necessário possuir conhecimento prévio
+sobre programação ou qualquer outro tema. Não tem idade mínima nem
+máxima. Todas as pessoas serão muito bem-vindas e acolhidas (falaremos
+mais sobre isso no próprio encontro). Basta ter curiosidade e se
+interessar por tecnologia (seja software ou hardware).&lt;/p&gt;
+&lt;h1&gt;Requisitos&lt;/h1&gt;
+&lt;p&gt;Nenhum. Quem quiser e puder, pode trazer o notebook próprio. Pretendemos
+começar a colocar a mão na massa logo no primeiro encontro.&lt;/p&gt;
+&lt;h1&gt;Dúvidas&lt;/h1&gt;
+&lt;p&gt;A melhor maneira de sanar as suas possíveis dúvidas é comparecendo ao
+encontro :). Entretanto, se ficou alguma dúvida que precise ser sanada
+emergencialmente, acesse a &lt;a href="https://caiocarrara.com.br/contato.html"&gt;página de contato aqui do
+blog&lt;/a&gt; e escolha a forma mais
+apropriada para você para entrar em contato comigo.&lt;/p&gt;</content><category term="hackerclub"></category></entry><entry><title>Do Python ao Infinito e Além!</title><link href="/do-python-ao-infinito-e-alem.html" rel="alternate"></link><published>2018-04-12T00:30:00-03:00</published><updated>2018-04-12T00:30:00-03:00</updated><author><name>Caio Carrara</name></author><id>tag:None,2018-04-12:/do-python-ao-infinito-e-alem.html</id><summary type="html">&lt;p&gt;Muitas pessoas tem me perguntado como começar a estudar Python ou mesmo o que precisa aprender para arrumar um emprego e trabalhar com Python a maior parte do tempo. Com as experiências me relacionando com essas pessoas que desejam iniciar no desenvolvimento Python e na programação de uma forma mais ampla, percebo que o foco ainda está um pouco limitado sobre o que realmente significa trabalhar com desenvolvimento de software hoje em dia. Pensando em explorar um pouco esse tema vamos fazer uma viagem que irá do Python ao Infinito e Além!&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Disclaimer I:&lt;/em&gt; esse artigo completo é indicado para iniciantes em programação
 ou iniciantes nos estudos da linguagem Python.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Disclaimer II:&lt;/em&gt; se você já trabalha com Python, talvez a última parte desse
 artigo (Indo Além) seja a mais importante.&lt;/p&gt;
@@ -73,7 +102,7 @@ estudos teóricos com livros, cursos e até mesmo conversas com colegas, mas
 também que dedique uma considerável parcela do tempo programando. Assim sendo,
 não limite-se as leituras e pratique! O próprio curso Python para Zumbis possui
 alguns exercícios interessantes. Outra opção é uma página na wiki da associação
-Python Brasil com centenas de exercícios separadas por temas como estrturas
+Python Brasil com centenas de exercícios separadas por temas como estruturas
 sequenciais, estruturas de repetição, operação com arquivos, classes, etc. A
 lista pode ser encontrada na &lt;a href="https://wiki.python.org.br/ListaDeExercicios"&gt;wiki da Python
 Brasil&lt;/a&gt;.&lt;/p&gt;
@@ -115,11 +144,11 @@ pode ser o livro:&lt;/p&gt;
   Brian&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Uma outra característica marcante da linguagem Python é a sua simplicidade
-sintática e foco na legibilidade das pessoas que a utiliza. Esse é um dos
+sintática e foco na legibilidade das pessoas que a utilizam. Esse é um dos
 fatores da comunidade Python possuir pessoas das mais variadas áreas do
 conhecimento e não somente da computação. É comum em conferências nacionais e
 internacionais sobre Python encontrarmos profissionais das áreas de estatística,
-biologia, geólogia, jornalismo, dentre outros. Ou seja, sabendo programar em
+biologia, geologia, jornalismo, dentre outros. Ou seja, sabendo programar em
 Python um profissional pode atuar em diversos segmentos e com diversas
 abordagens da computação moderna: data science, data mining, web scrapping,
 business intelligence, desenvolvimento web e de sistemas distribuídos, entre
